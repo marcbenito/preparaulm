@@ -1,0 +1,656 @@
+[
+    {
+        "id": "meteo-nubes-adveccion",
+        "name": "Nubes - Formación Advección",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-nubes-frontales",
+        "name": "Nubes - Formación Frontal",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-nubes-condiciones",
+        "name": "Nubes - Condiciones de Vuelo",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-precipitacion-tipos",
+        "name": "Precipitación - Tipos",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-precipitacion-efectos",
+        "name": "Precipitación - Efectos en Vuelo",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-engelamiento-clases",
+        "name": "Engelamiento - Clases",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-engelamiento-nieve",
+        "name": "Engelamiento - Nieve y Escarcha",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-engelamiento-nubes",
+        "name": "Engelamiento - Según Tipo de Nube",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-engelamiento-sistemas",
+        "name": "Engelamiento - De Sistemas",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-operaciones-hielo",
+        "name": "Operaciones en Hielo - Precauciones",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-tormentas-formacion",
+        "name": "Tormentas - Condiciones de Formación",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-tormentas-causas",
+        "name": "Tormentas - Causas",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-tormentas-estructura",
+        "name": "Tormentas - Estructura",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-tormentas-clasificacion",
+        "name": "Tormentas - Clasificación",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-tormentas-vuelo",
+        "name": "Tormentas - Vuelo a Través",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-visibilidad-definicion",
+        "name": "Visibilidad - Definición",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-visibilidad-horizontal",
+        "name": "Visibilidad - Horizontal vs Oblicua",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-visibilidad-ilusiones",
+        "name": "Visibilidad - Ilusiones Ópticas",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "meteo-visibilidad-fenomenos",
+        "name": "Visibilidad - Fenómenos",
+        "parent_category_id": "meteorologia",
+        "parent_category_name": "Meteorología"
+    },
+    {
+        "id": "proc-definicion-necesidad",
+        "name": "Definición - Necesidad de Procedimientos",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-definicion-actitud",
+        "name": "Definición - Actitud de Vuelo",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-aspectos-preparacion",
+        "name": "Aspectos Generales - Preparación",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-piloto-obligaciones",
+        "name": "Responsabilidades del Piloto - Obligaciones",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-piloto-equipo",
+        "name": "Responsabilidades del Piloto - Equipo Mínimo",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-piloto-manual",
+        "name": "Responsabilidades del Piloto - Manual de Vuelo",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-inspeccion",
+        "name": "Normales - Inspección Pre-vuelo",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-arranque",
+        "name": "Normales - Arranque de Motor",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-rodaje",
+        "name": "Normales - Rodaje",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-despegue",
+        "name": "Normales - Despegue y Subida",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-crucero",
+        "name": "Normales - Crucero",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-descenso",
+        "name": "Normales - Descenso y Aproximación",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-aterrizaje",
+        "name": "Normales - Aterrizaje",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-normales-parada",
+        "name": "Normales - Parada de Motor",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-anormales-mandos",
+        "name": "Anormales - Mal Funcionamiento Mandos",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-anormales-anemometro",
+        "name": "Anormales - Mal Funcionamiento Anemómetro",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-anormales-pista",
+        "name": "Anormales - Pista Contaminada",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-anormales-turbulencia",
+        "name": "Anormales - Turbulencia de Estela",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-anormales-imc",
+        "name": "Anormales - Ingreso Inadvertido en IMC",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-actitud",
+        "name": "Emergencia - Actitud Inicial",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-motor",
+        "name": "Emergencia - Fallo de Motor",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-fuego-motor",
+        "name": "Emergencia - Fuego en Motor",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-fuego-cabina",
+        "name": "Emergencia - Fuego en Cabina",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-humo",
+        "name": "Emergencia - Humo en Cabina",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-cizalladura",
+        "name": "Emergencia - Cizalladura",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-aterrizaje",
+        "name": "Emergencia - Aterrizaje de Emergencia",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-paracaidas",
+        "name": "Emergencia - Paracaídas Balístico",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-emergencia-rescate",
+        "name": "Emergencia - Sistemas de Rescate",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-listas-procedimientos",
+        "name": "Listas de Comprobación - Checklists",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "proc-conciencia-operaciones",
+        "name": "Conciencia Medioambiental - Operaciones",
+        "parent_category_id": "procedimientos",
+        "parent_category_name": "Procedimientos Operacionales"
+    },
+    {
+        "id": "factores-fisiologia-composicion",
+        "name": "Fisiología Básica - Composición Atmósfera",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-gases",
+        "name": "Fisiología Básica - Leyes de Gases",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-sistema",
+        "name": "Fisiología Básica - Sistema Respiratorio",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-oxigeno",
+        "name": "Fisiología Básica - Oxígeno en Tejidos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-hipoxia",
+        "name": "Fisiología Básica - Hipoxia",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-hiperventilacion",
+        "name": "Fisiología Básica - Hiperventilación",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fisiologia-hipertension",
+        "name": "Fisiología Básica - Hipertensión",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-medio-nervioso",
+        "name": "Personas y Medio Ambiente - Sistema Nervioso",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-medio-funcional",
+        "name": "Personas y Medio Ambiente - Sistema Funcional",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-medio-vision",
+        "name": "Personas y Medio Ambiente - Visión",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-medio-nocturna",
+        "name": "Personas y Medio Ambiente - Visión Nocturna",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-ilusiones-visuales",
+        "name": "Ilusiones Sensoriales - Visuales",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-ilusiones-vestibulares",
+        "name": "Ilusiones Sensoriales - Vestibulares",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-memoria-tipos",
+        "name": "Memoria - Tipos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-comportamiento-conducta",
+        "name": "Comportamiento Humano - Conducta",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-comportamiento-actitudes",
+        "name": "Comportamiento Humano - Actitudes",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-comportamiento-aprendizaje",
+        "name": "Comportamiento Humano - Aprendizaje",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-comportamiento-motivacion",
+        "name": "Comportamiento Humano - Motivación",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-comportamiento-error",
+        "name": "Comportamiento Humano - Error Humano",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-evaluacion",
+        "name": "Evaluación y Decisiones - Evaluación",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-proceso",
+        "name": "Evaluación y Decisiones - Proceso",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-influyentes",
+        "name": "Evaluación y Decisiones - Factores Influyentes",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-tipos",
+        "name": "Evaluación y Decisiones - Tipos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-responsabilidad",
+        "name": "Evaluación y Decisiones - Responsabilidad",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-conciencia",
+        "name": "Evaluación y Decisiones - Conciencia Situacional",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-riesgos",
+        "name": "Evaluación y Decisiones - Valoración Riesgos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-estres",
+        "name": "Evaluación y Decisiones - Gestión del Estrés",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-decision-crm",
+        "name": "Evaluación y Decisiones - CRM",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-salud-estado",
+        "name": "Vuelo y Salud - Estado Físico y Mental",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-salud-incapacitacion",
+        "name": "Vuelo y Salud - Incapacitación",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-salud-problemas",
+        "name": "Vuelo y Salud - Problemas Médicos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sustancias-tabaco",
+        "name": "Sustancias - Tabaco",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sustancias-alcohol",
+        "name": "Sustancias - Alcohol",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sustancias-cafeina",
+        "name": "Sustancias - Cafeína",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sustancias-medicamentos",
+        "name": "Sustancias - Medicamentos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sustancias-drogas",
+        "name": "Sustancias - Drogas",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sueno-funcion",
+        "name": "Sueño - Función",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-sueno-trastornos",
+        "name": "Sueño - Trastornos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-fatiga-definicion",
+        "name": "Fatiga - Definición",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-estres-tipos",
+        "name": "Estrés y Ansiedad - Tipos",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "factores-higiene-nutricion",
+        "name": "Higiene y Vuelo - Nutrición",
+        "parent_category_id": "factores-humanos",
+        "parent_category_name": "Factores Humanos"
+    },
+    {
+        "id": "com-radiotelef-alfabeto",
+        "name": "Procedimientos Radiotelefónicos - Alfabeto",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-radiotelef-distintivos",
+        "name": "Procedimientos Radiotelefónicos - Distintivos",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-radiotelef-transmision",
+        "name": "Procedimientos Radiotelefónicos - Transmisión",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-fraseologia-circuito",
+        "name": "Fraseología VFR - Circuito de Tráfico",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-fraseologia-mensajes",
+        "name": "Fraseología VFR - Mensajes",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-fraseologia-frecuencias",
+        "name": "Fraseología VFR - Frecuencias",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-emergencia-socorro",
+        "name": "Comunicaciones de Emergencia - Socorro",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-emergencia-urgencia",
+        "name": "Comunicaciones de Emergencia - Urgencia",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-emergencia-perdida",
+        "name": "Comunicaciones de Emergencia - Pérdida",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "com-emergencia-121",
+        "name": "Comunicaciones de Emergencia - 121.5 MHz",
+        "parent_category_id": "comunicaciones",
+        "parent_category_name": "Comunicaciones"
+    },
+    {
+        "id": "nav-tierra-coordenadas",
+        "name": "La Tierra",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-hora-solar-utc",
+        "name": "Hora",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-direcciones-distancias",
+        "name": "Direcciones y distancias",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-magnetismo-terrestre",
+        "name": "Magnetismo terrestre",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-cartografia-proyecciones",
+        "name": "Cartografía",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-navegacion-estima",
+        "name": "Navegación a estima",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-rumbo-consumibles",
+        "name": "Cálculo de rumbo y consumibles",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-planificacion-ejecucion-viajes",
+        "name": "Planificación y ejecución de viajes",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    },
+    {
+        "id": "nav-desorientacion-espacial",
+        "name": "Desorientación",
+        "parent_category_id": "navegacion",
+        "parent_category_name": "Navegación"
+    }
+]

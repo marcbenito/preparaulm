@@ -1,0 +1,83 @@
+[
+    {
+        "id": "meteorologia",
+        "name": "Meteorología",
+        "description": "Conocimientos sobre fenómenos meteorológicos y su impacto en la aviación.",
+        "iconName": "Cloud",
+        "color": "from-sky-500 to-blue-500",
+        "parentCategoryId": null,
+        "totalQuestions": 250
+    },
+    {
+        "id": "performance",
+        "name": "Performance y Planificación",
+        "description": "Rendimiento y limitaciones de las aeronaves.",
+        "iconName": "Gauge",
+        "color": "from-green-500 to-emerald-500",
+        "parentCategoryId": null,
+        "totalQuestions": 180
+    },
+    {
+        "id": "comunicaciones",
+        "name": "Comunicaciones",
+        "description": "Procedimientos de comunicación y fraseología aeronáutica.",
+        "iconName": "Radio",
+        "color": "from-purple-500 to-indigo-500",
+        "parentCategoryId": null,
+        "totalQuestions": 150
+    },
+    {
+        "id": "conocimiento-aeronave",
+        "name": "Conocimiento General de la Aeronave",
+        "description": "Sistemas y componentes de las aeronaves.",
+        "iconName": "Plane",
+        "color": "from-orange-500 to-red-500",
+        "parentCategoryId": null,
+        "totalQuestions": 200
+    },
+    {
+        "id": "navegacion",
+        "name": "Navegación",
+        "description": "Métodos y técnicas de navegación aérea.",
+        "iconName": "NavigationIcon",
+        "color": "from-pink-500 to-rose-500",
+        "parentCategoryId": null,
+        "totalQuestions": 220
+    },
+    {
+        "id": "principios-vuelo",
+        "name": "Principios de Vuelo",
+        "description": "Principios básicos de aerodinámica y vuelo.",
+        "iconName": "FileQuestion",
+        "color": "from-yellow-500 to-amber-500",
+        "parentCategoryId": null,
+        "totalQuestions": 160
+    },
+    {
+        "id": "factores-humanos",
+        "name": "Factores Humanos",
+        "description": "Rendimiento y limitaciones humanas en aviación.",
+        "iconName": "Brain",
+        "color": "from-teal-500 to-cyan-500",
+        "parentCategoryId": null,
+        "totalQuestions": 140
+    },
+    {
+        "id": "derecho-aereo",
+        "name": "Derecho Aéreo",
+        "description": "Normativa y legislación aplicable a la aviación.",
+        "iconName": "Waypoints",
+        "color": "from-violet-500 to-purple-500",
+        "parentCategoryId": null,
+        "totalQuestions": 190
+    },
+    {
+        "id": "procedimientos",
+        "name": "Procedimientos Operacionales",
+        "description": "Procedimientos operativos y de emergencia.",
+        "iconName": "AlertTriangle",
+        "color": "from-fuchsia-500 to-pink-500",
+        "parentCategoryId": null,
+        "totalQuestions": 170
+    }
+]

@@ -1,0 +1,412 @@
+[
+    {
+        "id": "derecho-aereo-aeronavegabilidad",
+        "name": "Aeronavegabilidad",
+        "description": "- Definiciones\n- Certificado de aeronavegabilidad"
+    },
+    {
+        "id": "derecho-aereo-nacionalidad-registro",
+        "name": "Nacionalidad y registro de la aeronave",
+        "description": "- Definiciones\n- Marcas de matrícula\n- Certificado de registro"
+    },
+    {
+        "id": "derecho-aereo-servicio-informacion",
+        "name": "Servicio de información aeronáutica",
+        "description": "- Definiciones\n- AIP\n- NOTAM"
+    },
+    {
+        "id": "derecho-aereo-aerodromos",
+        "name": "Aeródromos",
+        "description": "- Datos del aeródromo\n- Ayudas visuales\n  - Indicadores\n  - Marcas\n  - Luces\n  - Áreas de uso restringido\n  - Emergencias"
+    },
+    {
+        "id": "derecho-aereo-busqueda-salvamento",
+        "name": "Búsqueda y salvamento",
+        "description": "- Definiciones\n- Procedimientos para el PIC\n- Señales de búsqueda y salvamento\n  - Código de señales en tierra o aire"
+    },
+    {
+        "id": "derecho-aereo-investigacion-accidentes",
+        "name": "Investigación de accidentes",
+        "description": "- Definiciones\n- Aplicabilidad\n- Legislación nacional"
+    },
+    {
+        "id": "principios-v-aerodinamica",
+        "name": "Aerodinámica",
+        "description": "- Conceptos básicos\n- Leyes y definiciones (Bernoulli, Newton)\n- Conceptos matemáticos y aerodinámicos elementales\n- Conversión de unidades"
+    },
+    {
+        "id": "principios-v-atmosfera-estandar",
+        "name": "La atmósfera y la atmósfera estándar",
+        "description": "- Densidad\n- Influencia de la presión y temperatura en la densidad\n- Altitud de presión y altitud de densidad"
+    },
+    {
+        "id": "principios-v-presion-estatica-dinamica-total",
+        "name": "Presión estática, dinámica y total",
+        "description": "- Presión estática, dinámica y total"
+    },
+    {
+        "id": "principios-v-efecto-venturi",
+        "name": "Efecto Venturi",
+        "description": "- Efecto Venturi"
+    },
+    {
+        "id": "principios-v-velocidades-tas-ias",
+        "name": "Velocidades TAS e IAS",
+        "description": "- Velocidades TAS e IAS"
+    },
+    {
+        "id": "principios-v-flujo-aire-viscosidad-capa-limite",
+        "name": "Flujo de aire, viscosidad y capa límite",
+        "description": "- Flujo de aire, viscosidad y capa límite"
+    },
+    {
+        "id": "principios-v-geometria-perfil",
+        "name": "Geometría del perfil aerodinámico",
+        "description": "- Sección\n- Cuerda\n- Espesor\n- Línea de curvatura\n- Curvatura media\n- Borde de ataque\n- Borde de salida\n- Extradós\n- Intradós\n- Superficie alar\n- Envergadura\n- Alargamiento\n- Torsión"
+    },
+    {
+        "id": "principios-v-fuerzas-perfil",
+        "name": "Fuerzas aerodinámicas sobre un perfil",
+        "description": "- Ángulo de ataque\n- Sustentación\n  - Fórmula\n  - Centro de presiones y centro aerodinámico\n  - Coeficiente de sustentación\n  - Dispositivos hipersustentadores\n- Resistencia\n  - Resistencia parásita (del perfil, de la forma, de la fricción de las superficies del ala)\n  - Resistencia inducida\n  - Deflexión del aire hacia abajo\n  - Torbellinos marginales\n  - Efecto de la velocidad\n  - Efecto del alargamiento del ala\n  - Centro de gravedad"
+    },
+    {
+        "id": "principios-v-el-ala",
+        "name": "El ala",
+        "description": "- Formas de ala"
+    },
+    {
+        "id": "principios-v-el-peso",
+        "name": "El peso",
+        "description": "- El peso"
+    },
+    {
+        "id": "principios-v-la-perdida-stall",
+        "name": "La pérdida (stall)",
+        "description": "- Capa límite\n- Variación de la sustentación y resistencia en función del ángulo de ataque\n- Centro de presiones\n- Velocidad de pérdida\n- Influencia de la forma alar\n- Síntomas de la pérdida\n- Recuperación de la pérdida\n- Barrena"
+    },
+    {
+        "id": "principios-v-empuje-traccion",
+        "name": "Empuje y tracción",
+        "description": "- Empuje y tracción"
+    },
+    {
+        "id": "principios-v-estabilidad",
+        "name": "Estabilidad",
+        "description": "- Ejes de giro\n  - Eje longitudinal\n  - Eje lateral\n  - Eje vertical\n- Controles de cabeceo, guiñada y alabeo\n  - Guiñada adversa\n- Estabilidad estática y dinámica\n  - Longitudinal\n  - Lateral\n  - Direccional\n  - Positiva\n  - Negativa\n  - Neutra\n- Estabilizador vertical\n- Estabilizador horizontal\n- Dispositivos de compensación"
+    },
+    {
+        "id": "principios-v-factor-carga",
+        "name": "Factor de carga",
+        "description": "- Cargas y resistencia estructural\n- Factor de carga en vuelo recto\n- Factor de carga en virajes\n- Factor de carga en turbulencia"
+    },
+    {
+        "id": "principios-v-aerodinamica-operacional",
+        "name": "Aerodinámica operacional",
+        "description": "- Ascensos y descensos\n- Curva polar de velocidades\n  - Velocidad de máximo alcance en planeo\n  - Velocidad de mínima potencia requerida\n  - Velocidad de máximo ascenso\n  - Velocidad de máxima pendiente de ascenso"
+    },
+    {
+        "id": "principios-v-despegue",
+        "name": "Despegue",
+        "description": "- Normal\n- Con viento cruzado\n- Velocidad de ascenso"
+    },
+    {
+        "id": "principios-v-vuelo",
+        "name": "Vuelo",
+        "description": "- Efecto suelo\n- Vuelo con viento y con viento racheado\n- Localización de la dirección del viento\n- Vuelo sobre colinas o montañas\n- Barloventos y sotaventos"
+    },
+    {
+        "id": "principios-v-deriva-inherente",
+        "name": "Deriva inherente",
+        "description": "- Deriva inherente"
+    },
+    {
+        "id": "principios-v-limites-operativos",
+        "name": "Límites operativos del avión",
+        "description": "- Envolvente de la maniobra\n- Limitaciones operativas\n  - Vibraciones\n  - V_fe, V_no, V_ne"
+    },
+    {
+        "id": "principios-v-virajes",
+        "name": "Virajes",
+        "description": "- Virajes en aviones"
+    },
+    {
+        "id": "principios-v-aproximacion-aterrizaje",
+        "name": "Aproximación y aterrizaje",
+        "description": "- Aproximaciones normales\n- Aproximaciones con viento\n- Aterrizaje normal\n- Aterrizaje con viento"
+    },
+    {
+        "id": "principios-v-helices",
+        "name": "Hélices",
+        "description": "- Significado del paso de hélice\n- Resistencias generadas por la hélice\n- Momentos debidos al funcionamiento de la hélice"
+    },
+    {
+        "id": "principios-v-termicas-turbulencias",
+        "name": "Térmicas y turbulencias",
+        "description": "- Actuaciones y precauciones"
+    },
+    {
+        "id": "nav-tierra",
+        "name": "La Tierra",
+        "description": "- Meridianos y paralelos\n- Latitud y longitud\n- Coordenadas para localizar cualquier posición"
+    },
+    {
+        "id": "nav-hora",
+        "name": "Hora",
+        "description": "- Hora solar\n  - Orto y ocaso\n- Hora UTC, GMT y local\n- Husos horarios"
+    },
+    {
+        "id": "nav-direcciones-distancias",
+        "name": "Direcciones y distancias",
+        "description": "- Norte verdadero, magnético y de brújula\n- Desviación de la brújula\n- Unidades (milla náutica, kilómetros, metros, pies)\n- Conversión de unidades"
+    },
+    {
+        "id": "nav-magnetismo-terrestre",
+        "name": "Magnetismo terrestre",
+        "description": "- Variación anual\n- Campos magnéticos\n- Magnetismo y brújula"
+    },
+    {
+        "id": "nav-cartografia",
+        "name": "Cartografía",
+        "description": "- Proyecciones\n  - Cilíndricas\n  - Cónicas\n- Propiedades de las cartas\n  - Escala\n  - Características\n  - Símbolos, elevaciones, relieve\n- Círculos máximos y menores\n- Ruta\n- Variación o declinación\n- Medición de dirección y distancia"
+    },
+    {
+        "id": "nav-estima",
+        "name": "Navegación a estima",
+        "description": "- Preparación del viaje y planificación\n- Elección de la ruta\n- Trazado de la ruta\n- Triángulo de velocidades\n- Velocidad del viento\n- Velocidades (IAS, CAS, TAS)\n- Velocidad sobre el suelo (GS)\n- Ruta y ángulo de deriva\n- Rumbo (magnético, verdadero, brújula)\n- Distancia\n- Altitud verdadera\n- Velocidad apropiada\n- Hora\n- Tiempo estimado\n- Cálculo de consumibles"
+    },
+    {
+        "id": "nav-planificacion-viajes",
+        "name": "Planificación y realización de viajes",
+        "description": "- Plan de vuelo operacional\n- Procedimientos de extravío\n- Revisión de parámetros de navegación (rumbo, distancia, tiempo y situación)\n- Deriva y corrección de deriva\n- Navegación observada, técnica y empleo\n- Aeródromos alternativos"
+    },
+    {
+        "id": "nav-desorientacion",
+        "name": "Desorientación",
+        "description": "- Actuación y posibles soluciones"
+    },
+    {
+        "id": "cga-motor-sistemas",
+        "name": "El motor y sus sistemas",
+        "description": "- Alimentación\n- Refrigeración\n- Lubricación\n- Encendido\n- Sistema eléctrico"
+    },
+    {
+        "id": "cga-helices",
+        "name": "Hélices",
+        "description": "- Tipos\n- Hélices de velocidad constante\n- Manejo de la hélice"
+    },
+    {
+        "id": "cga-avion",
+        "name": "El avión",
+        "description": "- Estructura y cargas\n- Célula\n- Ala y superficies de cola\n  - Diseño\n  - Materiales\n  - Límites estructurales\n- Fuselaje\n  - Diseño\n  - Materiales\n  - Límites estructurales\n- Superficies de vuelo y control\n  - Diseño\n  - Materiales\n  - Límites estructurales\n- Tren de aterrizaje (ruedas, flotadores, patines)\n- Controles de vuelo\n  - Mecánicos o automáticos\n  - Controles secundarios"
+    },
+    {
+        "id": "factores-h-evaluacion-toma-decisiones",
+        "name": "Evaluación y toma de decisiones",
+        "description": "- Evaluación del piloto (elementos y tipos)\n- Toma de decisiones\n- Factores influyentes\n- Tipos de decisiones\n- Responsabilidad del piloto\n- Conciencia de la situación\n  - Valoración de riesgos\n  - Gestión del estrés"
+    },
+    {
+        "id": "cga-instrumentos-equipos",
+        "name": "Instrumentos y equipos",
+        "description": "- Anemómetro\n  - Velocidades IAS y TAS\n- Altímetro\n  - Procedimiento de reglaje de altímetro\n- Variómetro\n- Tacómetro de motor\n- Indicador de virajes\n- Indicador de actitud\n- Indicador de resbales y derrapes\n- Brújula (correcciones y rumbos)\n- Sistema de comunicaciones (VHF)\n- GPS (principios, operación y errores)\n- Instrumentos y sistemas de indicación\n- Sistema de paracaídas\n- Equipos de rescate"
+    },
+    {
+        "id": "meteorologia-atmosfera",
+        "name": "La atmósfera",
+        "description": "- Definición y composición de la atmósfera\n- Distribución térmica\n- Distribución físico-química\n- Atmósfera estándar OACI\n- Circulación atmosférica"
+    },
+    {
+        "id": "meteorologia-temperatura-aire",
+        "name": "Temperatura del aire",
+        "description": "- Definición y unidades\n- Transmisión del calor\n  - Radiación\n  - Conducción\n  - Convección\n- Influencia del suelo y el mar sobre la temperatura\n- Oscilación diurna de la temperatura\n- Gradiente térmico vertical\n- Inversión térmica"
+    },
+    {
+        "id": "meteorologia-presion-atmosferica",
+        "name": "Presión atmosférica",
+        "description": "- Unidades de medida\n- Gradiente horizontal de presión\n- Variación de la presión con la altura\n  - Líneas isobaras\n- Altas presiones\n- Bajas presiones"
+    },
+    {
+        "id": "meteorologia-densidad",
+        "name": "Densidad",
+        "description": "- Definición\n- Relación presión-temperatura-densidad\n- ISA"
+    },
+    {
+        "id": "meteorologia-humedad",
+        "name": "Humedad",
+        "description": "- Presión del vapor\n- Punto de rocío\n- Humedad absoluta y relativa\n- Núcleos de condensación\n- Condensación y precipitación"
+    },
+    {
+        "id": "meteorologia-estabilidad-atmosferica",
+        "name": "Estabilidad atmosférica y el vuelo",
+        "description": "- Condiciones de vuelo en aire estable\n- Condiciones de vuelo en aire inestable"
+    },
+    {
+        "id": "meteorologia-viento",
+        "name": "El viento",
+        "description": "- Gradiente horizontal de presión y viento\n- Viento y rotación de la Tierra\n- Efecto del rozamiento del suelo\n- Variación diurna\n- Viento local\n  - Brisa de tierra y mar\n  - Viento orográfico\n  - Brisa de valle y montaña\n  - Viento Föhn\n  - Viento laminar\n  - Viento turbulento\n    - Turbulencia mecánica\n    - Turbulencia orográfica\n  - Onda de montaña (nubes asociadas)\n  - Turbulencia térmica\n  - Cizalladura del viento\n    - Racha\n  - Situaciones meteorológicas típicas (frentes, tormentas, obstáculos)\n  - Inversión térmica\n    - Vertical\n    - Horizontal"
+    },
+    {
+        "id": "meteorologia-nubes",
+        "name": "Nubes",
+        "description": "- Clasificación general de las nubes\n  - Nubes altas (Ci, Cs, Cc)\n  - Nubes medias (As, Ac)\n  - Nubes bajas (Sc, St, Ns)\n  - Nubes de desarrollo vertical (Cu, Cb)\n- Formación de las nubes\n  - Nubes orográficas\n  - Nubes de turbulencia\n  - Nubes convectivas\n  - Nubes de advección\n  - Nubes frontales\n- Condiciones de vuelo según el tipo de nubes"
+    },
+    {
+        "id": "meteorologia-precipitacion",
+        "name": "Precipitación",
+        "description": "- Definición\n- Precipitación frontal\n- Precipitación orográfica\n- Efectos de la precipitación en vuelo"
+    },
+    {
+        "id": "meteorologia-engelamiento",
+        "name": "Engelamiento (hielo)",
+        "description": "- Definición\n- Clases de engelamiento\n- Nieve húmeda y escarcha\n- Engelamiento y tipo de nubes\n- Engelamiento de sistemas\n  - Motor (carburador)\n  - Bordes de ataque\n  - Hélices\n  - Tubo de Pitot\n  - Operación aérea con hielo"
+    },
+    {
+        "id": "meteorologia-tormentas",
+        "name": "Tormentas",
+        "description": "- Condiciones de formación\n- Causas para la formación\n- Estructura de una tormenta\n  - Etapas: formación, desarrollo, madurez y disipación\n- Clasificación de las tormentas\n- Vuelo a través de tormentas"
+    },
+    {
+        "id": "meteorologia-visibilidad",
+        "name": "Visibilidad",
+        "description": "- Definición\n- Visibilidad horizontal\n- Visibilidad oblicua\n- Ilusiones ópticas\n- Niebla, neblina, calima y humo\n  - Definiciones\n  - Clases de niebla"
+    },
+    {
+        "id": "meteorologia-masas-aire",
+        "name": "Masas de aire",
+        "description": "- Sistemas de presión\n- Clasificación\n- Masas de aire de origen marítimo\n- Masas de aire de origen continental\n- Masas de aire en España"
+    },
+    {
+        "id": "meteorologia-frentes",
+        "name": "Frentes",
+        "description": "- Concepto de frente\n  - Superficie frontal\n  - Línea frontal\n  - Frentes activos y estacionarios\n- Clasificación de los frentes\n  - Frente frío\n  - Frente cálido\n  - Frente ocluido (oclusión fría y cálida)\n  - Frente estacionario\n- Condiciones meteorológicas antes, durante y después del paso de un frente cálido\n- Condiciones meteorológicas antes, durante y después del paso de un frente frío\n- Borrascas y anticiclones"
+    },
+    {
+        "id": "meteorologia-altimetria",
+        "name": "Altimetría",
+        "description": "- Definición\n- Relación altura-temperatura-presión\n- Atmósfera estándar OACI\n- Altitud de presión y altitud de densidad\n- QFE, QNE y QNH"
+    },
+    {
+        "id": "proc-oper-definicion",
+        "name": "Definición de procedimiento operacional",
+        "description": "- Necesidad\n- Actitud de vuelo"
+    },
+    {
+        "id": "proc-oper-aspectos-generales",
+        "name": "Aspectos generales",
+        "description": "- Preparación del vuelo\n- Obligaciones del piloto al mando\n- Equipo mínimo para el vuelo\n  - Manual de vuelo"
+    },
+    {
+        "id": "proc-oper-normales",
+        "name": "Procedimientos normales",
+        "description": "- Inspección previa al vuelo\n- Procedimiento de arranque\n- Maniobras durante el rodaje\n- Procedimientos en despegue, subida, crucero, descenso, aproximación y aterrizaje\n- Parada de motor y abandono de aeronave"
+    },
+    {
+        "id": "proc-oper-anormales",
+        "name": "Procedimientos anormales",
+        "description": "- Mal funcionamiento de los mandos de vuelo\n- Mal funcionamiento del anemómetro\n- Pista contaminada\n- Turbulencia (precauciones con otros tráficos durante despegue y aterrizaje)\n- Volar inadvertidamente en condiciones meteorológicas instrumentales (IMC)"
+    },
+    {
+        "id": "proc-oper-emergencia",
+        "name": "Procedimientos de emergencia",
+        "description": "- Actitud ante una emergencia\n- Fallo de motor\n- Fuego en el motor\n- Fuego en cabina\n- Humo en cabina\n- Cizalladura (reconocimiento durante salida y aproximación)\n- Aterrizaje de emergencia\n- Uso del paracaídas\n- Uso de sistemas de rescate"
+    },
+    {
+        "id": "proc-oper-lista-aeronave",
+        "name": "Lista de procedimientos de la aeronave",
+        "description": "- Lista de procedimientos de la aeronave"
+    },
+    {
+        "id": "factores-h-conceptos",
+        "name": "Conceptos",
+        "description": "- Factores humanos en aviación"
+    },
+    {
+        "id": "factores-h-fisiologia-salud",
+        "name": "Fisiología básica y salud",
+        "description": "- La atmósfera\n  - Composición\n  - Leyes de los gases\n- Sistema respiratorio y circulatorio\n  - Necesidad de oxígeno de los tejidos\n  - Hipoxia\n    - Síntomas de hipoxia\n    - Contramedidas\n    - Monóxido de carbono\n  - Hiperventilación\n  - Hipertensión y enfermedad coronaria"
+    },
+    {
+        "id": "factores-h-personas-medio",
+        "name": "Personas y medio ambiente",
+        "description": "- Sistema nervioso anatómico (central y periférico)\n- Sistema nervioso funcional (voluntario y autónomo)\n- Visión\n  - Campo visual\n  - Visión monocular y binocular\n  - Visión nocturna\n  - Defectos de la visión\n  - Técnicas visuales de escaneo (look-out)\n- Audición\n  - Anatomía\n  - Pérdida de audición\n  - Peligros en vuelo\n- Equilibrio\n  - Anatomía\n  - Mareo\n  - Movimiento y aceleración\n- Desorientación espacial\n  - Tipos\n  - Causas\n  - Reconocimiento y formas de evitarla\n  - Ilusiones (visuales y vestibulares)"
+    },
+    {
+        "id": "factores-h-memoria",
+        "name": "Memoria",
+        "description": "- Descripción y tipos"
+    },
+    {
+        "id": "factores-h-comportamiento",
+        "name": "El comportamiento humano",
+        "description": "- Conducta\n- Personalidad\n- Actitudes\n- Aptitudes\n- Aprendizaje (clasificación y niveles)\n- Motivación\n- Error (modelos, tipos y prevención)"
+    },
+    {
+        "id": "factores-h-vuelo-salud",
+        "name": "Vuelo y salud",
+        "description": "- Estado físico y mental\n  - Incapacitación\n  - Causas y síntomas:\n    - Gastrointestinal\n    - Coronaria (factores de riesgo)\n    - Migraña\n    - Síncope y desfallecimiento\n    - Otorrinolaringológica\n    - Psiquiátrica\n- Tóxicos:\n  - Tabaco\n  - Alcohol\n  - Cafeína\n  - Medicamentos\n  - Drogas\n- Sueño\n  - Función\n  - Modelos\n  - Trastornos del sueño (prevención y tratamiento)\n- Fatiga\n  - Definición\n  - Tipos\n  - Causas\n  - Prevención\n- Estrés y ansiedad\n  - Tipos de estrés, identificación y manejo\n- Higiene y vuelo\n  - Nutrición\n  - Alimentos y distribución\n  - Alimentos a evitar antes del vuelo\n  - Ejercicio físico (beneficios y recomendaciones)"
+    },
+    {
+        "id": "coms-definiciones",
+        "name": "Definiciones",
+        "description": "- Abreviaturas ATS\n- Categoría de los mensajes"
+    },
+    {
+        "id": "coms-procedimientos-generales",
+        "name": "Procedimientos generales",
+        "description": "- Transmisión de letras, números y hora\n- Técnicas de transmisión\n- Señales de llamada a estaciones y aeronaves\n- Colación"
+    },
+    {
+        "id": "coms-terminos-meteorologicos-vfr",
+        "name": "Términos para la información meteorológica (VFR)",
+        "description": "- Términos para la información meteorológica (VFR)"
+    },
+    {
+        "id": "coms-meteorologia-actual-prevision",
+        "name": "Meteorología actual y previsión",
+        "description": "- Meteorología actual y previsión"
+    },
+    {
+        "id": "coms-fallo-comunicaciones",
+        "name": "Fallo de comunicaciones",
+        "description": "- Fallo de comunicaciones"
+    },
+    {
+        "id": "coms-socorro-peligro",
+        "name": "Comunicaciones de socorro y actuación en caso de peligro",
+        "description": "- Emergencia\n- Urgencia\n- Procedimientos de actuación"
+    },
+    {
+        "id": "performance-definiciones",
+        "name": "Definiciones",
+        "description": "- Masas\n- Efectos de la altitud de densidad\n- Velocidad de máximo alcance y mayor autonomía\n- Velocidades Vx y Vy"
+    },
+    {
+        "id": "performance-despegue",
+        "name": "Despegue",
+        "description": "- Despegue y distancia disponible\n- Efecto suelo\n- Ascenso inicial\n- Masa, viento y altitud de densidad\n- Efectos del gradiente en la superficie del suelo\n- Condiciones de la pista"
+    },
+    {
+        "id": "performance-aterrizaje",
+        "name": "Aterrizaje",
+        "description": "- Efecto suelo\n- Aproximaciones\n- Masa, viento y altitud de densidad y velocidad de aproximación\n- Efectos del gradiente en la superficie del suelo\n- Condiciones de la pista"
+    },
+    {
+        "id": "performance-en-vuelo",
+        "name": "En vuelo",
+        "description": "- Diagrama de rendimiento\n- Configuración, masa, temperatura y altitud\n- Efectos adversos (lluvia, hielo)"
+    },
+    {
+        "id": "performance-maniobras",
+        "name": "Maniobras",
+        "description": "- Factor de carga"
+    },
+    {
+        "id": "performance-masa-centrado",
+        "name": "Masa y centrado",
+        "description": "- Limitaciones del centro de gravedad\n- Factor de carga límite\n- Limitación estructural\n- Cálculo de masa\n- Cálculo del centro de gravedad\n- Masa máxima para despegue y aterrizaje\n- Datum y posición del centro de gravedad"
+    },
+    {
+        "id": "performance-planificacion-vuelo",
+        "name": "Planificación del vuelo",
+        "description": "- Planificación de vuelos VFR\n- Cartas VFR, rutas, aeródromos y altitudes\n- Cartas de aeródromos\n- Rumbos y distancias\n- Planificación de las comunicaciones\n- Cálculo del combustible y reservas\n- Información AIP y NOTAM\n- Aeródromos alternativos\n- Rutas y espacio aéreo\n- Información meteorológica\n- Comprobaciones en vuelo\n- Gestión del combustible\n- Seguimiento de la ruta y tiempo de vuelo\n- Recalcular los datos del vuelo si hay desviación de lo planificado"
+    }
+]

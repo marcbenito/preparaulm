@@ -1,0 +1,239 @@
+ID | Categoría | Subcategoría | Sub-subcategoría
+derecho-aereo | Derecho aéreo | Aeronavegabilidad | Definiciones
+derecho-aeronavegabilidad-definiciones | Derecho aéreo | Aeronavegabilidad | Certificado de aeronavegabilidad
+derecho-aeronavegabilidad-certificado | Derecho aéreo | Nacionalidad y registro de la aeronave | Definiciones
+derecho-nacionalidad-registro-definiciones | Derecho aéreo | Nacionalidad y registro de la aeronave | Marcas de matrícula
+derecho-nacionalidad-registro-marcas | Derecho aéreo | Nacionalidad y registro de la aeronave | Certificado de registro
+derecho-nacionalidad-registro-certificado | Derecho aéreo | Servicio de información aeronáutica | Definiciones
+derecho-servicio-informacion-definiciones | Derecho aéreo | Servicio de información aeronáutica | AIP 
+derecho-servicio-informacion-aip | Derecho aéreo | Servicio de información aeronáutica | NOTAM 
+derecho-servicio-informacion-notam | Derecho aéreo | Aeródromos | Datos del aeródromo
+derecho-aerodromos-datos | Derecho aéreo | Aeródromos | Indicadores (ayudas visuales)
+derecho-aerodromos-indicadores | Derecho aéreo | Aeródromos | Marcas (ayudas visuales)
+derecho-aerodromos-marcas | Derecho aéreo | Aeródromos | Luces (ayudas visuales)
+derecho-aerodromos-luces | Derecho aéreo | Aeródromos | Áreas de uso restringido
+derecho-aerodromos-areas-restringidas | Derecho aéreo | Aeródromos | Emergencias
+derecho-aerodromos-emergencias | Derecho aéreo | Normativa internacional | Buenas prácticas (EASA, FAA)
+derecho-normativa-internacional-buenas-practicas | Principios de vuelo | Aerodinámica | Conceptos básicos de aerodinámica
+principios-aerodinamica-conceptos-basicos | Principios de vuelo | Aerodinámica | Leyes y definiciones (Bernoulli, Newton)
+principios-aerodinamica-leyes-definiciones | Principios de vuelo | Aerodinámica | Conceptos matemáticos elementales
+principios-aerodinamica-conceptos-matematicos | Principios de vuelo | Aerodinámica | Conversión de unidades
+principios-aerodinamica-conversion-unidades | Principios de vuelo | Atmósfera estándar | Densidad del aire
+principios-atmosfera-estandar-densidad | Principios de vuelo | Atmósfera estándar | Presión y temperatura en la densidad
+principios-atmosfera-estandar-presion-temperatura | Principios de vuelo | Atmósfera estándar | Altitud de presión y altitud de densidad
+principios-atmosfera-estandar-altitud | Principios de vuelo | – | Presión estática, dinámica y total
+principios-presion-estatica-dinamica | Principios de vuelo | – | Efecto Venturi
+principios-efecto-venturi | Principios de vuelo | – | Velocidades TAS e IAS
+principios-velocidades-tas-ias | Principios de vuelo | – | Flujo de aire, viscosidad y capa límite
+principios-flujo-aire | Principios de vuelo | Perfil aerodinámico | Sección y cuerda
+principios-perfil-aerodinamico-seccion-cuerda | Principios de vuelo | Perfil aerodinámico | Espesor y línea de curvatura media
+principios-perfil-aerodinamico-espesor-curvatura | Principios de vuelo | Perfil aerodinámico | Borde de ataque y borde de salida
+principios-perfil-aerodinamico-bordes | Principios de vuelo | Perfil aerodinámico | Extradós e intradós
+principios-perfil-aerodinamico-extrados-intrados | Principios de vuelo | Perfil aerodinámico | Superficie alar y envergadura
+principios-perfil-aerodinamico-superficie-envergadura | Principios de vuelo | Perfil aerodinámico | Alargamiento y torsión
+principios-perfil-aerodinamico-alargamiento-torsion | Principios de vuelo | Fuerzas aerodinámicas en perfil | Ángulo de ataque
+principios-fuerzas-aerodinamicas-angulo-ataque | Principios de vuelo | Fuerzas aerodinámicas en perfil | Sustentación 
+principios-fuerzas-aerodinamicas-sustentacion | Principios de vuelo | Fuerzas aerodinámicas en perfil | Centro de presiones y centro aerodinámico
+principios-fuerzas-aerodinamicas-centro-presiones | Principios de vuelo | Fuerzas aerodinámicas en perfil | Dispositivos hipersustentadores
+principios-fuerzas-aerodinamicas-dispositivos-hipersustentadores | Principios de vuelo | Fuerzas aerodinámicas en perfil | Resistencia parásita
+principios-fuerzas-aerodinamicas-resistencia-parasita | Principios de vuelo | Fuerzas aerodinámicas en perfil | Resistencia inducida
+principios-fuerzas-aerodinamicas-resistencia-inducida | Principios de vuelo | El ala | Formas de ala
+principios-ala-formas | Principios de vuelo | El peso | Peso (fuerza de la gravedad)
+principios-peso-fuerza-gravedad | Principios de vuelo | La pérdida  | Capa límite y separación de flujo
+principios-perdida-capa-limite | Principios de vuelo | La pérdida  | Variación de sustentación y resistencia según ángulo de ataque
+principios-perdida-variacion-sustentacion | Principios de vuelo | La pérdida  | Centro de presiones 
+principios-perdida-centro-presiones | Principios de vuelo | La pérdida  | Velocidad de pérdida
+principios-perdida-velocidad | Principios de vuelo | La pérdida  | Influencia de la forma alar en la pérdida
+principios-perdida-influencia-forma-alar | Principios de vuelo | La pérdida  | Síntomas de la pérdida
+principios-perdida-sintomas | Principios de vuelo | La pérdida  | Recuperación de la pérdida
+principios-perdida-recuperacion | Principios de vuelo | La pérdida  | Barrena (entrada y recuperación)
+principios-perdida-barrena | Principios de vuelo | Empuje y tracción | Concepto de empuje (tracción de la hélice)
+principios-empuje-traccion-concepto | Principios de vuelo | Estabilidad | Ejes de giro del avión (longitudinal, lateral, vertical)
+principios-estabilidad-ejes | Principios de vuelo | Estabilidad | Controles de vuelo (cabeceo, alabeo, guiñada)
+principios-estabilidad-controles | Principios de vuelo | Estabilidad | Guiñada adversa
+principios-estabilidad-guinada-adversa | Principios de vuelo | Estabilidad | Estabilidad estática (positiva, neutral, negativa)
+principios-estabilidad-estatica | Principios de vuelo | Estabilidad | Estabilidad dinámica (longitudinal, lateral, direccional)
+principios-estabilidad-dinamica | Principios de vuelo | Estabilidad | Estabilizador vertical y horizontal
+principios-estabilidad-estabilizador | Principios de vuelo | Estabilidad | Dispositivos de compensación (trimado)
+principios-estabilidad-compensacion | Principios de vuelo | Factor de carga | Cargas estructurales y resistencia
+principios-factor-carga-estructurales | Principios de vuelo | Factor de carga | Factor de carga en vuelo recto
+principios-factor-carga-vuelo-recto | Principios de vuelo | Factor de carga | Factor de carga en virajes
+principios-factor-carga-virajes | Principios de vuelo | Factor de carga | Factor de carga en turbulencia
+principios-factor-carga-turbulencia | Principios de vuelo | Aerodinámica operacional | Ascensos y descensos
+principios-aerodinamica-operacional-ascensos-descensos | Principios de vuelo | Aerodinámica operacional | Curva polar de velocidades
+principios-aerodinamica-operacional-curva-polar | Principios de vuelo | Aerodinámica operacional | Velocidad de máximo alcance en planeo
+principios-aerodinamica-operacional-velocidad-planeo | Principios de vuelo | Aerodinámica operacional | Velocidad de mínima potencia requerida
+principios-aerodinamica-operacional-velocidad-minima-potencia | Principios de vuelo | Aerodinámica operacional | Velocidad de ascenso óptima (mejor régimen)
+principios-aerodinamica-operacional-velocidad-ascenso-optima | Principios de vuelo | Aerodinámica operacional | Velocidad de ascenso con mejor ángulo
+principios-aerodinamica-operacional-velocidad-mejor-angulo | Principios de vuelo | Despegue (técnicas) | Despegue normal
+principios-despegue-tecnicas-normal | Principios de vuelo | Despegue (técnicas) | Despegue con viento cruzado
+principios-despegue-tecnicas-viento-cruzado | Principios de vuelo | Despegue (técnicas) | Velocidad de ascenso segura
+principios-despegue-tecnicas-velocidad-segura | Principios de vuelo | Vuelo con viento | Efecto suelo (ground effect)
+principios-vuelo-viento-efecto-suelo | Principios de vuelo | Vuelo con viento | Vuelo con viento fuerte y racheado
+principios-vuelo-viento-fuerte-racheado | Principios de vuelo | Vuelo con viento | Determinación de la dirección del viento
+principios-vuelo-viento-determinacion | Principios de vuelo | Vuelo en terreno montañoso | Vuelo sobre colinas o montañas
+principios-vuelo-terreno-montanoso-colinas | Principios de vuelo | Vuelo en terreno montañoso | Barlovento y sotavento (efecto del viento en ladera)
+principios-vuelo-terreno-montanoso-barlovento-sotavento | Performance y planificación del vuelo | Definiciones | Masas (peso en vacío, útil, máximo, etc.)
+performance-definiciones-masas | Performance y planificación del vuelo | Definiciones | Altitud de densidad (efecto de densidad)
+performance-definiciones-altitud-densidad | Performance y planificación del vuelo | Definiciones | Velocidad de máximo alcance y mayor autonomía
+performance-definiciones-velocidad-alcance | Performance y planificación del vuelo | Definiciones | Velocidades características Vx (mejor ángulo) y Vy (mejor régimen)
+performance-definiciones-velocidades-caracteristicas | Performance y planificación del vuelo | Despegue  | Distancia de despegue disponible
+performance-despegue-distancia | Performance y planificación del vuelo | Despegue  | Efecto suelo en despegue
+performance-despegue-efecto-suelo | Performance y planificación del vuelo | Despegue  | Ascenso inicial
+performance-despegue-ascenso-inicial | Performance y planificación del vuelo | Despegue  | Influencia de masa, viento y altitud de densidad en despegue
+performance-despegue-influencia-factores | Performance y planificación del vuelo | Despegue  | Efecto de la pendiente de pista (gradiente)
+performance-despegue-pendiente-pista | Performance y planificación del vuelo | Despegue  | Condiciones de la pista (estado/superficie)
+performance-despegue-condiciones-pista | Performance y planificación del vuelo | Aterrizaje  | Efecto suelo en aterrizaje
+performance-aterrizaje-efecto-suelo | Performance y planificación del vuelo | Aterrizaje  | Aproximaciones (perfil de planeo)
+performance-aterrizaje-aproximaciones | Performance y planificación del vuelo | Aterrizaje  | Influencia de masa, viento, altitud densidad en la aproximación
+performance-aterrizaje-influencia-factores | Performance y planificación del vuelo | Aterrizaje  | Efecto de la pendiente de pista en aterrizaje
+performance-aterrizaje-pendiente-pista | Performance y planificación del vuelo | Aterrizaje  | Condiciones de la pista (estado/superficie)
+performance-aterrizaje-condiciones-pista | Performance y planificación del vuelo | En vuelo | Diagrama de rendimiento (curva potencia/velocidad)
+performance-vuelo-diagrama-rendimiento | Performance y planificación del vuelo | En vuelo | Configuración, masa, temperatura, altitud (efecto en crucero)
+performance-vuelo-configuracion-factores | Performance y planificación del vuelo | En vuelo | Efectos adversos (lluvia, hielo) en rendimiento
+performance-vuelo-efectos-adversos | Performance y planificación del vuelo | Maniobras | Factor de carga (efecto en maniobras)
+performance-maniobras-factor-carga | Performance y planificación del vuelo | Masa y centrado | Limitaciones del centro de gravedad
+performance-masa-centrado-limitaciones-cg | Performance y planificación del vuelo | Masa y centrado | Factor de carga límite (estructural)
+performance-masa-centrado-factor-carga-limite | Performance y planificación del vuelo | Masa y centrado | Limitaciones estructurales (carga máxima)
+performance-masa-centrado-limitaciones-estructurales | Performance y planificación del vuelo | Masa y centrado | Cálculo de la masa total
+performance-masa-centrado-calculo-masa | Performance y planificación del vuelo | Masa y centrado | Cálculo de la posición del centro de gravedad
+performance-masa-centrado-calculo-cg | Performance y planificación del vuelo | Masa y centrado | Masa máxima al despegue y al aterrizaje
+performance-masa-centrado-maxima-despegue-aterrizaje | Performance y planificación del vuelo | Masa y centrado | Datum y ubicación del centro de gravedad
+performance-masa-centrado-datum-ubicacion | Performance y planificación del vuelo | Planificación del vuelo | Planificación de vuelos VFR (en general)
+performance-planificacion-vuelo-vfr | Navegación | Parámetros básicos de navegación | Rumbo (magnético, verdadero y de brújula)
+navegacion-parametros-basicos-rumbo | Navegación | Parámetros básicos de navegación | Distancia (millas, kilómetros)
+navegacion-parametros-basicos-distancia | Navegación | Parámetros básicos de navegación | Altitud verdadera
+navegacion-parametros-basicos-altitud | Navegación | Parámetros básicos de navegación | Velocidad (indicada, calibrada, verdadera)
+navegacion-parametros-basicos-velocidad | Navegación | Parámetros básicos de navegación | Hora (UTC, local)
+navegacion-parametros-basicos-hora | Navegación | Parámetros básicos de navegación | Tiempo estimado de vuelo (ETE)
+navegacion-parametros-basicos-ete | Navegación | Parámetros básicos de navegación | Cálculo de combustible y reservas
+navegacion-parametros-basicos-combustible | Navegación | La Tierra | Meridianos y paralelos (latitud y longitud)
+navegacion-tierra-meridianos-paralelos | Navegación | La Tierra | Coordenadas geográficas (posición)
+navegacion-tierra-coordenadas | Navegación | Hora | Hora solar (orto y ocaso)
+navegacion-hora-solar | Navegación | Hora | Hora UTC, GMT y local; husos horarios
+navegacion-hora-utc-gmt | Navegación | Direcciones y distancias | Norte verdadero, magnético y de brújula
+navegacion-direcciones-distancias-norte | Navegación | Direcciones y distancias | Desviación de la brújula (deviation)
+navegacion-direcciones-distancias-desviacion | Navegación | Direcciones y distancias | Unidades de medida (NM, km, m, ft)
+navegacion-direcciones-distancias-unidades | Navegación | Direcciones y distancias | Conversión de unidades de distancia/altitud
+navegacion-direcciones-distancias-conversion | Navegación | Magnetismo terrestre | Variación magnética anual
+navegacion-magnetismo-variacion | Navegación | Magnetismo terrestre | Campos magnéticos (interferencias)
+navegacion-magnetismo-campos | Navegación | Magnetismo terrestre | Magnetismo y brújula (errores)
+navegacion-magnetismo-brujula | Navegación | Cartografía | Proyecciones cartográficas (cilíndricas, cónicas)
+navegacion-cartografia-proyecciones | Navegación | Cartografía | Propiedades de las cartas (escala, símbolos, relieve)
+navegacion-cartografia-propiedades | Navegación | Cartografía | Círculos máximos y menores
+navegacion-cartografia-circulos | Navegación | Cartografía | Rumbos de ruta y declinación (variación)
+navegacion-cartografia-rumbos | Navegación | Cartografía | Medida de direcciones y distancias en carta
+navegacion-cartografia-medida | Navegación | Navegación a estima | Preparación y planificación del viaje
+navegacion-estima-preparacion | Navegación | Navegación a estima | Selección y trazado de la ruta
+navegacion-estima-seleccion-ruta | Navegación | Navegación a estima | Triángulo de velocidades (cálculo de deriva)
+navegacion-estima-triangulo-velocidades | Navegación | Navegación a estima | Velocidad del viento (componentes)
+navegacion-estima-velocidad-viento | Navegación | Navegación a estima | Velocidades IAS, CAS, TAS
+navegacion-estima-velocidades | Navegación | Navegación a estima | Velocidad sobre el suelo (GS)
+navegacion-estima-velocidad-suelo | Navegación | Navegación a estima | Rumbo resultante y ángulo de deriva
+navegacion-estima-rumbo-deriva | Navegación | Planificación de vuelo VFR | Plan de vuelo operacional
+navegacion-planificacion-vfr-plan | Navegación | Planificación de vuelo VFR | Procedimientos de extravío (pérdida de ruta)
+navegacion-planificacion-vfr-extravio | Navegación | Planificación de vuelo VFR | Revisión de rumbo, distancia, tiempo y posición
+navegacion-planificacion-vfr-revision | Navegación | Planificación de vuelo VFR | Deriva y corrección de la deriva
+navegacion-planificacion-vfr-deriva | Navegación | Planificación de vuelo VFR | Navegación observada (pilotaje visual)
+navegacion-planificacion-vfr-observada | Navegación | Planificación de vuelo VFR | Aeródromos alternativos
+navegacion-planificacion-vfr-alternativos | Navegación | Desorientación | Actuación del piloto y soluciones ante desorientación
+navegacion-desorientacion-actuacion | Navegación | Sistemas de navegación modernos | Navegación GNSS avanzada (GPS, Galileo, etc.)
+navegacion-sistemas-modernos-gnss | Navegación | Sistemas de navegación modernos | Automatización y ayudas digitales 
+navegacion-sistemas-modernos-automatizacion | Conocimiento general de la aeronave | El motor y sus sistemas | Sistema de alimentación de combustible
+conocimiento-motor-sistemas-combustible | Conocimiento general de la aeronave | El motor y sus sistemas | Sistema de refrigeración
+conocimiento-motor-sistemas-refrigeracion | Conocimiento general de la aeronave | El motor y sus sistemas | Sistema de lubricación
+conocimiento-motor-sistemas-lubricacion | Conocimiento general de la aeronave | El motor y sus sistemas | Sistema de encendido
+conocimiento-motor-sistemas-encendido | Conocimiento general de la aeronave | El motor y sus sistemas | Sistema eléctrico
+conocimiento-motor-sistemas-electrico | Conocimiento general de la aeronave | El motor y sus sistemas | Nuevas tecnologías de motor (inyección electrónica,eléctricos)
+conocimiento-motor-sistemas-nuevas-tecnologias | Conocimiento general de la aeronave | Hélices | Tipos de hélices (paso fijo vs. variable)
+conocimiento-helices-tipos | Conocimiento general de la aeronave | Hélices | Hélices de velocidad constante (paso ajustable)
+conocimiento-helices-velocidad-constante | Conocimiento general de la aeronave | Hélices | Manejo y precauciones de la hélice
+conocimiento-helices-manejo | Conocimiento general de la aeronave | El avión | Estructura y cargas de la célula
+conocimiento-avion-estructura | Conocimiento general de la aeronave | El avión | Ala y superficies de cola (diseño, materiales, límites)
+conocimiento-avion-ala | Conocimiento general de la aeronave | El avión | Fuselaje (diseño, materiales, límites)
+conocimiento-avion-fuselaje | Conocimiento general de la aeronave | El avión | Superficies de control (diseño, materiales, límites)
+conocimiento-avion-superficies-control | Conocimiento general de la aeronave | El avión | Tren de aterrizaje (ruedas, flotadores, patines)
+conocimiento-avion-tren-aterrizaje | Conocimiento general de la aeronave | El avión | Controles de vuelo (mecánicos, automáticos, secundarios)
+conocimiento-avion-controles-vuelo | Conocimiento general de la aeronave | El avión | Materiales compuestos y nuevas tecnologías estructurales
+conocimiento-avion-materiales | Conocimiento general de la aeronave | Instrumentos y equipos | Anemómetro (indicador de velocidad)
+conocimiento-instrumentos-anemometro | Conocimiento general de la aeronave | Instrumentos y equipos | Velocidades IAS y TAS (uso del anemómetro)
+conocimiento-instrumentos-velocidades | Conocimiento general de la aeronave | Instrumentos y equipos | Altímetro (indicador de altitud)
+conocimiento-instrumentos-altimetro | Conocimiento general de la aeronave | Instrumentos y equipos | Procedimiento de reglaje del altímetro (QNH, QFE)
+conocimiento-instrumentos-reglaje | Conocimiento general de la aeronave | Instrumentos y equipos | Variómetro 
+conocimiento-instrumentos-variometro | Conocimiento general de la aeronave | Instrumentos y equipos | Tacómetro de motor (RPM)
+conocimiento-instrumentos-tacometro | Conocimiento general de la aeronave | Instrumentos y equipos | Indicador de viraje y derrape
+conocimiento-instrumentos-viraje | Conocimiento general de la aeronave | Instrumentos y equipos | Equipos GPS y electrónicos (EFIS) a bordo
+conocimiento-instrumentos-gps | Meteorología | Presión atmosférica y altimetría | Relación presión-temperatura-altitud
+meteorologia-presion-relacion | Meteorología | Presión atmosférica y altimetría | Atmósfera estándar OACI
+meteorologia-presion-atmosfera | Meteorología | Presión atmosférica y altimetría | Altitud de presión y altitud de densidad
+meteorologia-presion-altitud | Meteorología | Presión atmosférica y altimetría | QFE, QNH, QNE (calibración altímetro)
+meteorologia-presion-calibracion | Meteorología | Viento | Cizalladura del viento (wind shear)
+meteorologia-viento-cizalladura | Meteorología | Viento | Rachas de viento (la racha)
+meteorologia-viento-rachas | Meteorología | Situaciones típicas | Fenómenos típicos (frentes, tormentas, efectos orográficos)
+meteorologia-situaciones-fenomenos | Meteorología | Masas de aire y frentes | Frente frío
+meteorologia-masas-frentes-frio | Meteorología | Masas de aire y frentes | Frente cálido
+meteorologia-masas-frentes-calido | Meteorología | Masas de aire y frentes | Frente ocluido (oclusión fría y cálida)
+meteorologia-masas-frentes-ocluido | Meteorología | Masas de aire y frentes | Frente estacionario
+meteorologia-masas-frentes-estacionario | Meteorología | Masas de aire y frentes | Condiciones antes/durante/después de un frente cálido
+meteorologia-masas-frentes-condiciones-calido | Meteorología | Masas de aire y frentes | Condiciones antes/durante/después de un frente frío
+meteorologia-masas-frentes-condiciones-frio | Meteorología | Sistemas de presión | Borrascas (bajas presiones)
+meteorologia-sistemas-presion-borrascas | Meteorología | Sistemas de presión | Anticiclones (altas presiones)
+meteorologia-sistemas-presion-anticiclones | Meteorología | Nubes | Clasificación de las nubes (altas, medias, bajas, vertical)
+meteorologia-nubes-clasificacion | Meteorología | Nubes | Formación de nubes orográficas
+meteorologia-nubes-orograficas | Meteorología | Nubes | Formación de nubes de turbulencia
+meteorologia-nubes-turbulencia | Meteorología | Nubes | Formación de nubes convectivas
+meteorologia-nubes-convectivas | Meteorología | Nubes | Formación de nubes de advección
+meteorologia-nubes-adveccion | Meteorología | Nubes | Formación de nubes frontales
+meteorologia-nubes-frontales | Meteorología | Nubes | Condiciones de vuelo según tipo de nube
+meteorologia-nubes-condiciones | Meteorología | Precipitación | Tipos de precipitación (frontal, orográfica)
+meteorologia-precipitacion-tipos | Meteorología | Precipitación | Efectos de la precipitación en vuelo
+meteorologia-precipitacion-efectos | Meteorología | Engelamiento (hielo) | Clases de engelamiento (hielo)
+meteorologia-engelamiento-clases | Meteorología | Engelamiento (hielo) | Nieve húmeda y escarcha
+meteorologia-engelamiento-nieve-escarcha | Meteorología | Engelamiento (hielo) | Engelamiento según el tipo de nube
+meteorologia-engelamiento-nubes | Meteorología | Engelamiento (hielo) | Engelamiento de sistemas (carburador, bordes de ataque, hélice)
+meteorologia-engelamiento-sistemas | Meteorología | Operaciones en hielo | Operación en condiciones de hielo (precauciones)
+meteorologia-operaciones-hielo-precauciones | Meteorología | Tormentas | Condiciones de formación de tormentas
+meteorologia-tormentas-condiciones | Meteorología | Tormentas | Causas de las tormentas
+meteorologia-tormentas-causas | Meteorología | Tormentas | Estructura de una tormenta (formación, desarrollo, madurez, disipación)
+meteorologia-tormentas-estructura | Meteorología | Tormentas | Clasificación de las tormentas
+meteorologia-tormentas-clasificacion | Meteorología | Tormentas | Vuelo a través de tormentas (riesgos)
+meteorologia-tormentas-vuelo | Meteorología | Visibilidad | Definición de visibilidad
+meteorologia-visibilidad-definicion | Meteorología | Visibilidad | Visibilidad horizontal vs oblicua
+meteorologia-visibilidad-horizontal-oblicua | Meteorología | Visibilidad | Ilusiones ópticas (por visibilidad)
+meteorologia-visibilidad-ilusiones | Meteorología | Visibilidad | Fenómenos: niebla, neblina, calima, humo
+meteorologia-visibilidad-fenomenos | Procedimientos operacionales | Definición de procedimiento operacional | Necesidad de los procedimientos
+procedimientos-definicion
+factores-comportamiento-motivacion | Factores humanos | El comportamiento humano | Motivación
+factores-comportamiento-error | Factores humanos | El comportamiento humano | Error humano (modelos, tipos, prevención)
+factores-decision-evaluacion | Factores humanos | Evaluación y toma de decisiones | Evaluación del piloto (capacidades, autoevaluación)
+factores-decision-proceso | Factores humanos | Evaluación y toma de decisiones | Proceso de toma de decisiones
+factores-decision-influyentes | Factores humanos | Evaluación y toma de decisiones | Factores influyentes en la decisión
+factores-decision-tipos | Factores humanos | Evaluación y toma de decisiones | Tipos de decisiones (rutinarias vs emergencia)
+factores-decision-responsabilidad | Factores humanos | Evaluación y toma de decisiones | Responsabilidad del piloto
+factores-decision-conciencia | Factores humanos | Evaluación y toma de decisiones | Conciencia situacional (percepción del entorno)
+factores-decision-riesgos | Factores humanos | Evaluación y toma de decisiones | Valoración de riesgos
+factores-decision-estres | Factores humanos | Evaluación y toma de decisiones | Gestión del estrés (en la toma de decisiones)
+factores-decision-crm | Factores humanos | Evaluación y toma de decisiones | Gestión de recursos de cabina (CRM)
+factores-salud-estado | Factores humanos | Vuelo y salud | Estado físico y mental del piloto
+factores-salud-incapacitacion | Factores humanos | Vuelo y salud | Incapacitación (causas y síntomas)
+factores-salud-problemas | Factores humanos | Vuelo y salud | Problemas médicos en vuelo (digestivos, cardíacos, neurológicos)
+factores-sustancias-tabaco | Factores humanos | Sustancias (tóxicos) | Tabaco (efectos fisiológicos)
+factores-sustancias-alcohol | Factores humanos | Sustancias (tóxicos) | Alcohol (efectos y limitaciones legales)
+factores-sustancias-cafeina | Factores humanos | Sustancias (tóxicos) | Cafeína (efectos en el cuerpo)
+factores-sustancias-medicamentos | Factores humanos | Sustancias (tóxicos) | Medicamentos (efectos secundarios)
+factores-sustancias-drogas | Factores humanos | Sustancias (tóxicos) | Drogas (impacto en el rendimiento)
+factores-sueno-funcion | Factores humanos | Sueño | Función del sueño en el rendimiento
+factores-sueno-trastornos | Factores humanos | Sueño | Trastornos del sueño (prevención)
+factores-fatiga-definicion | Factores humanos | Fatiga | Fatiga del piloto (definición, tipos, causas, prevención)
+factores-estres-tipos | Factores humanos | Estrés y ansiedad | Tipos de estrés, identificación y manejo
+factores-higiene-nutricion | Factores humanos | Higiene y vuelo | Nutrición y alimentación previa al vuelo (higiene personal)
+com-radiotelef-alfabeto | Comunicaciones | Procedimientos radiotelefónicos | Alfabeto fonético y pronunciación
+com-radiotelef-distintivos | Comunicaciones | Procedimientos radiotelefónicos | Distintivos de llamada (call sign)
+com-radiotelef-transmision | Comunicaciones | Procedimientos radiotelefónicos | Transmisión y recepción (técnicas de fraseo)
+com-fraseologia-circuito | Comunicaciones | Fraseología VFR estándar | Comunicaciones en el circuito de tráfico de aeródromo
+com-fraseologia-mensajes | Comunicaciones | Fraseología VFR estándar | Mensajes de salida, ruta y llegada (posiciones)
+com-fraseologia-frecuencias | Comunicaciones | Fraseología VFR estándar | Uso de frecuencias (AFIS, unicom, emergencia)
+com-emergencia-socorro | Comunicaciones | Comunicaciones de emergencia | Mensajes de socorro – "MAYDAY" (situaciones de emergencia)
+com-emergencia-urgencia | Comunicaciones | Comunicaciones de emergencia | Mensajes de urgencia – "PAN-PAN" (situaciones urgentes)
+com-emergencia-perdida | Comunicaciones | Comunicaciones de emergencia | Pérdida de comunicaciones (procedimientos NORDO)
+com-emergencia-121 | Comunicaciones | Comunicaciones de emergencia | Frecuencia de emergencia 121.5 MHz (escucha obligatoria)

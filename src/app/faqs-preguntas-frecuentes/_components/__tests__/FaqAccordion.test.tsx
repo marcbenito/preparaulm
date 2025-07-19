@@ -6,8 +6,8 @@ const mockData = [
     category: "Funcionamiento",
     questions: [
       {
-        question: "¿Qué es AeroTest?",
-        answer: "AeroTest es una plataforma para tests de piloto ULM.",
+            question: "¿Qué es PreparaUlm?",
+    answer: "PreparaUlm es una plataforma para tests de piloto ULM.",
       },
       {
         question: "¿Cómo funcionan los tests?",
@@ -32,7 +32,7 @@ describe("FaqAccordion", () => {
 
     expect(screen.getByText("Funcionamiento")).toBeInTheDocument()
     expect(screen.getByText("Pagos")).toBeInTheDocument()
-    expect(screen.getByText("¿Qué es AeroTest?")).toBeInTheDocument()
+    expect(screen.getByText("¿Qué es PreparaUlm?")).toBeInTheDocument()
     expect(screen.getByText("¿Cómo funcionan los tests?")).toBeInTheDocument()
     expect(
       screen.getByText("¿Qué métodos de pago aceptáis?"),
@@ -60,7 +60,7 @@ describe("FaqAccordion", () => {
     expect(
       screen.getByText("¿Qué métodos de pago aceptáis?"),
     ).toBeInTheDocument()
-    expect(screen.queryByText("¿Qué es AeroTest?")).not.toBeInTheDocument()
+    expect(screen.queryByText("¿Qué es PreparaUlm?")).not.toBeInTheDocument()
     expect(screen.getByText("Se encontraron 1 pregunta")).toBeInTheDocument()
   })
 
@@ -94,7 +94,7 @@ describe("FaqAccordion", () => {
 
     fireEvent.change(searchInput, { target: { value: "plataforma" } })
 
-    expect(screen.getByText("¿Qué es AeroTest?")).toBeInTheDocument()
+    expect(screen.getByText("¿Qué es PreparaUlm?")).toBeInTheDocument()
     expect(
       screen.queryByText("¿Qué métodos de pago aceptáis?"),
     ).not.toBeInTheDocument()
@@ -120,10 +120,10 @@ describe("FaqAccordion", () => {
     )
 
     fireEvent.change(searchInput, { target: { value: "Stripe" } })
-    expect(screen.queryByText("¿Qué es AeroTest?")).not.toBeInTheDocument()
+    expect(screen.queryByText("¿Qué es PreparaUlm?")).not.toBeInTheDocument()
 
     fireEvent.change(searchInput, { target: { value: "" } })
-    expect(screen.getByText("¿Qué es AeroTest?")).toBeInTheDocument()
+    expect(screen.getByText("¿Qué es PreparaUlm?")).toBeInTheDocument()
     expect(
       screen.getByText("¿Qué métodos de pago aceptáis?"),
     ).toBeInTheDocument()

@@ -18,7 +18,7 @@ const blogPosts = [
     title: "¿Qué necesitas para ser piloto de ultraligero?",
     excerpt:
       "Descubre todos los requisitos, documentación y pasos necesarios para convertirte en piloto de ultraligero en España.",
-    author: "Equipo AeroTest",
+    author: "Equipo PreparaUlm",
     date: "2024-03-15",
     readTime: "8 min",
     category: "Requisitos",
@@ -29,7 +29,7 @@ const blogPosts = [
     title: "Requisitos para presentarte al examen de ultraligero",
     excerpt:
       "Todo lo que debes saber sobre los requisitos específicos para poder presentarte al examen teórico oficial.",
-    author: "Equipo AeroTest",
+    author: "Equipo PreparaUlm",
     date: "2024-03-12",
     readTime: "6 min",
     category: "Exámenes",
@@ -40,7 +40,7 @@ const blogPosts = [
     title: "¿Dónde puedo sacarme el título de piloto de ultraligero?",
     excerpt:
       "Guía completa sobre las escuelas de vuelo autorizadas y centros de formación donde puedes obtener tu licencia.",
-    author: "Equipo AeroTest",
+    author: "Equipo PreparaUlm",
     date: "2024-03-10",
     readTime: "10 min",
     category: "Formación",
@@ -51,7 +51,7 @@ const blogPosts = [
     title: "Temario completo del examen de ultraligero",
     excerpt:
       "Desglose detallado de todas las materias y temas que debes estudiar para superar el examen teórico oficial.",
-    author: "Equipo AeroTest",
+    author: "Equipo PreparaUlm",
     date: "2024-03-08",
     readTime: "12 min",
     category: "Temario",
@@ -68,7 +68,7 @@ export default function BlogPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-bold text-main mb-6"
         >
-          Blog de AeroTest
+                      Blog de PreparaUlm
         </motion.h1>
 
         <motion.p
@@ -149,7 +149,7 @@ export default function BlogPage() {
               Pon en práctica todo lo que has aprendido con nuestros tests
               adaptativos
             </p>
-            <Link href="/test-selection">
+            <Link href="/test-ultraligero">
               <Button
                 variant="default"
                 size="lg"

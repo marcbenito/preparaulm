@@ -35,12 +35,12 @@ export default function TermsPage() {
                   1. Información del titular
                 </h2>
                 <p className="text-secondary leading-relaxed">
-                  El presente sitio web y la plataforma AeroTest (en adelante,
+                  El presente sitio web y la plataforma PreparaUlm (en adelante,
                   &ldquo;la Plataforma&rdquo;) son titularidad de Marc Benito
                   Pujante, actuando en calidad de profesional autónomo, con NIF:
                   44421735H, con domicilio en Otero Pedrayo 51, 36340 Nigrán
                   (Pontevedra), y correo electrónico de contacto:
-                  info@aerotestulm.com.
+                  contacto@preparaulm.com.
                 </p>
               </section>
 
@@ -50,7 +50,7 @@ export default function TermsPage() {
                 </h2>
                 <p className="text-secondary leading-relaxed mb-4">
                   Las presentes condiciones regulan el acceso, navegación y uso
-                  de la Plataforma AeroTest, que ofrece servicios orientados a
+                                      de la Plataforma PreparaUlm, que ofrece servicios orientados a
                   la preparación de los exámenes para la obtención de la
                   licencia de piloto de ultraligero (ULM) en España.
                 </p>

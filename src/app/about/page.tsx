@@ -19,7 +19,7 @@ export default function AboutPage() {
         >
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              About aeroTests
+              About PreparaUlm
             </h1>
             <p className="text-xl text-blue-200">
               A modern platform for aviation test preparation
@@ -44,18 +44,18 @@ export default function AboutPage() {
               <p className="text-blue-200 mb-6">Creator & Lead Developer</p>
 
               <div className="text-lg text-blue-100 mb-8 space-y-4 text-left max-w-2xl">
-                <p>¡Hola! Soy Marc Benito, el creador de Aerotest.</p>
+                <p>¡Hola! Soy Marc Benito, el creador de PreparaUlm.</p>
                 <p>
                   Soy desarrollador de software desde hace muchos años, pero
                   también un apasionado de la aviación. Siempre he creído que la
                   tecnología puede hacer que volar sea más accesible, seguro y
-                  entretenido. Por eso decidí crear Aerotest: una plataforma
+                                      entretenido. Por eso decidí crear PreparaUlm: una plataforma
                   donde combino mi experiencia en desarrollo con mi amor por los
                   aviones, para ofrecer herramientas útiles a pilotos,
                   estudiantes y entusiastas del vuelo.
                 </p>
                 <p>
-                  Aerotest nace con la idea de compartir lo que sé y seguir
+                  PreparaUlm nace con la idea de compartir lo que sé y seguir
                   aprendiendo junto a la comunidad aeronáutica. Si te gusta
                   volar o estás en proceso de aprender, espero que aquí
                   encuentres algo que te ayude o te inspire.
@@ -101,13 +101,13 @@ export default function AboutPage() {
                     LinkedIn
                   </Button>
                 </a>
-                <a href="mailto:info@aerotestulm.com">
+                                  <a href="mailto:contacto@preparaulm.com">
                   <Button
                     variant="ghost"
                     className="text-white hover:bg-white/10 w-full sm:w-auto"
                   >
                     <Mail className="h-5 w-5 mr-2" />
-                    info@aerotestulm.com
+                    contacto@preparaulm.com
                   </Button>
                 </a>
               </div>

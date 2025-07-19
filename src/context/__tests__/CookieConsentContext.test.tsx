@@ -110,7 +110,7 @@ describe("CookieConsentContext", () => {
     expect(result.current.showBanner).toBe(false)
 
     expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-      "aerotest-cookie-consent",
+      "preparaulm-cookie-consent",
       expect.stringContaining('"analytics":true'),
     )
     expect(mockGtag).toHaveBeenCalledWith("consent", "update", {
@@ -134,7 +134,7 @@ describe("CookieConsentContext", () => {
     expect(result.current.showBanner).toBe(false)
 
     expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-      "aerotest-cookie-consent",
+      "preparaulm-cookie-consent",
       expect.stringContaining('"analytics":false'),
     )
     expect(mockGtag).toHaveBeenCalledWith("consent", "update", {
@@ -178,7 +178,7 @@ describe("CookieConsentContext", () => {
     expect(result.current.showBanner).toBe(true)
 
     expect(mockLocalStorage.removeItem).toHaveBeenCalledWith(
-      "aerotest-cookie-consent",
+      "preparaulm-cookie-consent",
     )
     expect(mockGtag).toHaveBeenCalledWith("consent", "update", {
       analytics_storage: "denied",

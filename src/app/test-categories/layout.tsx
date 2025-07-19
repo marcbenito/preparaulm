@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Categorías de Test - AeroTest ULM | Todas las Áreas de Estudio",
+  title: "Categorías de Test - PreparaUlm | Todas las Áreas de Estudio",
   description:
     "Explora todas las categorías de estudio para tu licencia ULM: meteorología, navegación, sistemas, legislación y más. Tests específicos para cada área.",
   keywords:

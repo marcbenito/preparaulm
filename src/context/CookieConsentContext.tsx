@@ -22,7 +22,7 @@ const CookieConsentContext = createContext<
   CookieConsentContextType | undefined
 >(undefined)
 
-const STORAGE_KEY = "aerotest-cookie-consent"
+const STORAGE_KEY = "preparaulm-cookie-consent"
 
 const defaultConsent: CookieConsent = {
   analytics: false,

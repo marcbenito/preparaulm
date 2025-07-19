@@ -17,9 +17,9 @@ export interface IAuthRepository {
   resetPassword(email: string): Promise<void>
   validateToken(token: string): Promise<User | null>
   updateUser(params: { data: { [key: string]: any } }): Promise<{ data: { user: User | null }, error: Error | null }>
-} 
+}
 export class SupabaseAuthRepository implements IAuthRepository {
-  constructor(private readonly supabaseClient: any) {}
+  constructor(private readonly supabaseClient: any) { }
 
   async login(email: string, password: string): Promise<AuthResult | null> {
     const { data, error } = await this.supabaseClient.auth.signInWithPassword({
@@ -31,7 +31,7 @@ export class SupabaseAuthRepository implements IAuthRepository {
 
     // Crear objeto de usuario a partir de los datos de Supabase
     const role = this.mapRole(data.user.user_metadata?.role)
-    
+
     const user: User = {
       id: data.user.id,
       email: data.user.email || "",
@@ -51,10 +51,10 @@ export class SupabaseAuthRepository implements IAuthRepository {
 
   async getCurrentUser(): Promise<User | null> {
 
-    const {data} = await this.supabaseClient.auth.getSession()
+    const { data } = await this.supabaseClient.auth.getSession()
 
     if (!data?.session?.user) return null
-    
+
     const user = data.session?.user
 
     return {
@@ -95,12 +95,12 @@ export class SupabaseAuthRepository implements IAuthRepository {
   async resetPassword(email: string): Promise<void> {
     const { error } = await this.supabaseClient.auth.resetPasswordForEmail(email,
       {
-        redirectTo: 'https://www.aerotestulm.es/reset-password'
+        redirectTo: 'https://www.preparaulm.com/reset-password'
       }
     )
     if (error) throw new Error(error.message)
   }
-  
+
   // Función auxiliar para mapear strings a UserRole
   private mapRole(roleStr?: string): UserRole {
     if (roleStr === 'INSTRUCTOR' || roleStr === 'instructor') {
@@ -115,12 +115,12 @@ export class SupabaseAuthRepository implements IAuthRepository {
     try {
       // Name y phone ahora se gestionan en user_profiles
       const { name, phone, ...otherData } = params.data;
-      
+
       // Solo actualizamos otros metadatos que no sean name o phone
       const updateData: any = {
         data: {}
       };
-      
+
       // Añadir otros datos al objeto de metadatos
       Object.entries(otherData).forEach(([key, value]) => {
         // Excluimos name, phone y avatarUrl
@@ -128,16 +128,16 @@ export class SupabaseAuthRepository implements IAuthRepository {
           updateData.data[key] = value;
         }
       });
-      
+
       // Realizar la actualización solo si hay datos que actualizar
       if (Object.keys(updateData.data).length > 0) {
         const { data, error } = await this.supabaseClient.auth.updateUser(updateData);
-        
+
         if (error) {
           console.error('Error updating user:', error);
           return { data: { user: null }, error };
         }
-        
+
         // Mapear los datos de vuelta al objeto User
         const user = data?.user ? {
           id: data.user.id,
@@ -148,10 +148,10 @@ export class SupabaseAuthRepository implements IAuthRepository {
           createdAt: new Date(data.user.created_at || Date.now()),
           updatedAt: new Date(data.user.updated_at || Date.now()),
         } : null;
-        
+
         return { data: { user }, error: null };
       }
-      
+
       // Si no hay nada que actualizar en Auth, simplemente devolvemos el usuario actual
       const currentUser = await this.getCurrentUser();
       return { data: { user: currentUser }, error: null };

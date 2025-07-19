@@ -280,7 +280,7 @@ export default function TestCategoriesPage() {
                           Revisar
                         </Button>
                       </Link>
-                      <Link href={`/test-selection?category=${category.id}`}>
+                      <Link href={`/test-ultraligero?category=${category.id}`}>
                         <Button variant="primary-gradient" size="sm">
                           <PlayCircle className="h-5 w-5 mr-1" />
                           Hacer Prueba

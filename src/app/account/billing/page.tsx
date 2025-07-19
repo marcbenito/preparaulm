@@ -178,10 +178,10 @@ export default function BillingPage() {
               Si tienes alguna pregunta sobre tu facturación o suscripción,
               contacta con nuestro equipo de soporte en{" "}
               <a
-                href="mailto:info@aerotestulm.es"
+                                  href="mailto:contacto@preparaulm.com"
                 className="text-primary underline"
               >
-                info@aerotestulm.es
+                                  contacto@preparaulm.com
               </a>
             </p>
           </CardFooter>

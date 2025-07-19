@@ -23,7 +23,7 @@ describe("PreparingTestScreen", () => {
       expect(
         screen.getByText(/Las preguntas se seleccionan estratégicamente/),
       ).toBeInTheDocument()
-      expect(screen.getByText(/Cuanto más usas AeroTest/)).toBeInTheDocument()
+      expect(screen.getByText(/Cuanto más usas PreparaUlm/)).toBeInTheDocument()
       expect(
         screen.getByText(/En unos segundos tendrás tu test listo/),
       ).toBeInTheDocument()

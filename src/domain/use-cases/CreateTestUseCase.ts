@@ -1,7 +1,7 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 
 export class CreateTestUseCase {
-  async execute(categoryId?: string): Promise<number> {
+  async execute(categoryId?: string, testId?: string): Promise<number> {
     try {
       const response = await fetch('/api/tests', {
         method: 'POST',
@@ -10,6 +10,7 @@ export class CreateTestUseCase {
         },
         body: JSON.stringify({
           categoryId,
+          testId,
           durationSeconds: 3600 // 60 minutos
         }),
       });
@@ -19,7 +20,7 @@ export class CreateTestUseCase {
       }
 
       const data = await response.json();
-      
+
       // El endpoint siempre devuelve testExecutionId
       return data.testExecutionId;
     } catch (error) {

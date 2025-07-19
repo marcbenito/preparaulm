@@ -1,7 +1,16 @@
 import { MetadataRoute } from 'next'
+import testsData from './test-especificos/tests-data.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://aerotestulm.es'
+  const baseUrl = 'https://www.preparaulm.com'
+
+  // Generar URLs para cada test específico
+  const testEspecificosUrls = testsData.map(test => ({
+    url: `${baseUrl}/test-especificos/${test.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
   return [
     {
@@ -11,11 +20,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/test-selection`,
+      url: `${baseUrl}/test-ultraligero`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/test-especificos`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    ...testEspecificosUrls,
     {
       url: `${baseUrl}/test-categories`,
       lastModified: new Date(),

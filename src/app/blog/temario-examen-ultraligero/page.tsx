@@ -35,7 +35,7 @@ export default function TemarioExamenUltraligeroPage() {
             <User className="h-6 w-6 text-white" />
           </div>
           <div>
-            <p className="text-main font-medium">Equipo AeroTest</p>
+                            <p className="text-main font-medium">Equipo PreparaUlm</p>
             <p className="text-secondary text-sm">Equipo de redacción</p>
           </div>
         </div>

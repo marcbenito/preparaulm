@@ -3,13 +3,13 @@ import { FaqAccordion } from "./_components/FaqAccordion"
 import faqsData from "./faqs.json"
 
 export const metadata: Metadata = {
-  title: "Preguntas Frecuentes | AeroTest",
+  title: "Preguntas Frecuentes | PreparaUlm",
   description:
-    "Encuentra respuestas a las preguntas más frecuentes sobre AeroTest, la plataforma de tests para licencia de piloto ULM. Información sobre funcionamiento, pagos, cuenta y soporte.",
+    "Encuentra respuestas a las preguntas más frecuentes sobre PreparaUlm, la plataforma de tests para licencia de piloto ULM. Información sobre funcionamiento, pagos, cuenta y soporte.",
   keywords: [
     "FAQ",
     "preguntas frecuentes",
-    "AeroTest",
+    "PreparaUlm",
     "piloto ULM",
     "tests",
     "soporte",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "Stripe",
   ],
   openGraph: {
-    title: "Preguntas Frecuentes | AeroTest",
+    title: "Preguntas Frecuentes | PreparaUlm",
     description:
-      "Encuentra respuestas a las preguntas más frecuentes sobre AeroTest, la plataforma de tests para licencia de piloto ULM.",
+      "Encuentra respuestas a las preguntas más frecuentes sobre PreparaUlm, la plataforma de tests para licencia de piloto ULM.",
     type: "website",
   },
 }
@@ -54,7 +54,7 @@ export default function FaqsPage() {
               Preguntas Frecuentes
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Encuentra respuestas a las preguntas más comunes sobre AeroTest,
+              Encuentra respuestas a las preguntas más comunes sobre PreparaUlm,
               nuestra plataforma de tests para la licencia de piloto ULM.
             </p>
           </div>

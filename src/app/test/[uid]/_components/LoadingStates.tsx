@@ -102,7 +102,7 @@ export function ErrorMessage({ error }: ErrorMessageProps) {
           {typeof error === "object" ? JSON.stringify(error) : error}
         </AlertDescription>
       </Alert>
-      <Button onClick={() => router.push("/test-selection")}>
+      <Button onClick={() => router.push("/test-ultraligero")}>
         Volver a selección de test
       </Button>
     </div>
@@ -122,7 +122,7 @@ export function EmptyMessage({ message }: EmptyMessageProps) {
         <AlertCircle className="h-4 w-4" />
         <AlertDescription>{message}</AlertDescription>
       </Alert>
-      <Button onClick={() => router.push("/test-selection")}>
+      <Button onClick={() => router.push("/test-ultraligero")}>
         Volver a selección de test
       </Button>
     </div>

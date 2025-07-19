@@ -96,7 +96,7 @@ const getConfidenceIcon = (score: number) => {
 
 export default function InstructorDashboardPage() {
   const router = useRouter()
-  const registrationLink = "https://aerotests.com/register?instructor=123" // Example link
+  const registrationLink = "https://www.preparaulm.com/register?instructor=123" // Example link
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(registrationLink)

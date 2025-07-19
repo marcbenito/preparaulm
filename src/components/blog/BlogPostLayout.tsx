@@ -12,7 +12,7 @@ interface BlogPostLayoutProps {
 
 export default function BlogPostLayout({ children }: BlogPostLayoutProps) {
   return (
-    <div className="container mx-auto px-6 py-24">
+    <div className="container mx-auto px-6 py-8 md:py-24">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -53,7 +53,7 @@ export default function BlogPostLayout({ children }: BlogPostLayoutProps) {
                 Pon en práctica lo que has aprendido con nuestros tests
                 adaptativos
               </p>
-              <Link href="/test-selection">
+              <Link href="/test-ultraligero">
                 <Button
                   variant="default"
                   size="lg"

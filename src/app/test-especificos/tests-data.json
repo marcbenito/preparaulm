@@ -1,0 +1,73 @@
+[
+    {
+        "id": "meteorologia-frentes",
+        "slug": "meteorologia-frentes",
+        "title": "Meteorología: Frentes",
+        "description": "Test especializado en frentes cálidos y fríos. Profundiza en las características, identificación y efectos meteorológicos de los sistemas frontales en la aviación.",
+        "extendedDescription": "Este test especializado te ayudará a dominar uno de los aspectos más importantes de la meteorología aeronáutica: los sistemas frontales. Aprenderás a identificar las características de los frentes cálidos y fríos, sus diferencias, cómo se forman y cómo afectan a las condiciones de vuelo. El test incluye preguntas sobre la interpretación de mapas meteorológicos, reconocimiento de nubes asociadas a cada tipo de frente, cambios de viento y temperatura, y las precauciones que debe tomar un piloto al volar cerca de sistemas frontales.",
+        "categoryId": "1",
+        "categoryName": "Meteorología",
+        "level": "Avanzado",
+        "levelColor": "orange",
+        "questionCount": 15,
+        "duration": 20,
+        "imageUrl": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800&h=400",
+        "topics": [
+            "Frentes cálidos y sus características",
+            "Frentes fríos y sus características",
+            "Frentes ocluidos",
+            "Interpretación de mapas meteorológicos",
+            "Nubes asociadas a sistemas frontales",
+            "Cambios de viento en los frentes",
+            "Peligros para la aviación"
+        ]
+    },
+    {
+        "id": "luces-en-tierra-y-aire",
+        "slug": "luces-en-tierra-y-aire",
+        "title": "Luces en Tierra y Aire",
+        "description": "Domina las luces de navegación, señales luminosas de aeropuertos, balizas y sistemas de iluminación cruciales para la seguridad aérea.",
+        "extendedDescription": "La correcta identificación e interpretación de las luces aeronáuticas es fundamental para la seguridad del vuelo, especialmente en condiciones de visibilidad reducida o vuelos nocturnos. Este test cubre todos los aspectos relacionados con la iluminación aeronáutica: desde las luces de navegación de las aeronaves (posición, anticolisión, aterrizaje) hasta los sistemas de iluminación de aeródromos (PAPI/VASI, luces de pista, rodadura y plataforma). También incluye señales luminosas de torre de control, balizas de obstáculos y ayudas visuales para la aproximación.",
+        "categoryId": "5",
+        "categoryName": "Navegación",
+        "level": "Avanzado",
+        "levelColor": "purple",
+        "questionCount": 12,
+        "duration": 15,
+        "imageUrl": "https://images.unsplash.com/photo-1548309667-15c4a4f36b0e?auto=format&fit=crop&q=80&w=800&h=400",
+        "topics": [
+            "Luces de navegación de aeronaves",
+            "Luces anticolisión y estroboscópicas",
+            "Sistemas PAPI y VASI",
+            "Iluminación de pista y umbrales",
+            "Luces de rodadura y señalización",
+            "Señales luminosas de torre",
+            "Balizas de obstáculos",
+            "Luces de aproximación"
+        ]
+    },
+    {
+        "id": "comunicaciones-emergencia",
+        "slug": "comunicaciones-emergencia",
+        "title": "Comunicaciones de Emergencia",
+        "description": "Procedimientos de radio en situaciones de emergencia, señales de socorro, y comunicaciones críticas para la seguridad del vuelo.",
+        "extendedDescription": "En situaciones de emergencia, la comunicación efectiva puede marcar la diferencia entre un incidente menor y una tragedia. Este test avanzado se centra en los procedimientos de comunicación durante emergencias aeronáuticas. Cubre el uso correcto de las frecuencias de emergencia (121.5 MHz), las señales de socorro (MAYDAY y PAN-PAN), los códigos transpondedor de emergencia, y los procedimientos específicos para diferentes tipos de emergencias. También incluye comunicaciones con servicios de búsqueda y rescate, prioridades en las comunicaciones, y fraseología estándar OACI para situaciones críticas.",
+        "categoryId": "3",
+        "categoryName": "Comunicaciones",
+        "level": "Experto",
+        "levelColor": "red",
+        "questionCount": 18,
+        "duration": 25,
+        "imageUrl": "https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?auto=format&fit=crop&q=80&w=800&h=400",
+        "topics": [
+            "Frecuencias de emergencia",
+            "Señales MAYDAY y PAN-PAN",
+            "Códigos transpondedor 7500, 7600, 7700",
+            "Procedimientos de fallo de comunicaciones",
+            "Comunicación con servicios SAR",
+            "Prioridades en emergencias",
+            "Fraseología OACI de emergencia",
+            "Coordinación con ATC en emergencias"
+        ]
+    }
+]

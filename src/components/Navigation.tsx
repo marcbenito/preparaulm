@@ -54,7 +54,7 @@ function Navigation() {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
             <Plane className="h-8 w-8 text-white" />
-            <span className="text-2xl font-bold text-white">AeroTests</span>
+            <span className="text-2xl font-bold text-white">PreparaUlm</span>
           </Link>
 
           <div className="hidden md:flex space-x-4">
@@ -63,7 +63,7 @@ function Navigation() {
               asChild
               className="text-white hover:text-blue-200"
             >
-              <Link href="/test-selection">Realizar test</Link>
+              <Link href="/test-ultraligero">Realizar test</Link>
             </Button>
 
             <Button
@@ -82,6 +82,8 @@ function Navigation() {
               <Link href="/blog">Blog</Link>
             </Button>
 
+            {/* SECCIÓN PRECIOS COMENTADA TEMPORALMENTE */}
+            {/*
             <Button
               variant="ghost"
               asChild
@@ -89,6 +91,7 @@ function Navigation() {
             >
               <Link href="/pricing">Precios</Link>
             </Button>
+            */}
 
             <Button
               variant="ghost"
@@ -163,7 +166,7 @@ function Navigation() {
                 </SheetHeader>
                 <div className="flex flex-col space-y-4 mt-8">
                   <SheetClose asChild>
-                    <Link href="/test-selection">
+                    <Link href="/test-ultraligero">
                       <Button
                         variant="ghost"
                         className="text-white hover:text-blue-200 w-full justify-start"
@@ -195,6 +198,8 @@ function Navigation() {
                     </Link>
                   </SheetClose>
 
+                  {/* SECCIÓN PRECIOS COMENTADA TEMPORALMENTE */}
+                  {/*
                   <SheetClose asChild>
                     <Link href="/pricing">
                       <Button
@@ -205,6 +210,7 @@ function Navigation() {
                       </Button>
                     </Link>
                   </SheetClose>
+                  */}
                   <SheetClose asChild>
                     <Link href="/about">
                       <Button

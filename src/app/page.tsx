@@ -42,7 +42,7 @@ const features = [
     icon: BarChart3,
     title: "Sistema inteligente de evaluación y progreso",
     description:
-      "Nuestro algoritmo analiza tus resultados y detecta tus puntos débiles según las categorías oficiales. Gracias a la Inteligencia Artificial, AeroTest te guía paso a paso para que avances más rápido y con una comprensión real del temario, no solo memorización.",
+      "Nuestro algoritmo analiza tus resultados y detecta tus puntos débiles según las categorías oficiales. Gracias a la Inteligencia Artificial, PreparaUlm te guía paso a paso para que avances más rápido y con una comprensión real del temario, no solo memorización.",
     color: "from-purple-500 to-pink-500",
     stat: "IA personalizada",
   },
@@ -122,7 +122,7 @@ const licenseTypes = [
     name: "Multieje Ala Fija",
     description:
       "Preparación completa para la licencia de piloto ULM multieje ala fija",
-    link: "/test-selection",
+    link: "/test-ultraligero",
     icon: "✈️",
     available: true,
     status: "Disponible ahora",
@@ -187,7 +187,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.3 }}
-            className="text-xl text-blue-200 mb-12"
+            className="text-lg md:text-xl text-blue-200 mb-12"
           >
             Tests online especializados para la licencia ULM. Normativa {" "}
             <a
@@ -207,13 +207,13 @@ export default function HomePage() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link href="/test-selection">
+            <Link href="/test-ultraligero">
               <Button
                 variant="default"
                 size="lg"
                 rightIcon={<ArrowRight className="h-5 w-5" />}
               >
-                Comenzar Tests ULM Gratis
+                Comenzar Test ULM
               </Button>
             </Link>
             <Button variant="outline" size="lg">
@@ -317,7 +317,7 @@ export default function HomePage() {
         <section className="mb-24">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">
-              ¿Por Qué Elegir AeroTestULM para tu Examen ULM?
+              ¿Por Qué Elegir PreparaUlm para tu Examen ULM?
             </h2>
             <p className="text-blue-200 text-lg max-w-3xl mx-auto">
               Nuestra plataforma utiliza tecnología avanzada e inteligencia
@@ -340,10 +340,10 @@ export default function HomePage() {
                 >
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-blue-200 text-lg mb-6">
+                <p className="text-blue-200 text-base md:text-lg mb-6">
                   {feature.description}
                 </p>
                 <div className="flex items-center gap-2 text-lg">
@@ -367,7 +367,7 @@ export default function HomePage() {
 
               <div className="grid md:grid-cols-2 gap-8 text-blue-200">
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
                     Examen Teórico ULM Multieje
                   </h3>
                   <p className="mb-4">
@@ -416,7 +416,7 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-white mb-4">
                     Próximas Licencias ULM
                   </h3>
                   <p className="mb-4">
@@ -462,14 +462,14 @@ export default function HomePage() {
               Preguntas Frecuentes
             </h2>
             <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-              Resolvemos las dudas más comunes sobre AeroTestULM
+              Resolvemos las dudas más comunes sobre PreparaUlm
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6">
               <h3 className="text-lg font-semibold text-white mb-3">
-                ¿Es gratis usar AeroTestULM?
+                ¿Es gratis usar PreparaUlm?
               </h3>
               <p className="text-blue-200 text-sm">
                 Ofrecemos 200 preguntas gratuitas para que pruebes la
@@ -523,7 +523,7 @@ export default function HomePage() {
 
           <div className="text-center mt-8">
             <Link href="/faqs-preguntas-frecuentes">
-              <Button variant="outline" size="lg">
+              <Button asChild={true} variant="outline" size="lg">
                 Ver todas las preguntas frecuentes
               </Button>
             </Link>
@@ -539,7 +539,7 @@ export default function HomePage() {
                 mainEntity: [
                   {
                     "@type": "Question",
-                    name: "¿Es gratis usar AeroTestULM?",
+                    name: "¿Es gratis usar PreparaUlm?",
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "Ofrecemos 200 preguntas gratuitas para que pruebes la plataforma. Para acceso completo a todas las funciones y miles de preguntas, tenemos planes de suscripción desde 9.99€/mes.",
@@ -578,31 +578,31 @@ export default function HomePage() {
         {/* CTA Section */}
         <section className="mb-24">
           <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-1">
-            <div className="bg-cosmic-night rounded-2xl p-12">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="bg-cosmic-night rounded-2xl p-6 md:p-12">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
                 <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="bg-white/20 p-3 rounded-xl">
-                      <Users className="h-6 w-6 text-main" />
+                  <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                    <div className="bg-white/20 p-2 md:p-3 rounded-xl">
+                      <Users className="h-5 w-5 md:h-6 md:w-6 text-main" />
                     </div>
-                    <span className="text-lg text-main font-medium">
+                    <span className="text-sm md:text-lg text-main font-medium">
                       +10,000 estudiantes confían en nosotros
                     </span>
                   </div>
-                  <h2 className="text-3xl font-bold text-main mb-4">
+                  <h2 className="text-lg md:text-xl md:text-3xl font-bold text-main mb-3 md:mb-4">
                     Comienza tu Preparación para el Examen ULM Hoy
                   </h2>
-                  <p className="text-secondary text-lg">
+                  <p className="text-secondary text-base md:text-lg">
                     200 preguntas de práctica gratuitas para empezar tu
                     preparación
                   </p>
                 </div>
-                <Link href="/test-selection">
+                <Link href="/test-ultraligero">
                   <Button
                     variant="default"
                     size="lg"
                     rightIcon={<ArrowRight className="h-5 w-5" />}
-                    className="whitespace-nowrap"
+                    className="whitespace-nowrap w-full md:w-auto"
                   >
                     Comenzar Tests Gratis
                   </Button>
@@ -615,7 +615,7 @@ export default function HomePage() {
         {/* Blog Section */}
         <section className="my-12">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-main">
+            <h2 className="text-xl md:text-2xl font-bold text-main">
               Guías y Recursos para tu Examen ULM
             </h2>
             <Link href="/blog">

@@ -1,6 +1,6 @@
-# Tests E2E para aeroTests
+# Tests E2E para PreparaUlm
 
-Este directorio contiene tests automatizados simplificados para la plataforma aeroTests, enfocados en 3 flujos principales de usuario.
+Este directorio contiene tests automatizados simplificados para la plataforma PreparaUlm, enfocados en 3 flujos principales de usuario.
 
 ## Estructura de Tests
 
@@ -38,7 +38,7 @@ Tests del flujo completo de realización de tests:
 Los tests utilizan las siguientes credenciales de prueba:
 
 ```
-Email: test@aerotestulm.com
+  Email: test@preparaulm.com
 Password: testpassword123
 ```
 

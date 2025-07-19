@@ -25,31 +25,12 @@ import { Category } from "@/domain/entities/Category"
 
 import { createClient } from "@/utils/supabase/client"
 import { GetMainCategoriesUseCase } from "@/domain/use-cases/GetMainCategoriesUseCase"
-import { CreateTestUseCase } from "@/domain/use-cases/CreateTestUseCase"
-import { useAuth } from "@/context/auth-context"
-import { useAuthModal } from "@/context/AuthModalContext"
-
-import PreparingTestScreen from "./_components/PreparingTestScreen"
 
 export default function TestSelectionPage() {
   const router = useRouter()
-  const { user } = useAuth()
-  const { openLogin } = useAuthModal()
   const [categories, setCategories] = useState<Category[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [isLoadingCategories, setIsLoadingCategories] = useState(true)
-
-  const [isPreparingTest, setIsPreparingTest] = useState(false)
-  const [preparingTestError, setPreparingTestError] = useState<string | null>(
-    null,
-  )
-  const [preparingTestType, setPreparingTestType] = useState<
-    "generic" | "category"
-  >("generic")
-  const [selectedCategoryName, setSelectedCategoryName] = useState<string>("")
-  const [pendingTestAction, setPendingTestAction] = useState<{
-    categoryId?: string
-  } | null>(null)
 
   useEffect(() => {
     setIsLoadingCategories(true)
@@ -67,103 +48,27 @@ export default function TestSelectionPage() {
     }
   }
 
-  const executeTestCreation = async (categoryId?: string) => {
-    setIsPreparingTest(true)
-    setPreparingTestError(null)
 
+
+  const handleStartTest = (categoryId?: string) => {
     if (categoryId) {
-      setPreparingTestType("category")
-      const category = categories.find((cat) => cat.id === categoryId)
-      setSelectedCategoryName(category?.name || "")
+      router.push(`/preparacion-test/${categoryId}`)
     } else {
-      setPreparingTestType("generic")
-      setSelectedCategoryName("")
-    }
-
-    try {
-      console.log(
-        `Iniciando creación de test ${categoryId ? `para categoría ${categoryId}` : "genérico"}...`,
-      )
-
-      const timer = new Promise((resolve) => setTimeout(resolve, 3000))
-
-      const testCreation = async () => {
-        const supabase = createClient()
-        const createTestUseCase = CreateTestUseCase.create(supabase)
-        const testExecutionId = await createTestUseCase.execute(categoryId)
-
-        console.log(
-          `Test creado exitosamente con ID de ejecución: ${testExecutionId}`,
-        )
-        return testExecutionId
-      }
-
-      const [testExecutionId] = await Promise.all([testCreation(), timer])
-
-      // No llamamos setIsPreparingTest(false) aquí para evitar mostrar test-selection
-      // antes del redirect. El componente se desmontará con la navegación.
-      router.push(`/test/${testExecutionId}`)
-    } catch (error: any) {
-      console.error("Error starting test:", error)
-      setPreparingTestError(
-        error.message ||
-          "Ocurrió un error al preparar el test. Por favor, inténtalo de nuevo.",
-      )
+      router.push('/preparacion-test/generic')
     }
   }
 
-  const handleStartTest = async (categoryId?: string) => {
-    // Check if user is authenticated
-    if (!user) {
-      // Store the pending action and open login modal
-      setPendingTestAction({ categoryId })
-      openLogin(() => {
-        // This callback will be executed after successful login
-        // We need to use the current categoryId, not from state
-        executeTestCreation(categoryId)
-        setPendingTestAction(null)
-      })
-      return
-    }
 
-    // User is authenticated, proceed with test creation
-    await executeTestCreation(categoryId)
-  }
-
-  const handleRetryTest = () => {
-    setPreparingTestError(null)
-
-    if (preparingTestType === "category" && selectedCategoryName) {
-      const category = categories.find(
-        (cat) => cat.name === selectedCategoryName,
-      )
-      executeTestCreation(category?.id)
-    } else {
-      executeTestCreation()
-    }
-  }
-
-  if (isPreparingTest) {
-    return (
-      <PreparingTestScreen
-        onRetry={handleRetryTest}
-        testType={preparingTestType}
-        categoryName={selectedCategoryName}
-        errorMessage={preparingTestError}
-      />
-    )
-  }
 
   return (
     <div className="min-h-screen bg-blue-purple">
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold text-white mb-2">
-            Selección de Test
+            Tests de ultraligero
           </h1>
           <p className="text-xl text-blue-200 mb-10">
-            Elige el tipo de test que deseas realizar para poner a prueba tus
-            conocimientos
+            Elige el tipo de test:
           </p>
 
           <Card className="bg-white/5 text-white mb-12 border-0 overflow-hidden">
@@ -232,7 +137,7 @@ export default function TestSelectionPage() {
               No hay categorías disponibles.
             </div>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-16">
               {categories.map((category) => (
                 <div
                   key={category.id}
@@ -246,16 +151,16 @@ export default function TestSelectionPage() {
                     }
                   }}
                 >
-                  <Card className="bg-card-custom text-white border-0 flex flex-col h-44 bg-gradient-to-br from-blue-800/40 to-indigo-800/40">
-                    <CardHeader className="flex-1 py-4 px-4 flex flex-col items-center justify-center text-center">
-                      <div className="mb-3">
+                  <Card className="bg-card-custom text-white border-0 flex flex-col md:h-32 lg:h-36 bg-gradient-to-br from-blue-800/40 to-indigo-800/40">
+                    <CardHeader className="flex-1 py-3 px-4 flex flex-row md:flex-col items-center md:justify-center text-center md:text-center gap-4 md:gap-2">
+                      <div className="flex-shrink-0">
                         <CategoryIcon
                           iconName={category.iconName}
                           color={category.color}
-                          className="h-12 w-12"
+                          className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
                         />
                       </div>
-                      <CardTitle className="text-base h-10 flex items-center justify-center">
+                      <CardTitle className="text-base flex-1 md:flex-none md:h-8 lg:h-10 flex items-center justify-start md:justify-center text-left md:text-center">
                         {category.name}
                       </CardTitle>
                     </CardHeader>
@@ -267,20 +172,22 @@ export default function TestSelectionPage() {
 
           {/* Test Especiales Section */}
           <div className="mb-10">
-            <div className="flex items-center mb-6">
-              <BarChart3 className="h-8 w-8 text-yellow-400 mr-3" />
-              <h2 className="text-2xl font-bold text-white">Test Especiales</h2>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <BarChart3 className="h-8 w-8 text-yellow-400 mr-3" />
+                <h2 className="text-2xl font-bold text-white">Tests específicos</h2>
+              </div>
+              <Link href="/test-especificos">
+                <Button variant="outline" size="sm">
+                  Ver todos los tests
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
-            <p className="text-blue-200 mb-8 text-lg">
-              Hemos seleccionado unos tests hechos a medida para profundizar
-              sobre temas concretos del examen ULM. Si te sientes valiente y
-              quieres poner a prueba tus conocimientos especializados, ¡estos
-              desafíos son para ti!
-            </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Test Meteorología: Frentes */}
-              <Card className="bg-white/5 text-white border-0 hover:bg-white/10 transition-all duration-300 cursor-pointer group overflow-hidden">
+              <Card className="bg-white/5 text-white border-0 overflow-hidden">
                 <div
                   className="h-32 bg-cover bg-center relative"
                   style={{
@@ -297,7 +204,7 @@ export default function TestSelectionPage() {
                   </Badge>
                 </div>
                 <CardHeader className="p-6">
-                  <CardTitle className="text-lg font-bold group-hover:text-blue-200 transition-colors mb-3">
+                  <CardTitle className="text-lg font-bold mb-3">
                     Meteorología: Frentes
                   </CardTitle>
                   <p className="text-blue-200 text-sm mb-4">
@@ -310,23 +217,21 @@ export default function TestSelectionPage() {
                       <BookOpen className="h-4 w-4 mr-1" />
                       <span>15 preguntas</span>
                     </div>
-                    <Button
-                      size="sm"
-                      className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
-                      onClick={() => {
-                        // TODO: Implementar lógica para test especial de meteorología
-                        console.log("Test especial: Meteorología - Frentes")
-                      }}
-                    >
-                      Comenzar
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
+                    <Link href="/test-especificos/meteorologia-frentes">
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
+                      >
+                        Ver más
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardHeader>
               </Card>
 
               {/* Test Luces en Tierra y Aire */}
-              <Card className="bg-white/5 text-white border-0 hover:bg-white/10 transition-all duration-300 cursor-pointer group overflow-hidden">
+              <Card className="bg-white/5 text-white border-0 overflow-hidden">
                 <div
                   className="h-32 bg-cover bg-center relative"
                   style={{
@@ -343,7 +248,7 @@ export default function TestSelectionPage() {
                   </Badge>
                 </div>
                 <CardHeader className="p-6">
-                  <CardTitle className="text-lg font-bold group-hover:text-blue-200 transition-colors mb-3">
+                  <CardTitle className="text-lg font-bold mb-3">
                     Luces en Tierra y Aire
                   </CardTitle>
                   <p className="text-blue-200 text-sm mb-4">
@@ -356,23 +261,21 @@ export default function TestSelectionPage() {
                       <BookOpen className="h-4 w-4 mr-1" />
                       <span>12 preguntas</span>
                     </div>
-                    <Button
-                      size="sm"
-                      className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
-                      onClick={() => {
-                        // TODO: Implementar lógica para test especial de luces
-                        console.log("Test especial: Luces en tierra y aire")
-                      }}
-                    >
-                      Comenzar
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
+                    <Link href="/test-especificos/luces-en-tierra-y-aire">
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
+                      >
+                        Ver más
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardHeader>
               </Card>
 
               {/* Test Comunicaciones de Emergencia */}
-              <Card className="bg-white/5 text-white border-0 hover:bg-white/10 transition-all duration-300 cursor-pointer group overflow-hidden">
+              <Card className="bg-white/5 text-white border-0 overflow-hidden">
                 <div
                   className="h-32 bg-cover bg-center relative"
                   style={{
@@ -389,7 +292,7 @@ export default function TestSelectionPage() {
                   </Badge>
                 </div>
                 <CardHeader className="p-6">
-                  <CardTitle className="text-lg font-bold group-hover:text-blue-200 transition-colors mb-3">
+                  <CardTitle className="text-lg font-bold mb-3">
                     Comunicaciones de Emergencia
                   </CardTitle>
                   <p className="text-blue-200 text-sm mb-4">
@@ -402,19 +305,15 @@ export default function TestSelectionPage() {
                       <BookOpen className="h-4 w-4 mr-1" />
                       <span>18 preguntas</span>
                     </div>
-                    <Button
-                      size="sm"
-                      className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
-                      onClick={() => {
-                        // TODO: Implementar lógica para test especial de comunicaciones
-                        console.log(
-                          "Test especial: Comunicaciones de emergencia",
-                        )
-                      }}
-                    >
-                      Comenzar
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </Button>
+                    <Link href="/test-especificos/comunicaciones-emergencia">
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
+                      >
+                        Ver más
+                        <ArrowRight className="ml-1 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardHeader>
               </Card>

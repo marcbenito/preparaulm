@@ -78,10 +78,10 @@ export default function Footer() {
       <div className="text-center">
         <div className="flex items-center justify-center space-x-3 mb-6">
           <Plane className="h-8 w-8 text-white" />
-          <span className="text-2xl font-bold text-white">aeroTests</span>
+                      <span className="text-2xl font-bold text-white">PreparaUlm</span>
         </div>
         <p className="text-blue-200 text-base">
-          © {new Date().getFullYear()} aeroTests. Todos los derechos
+                      © {new Date().getFullYear()} PreparaUlm. Todos los derechos
           reservados.
         </p>
       </div>

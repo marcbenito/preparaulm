@@ -154,7 +154,7 @@ export default function PreparingTestScreen({
 
             <div className="bg-white/5 rounded-xl p-6">
               <h2 className="text-white font-semibold mb-4">
-                Cuanto más usas AeroTest, más afinamos el contenido para ti:
+                Cuanto más usas PreparaUlm, más afinamos el contenido para ti:
               </h2>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">

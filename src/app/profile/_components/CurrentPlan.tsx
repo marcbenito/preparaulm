@@ -155,10 +155,10 @@ export default function CurrentPlan() {
           Si tienes dudas sobre tu suscripción, contacta con nuestro equipo de
           soporte en{" "}
           <a
-            href="mailto:info@aerotestulm.es"
+                            href="mailto:contacto@preparaulm.com"
             className="text-primary underline"
           >
-            info@aerotestulm.es
+                          contacto@preparaulm.com
           </a>
         </p>
       </div>

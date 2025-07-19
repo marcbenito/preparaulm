@@ -384,7 +384,7 @@ export default function TestReviewPage({ params }: { params: any }) {
                 <Button
                   variant="ghost"
                   className="text-white mb-2 hover:bg-white/10"
-                  onClick={() => router.push("/test-selection")}
+                  onClick={() => router.push("/test-ultraligero")}
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Volver a Selección de Test

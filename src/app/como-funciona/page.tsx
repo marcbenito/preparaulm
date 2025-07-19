@@ -83,7 +83,7 @@ export default function HowItWorksPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-5xl font-bold text-main mb-6"
         >
-          ¿Cómo funciona AeroTest?
+                      ¿Cómo funciona PreparaUlm?
         </motion.h1>
 
         <motion.p
@@ -271,7 +271,7 @@ export default function HowItWorksPage() {
               <br />
               Ahora solo queda dar el paso. ¡Preséntate al examen con ventaja!
             </p>
-            <Link href="/test-selection">
+            <Link href="/test-ultraligero">
               <Button
                 variant="default"
                 size="lg"

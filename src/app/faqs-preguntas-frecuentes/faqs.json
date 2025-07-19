@@ -3,8 +3,8 @@
         "category": "Funcionamiento",
         "questions": [
             {
-                "question": "¿Qué es AeroTest?",
-                "answer": "AeroTest es una plataforma diseñada para ayudar a estudiantes e instructores de la licencia de piloto ULM (ultraligero) a prepararse mediante tests personalizados, análisis con IA y métricas detalladas de progreso."
+                "question": "¿Qué es PreparaUlm?",
+                "answer": "PreparaUlm es una plataforma diseñada para ayudar a estudiantes e instructores de la licencia de piloto ULM (ultraligero) a prepararse mediante tests personalizados, análisis con IA y métricas detalladas de progreso."
             },
             {
                 "question": "¿Cómo funcionan los tests de nivel?",
@@ -33,43 +33,6 @@
             {
                 "question": "¿Qué son los tests de reto?",
                 "answer": "Son tests cortos que se lanzan periódicamente a toda la comunidad, donde se valora tanto la puntuación como el tiempo de respuesta. Aparecen en un leaderboard público."
-            }
-        ]
-    },
-    {
-        "category": "Pagos",
-        "questions": [
-            {
-                "question": "¿Qué métodos de pago aceptáis?",
-                "answer": "Aceptamos pagos con tarjeta de crédito y débito (Visa, Mastercard, American Express) a través de Stripe, nuestro procesador de pagos seguro."
-            },
-            {
-                "question": "¿Es seguro pagar con tarjeta?",
-                "answer": "Sí, utilizamos Stripe como procesador de pagos, que cumple con los más altos estándares de seguridad PCI DSS Level 1. Tus datos de tarjeta están encriptados y nunca se almacenan en nuestros servidores."
-            },
-            {
-                "question": "¿Puedo cambiar mi plan de suscripción?",
-                "answer": "Sí, puedes cambiar tu plan en cualquier momento desde tu panel de cuenta. Los cambios se aplicarán en tu próximo ciclo de facturación."
-            },
-            {
-                "question": "¿Cómo funciona la facturación?",
-                "answer": "La facturación es automática y se realiza mensual o anualmente según el plan elegido. Recibirás un email con tu factura después de cada pago exitoso."
-            },
-            {
-                "question": "¿Puedo cancelar mi suscripción?",
-                "answer": "Sí, puedes cancelar tu suscripción en cualquier momento desde tu panel de cuenta. Mantendrás acceso hasta el final de tu período de facturación actual."
-            },
-            {
-                "question": "¿Ofrecéis reembolsos?",
-                "answer": "Ofrecemos reembolsos dentro de los primeros 14 días de tu suscripción si no estás satisfecho con el servicio. Contacta con nuestro soporte para procesar el reembolso."
-            },
-            {
-                "question": "¿Qué pasa si falla un pago?",
-                "answer": "Si un pago falla, Stripe intentará cobrarlo automáticamente varios días después. Te notificaremos por email para que puedas actualizar tu método de pago si es necesario."
-            },
-            {
-                "question": "¿Puedo obtener una factura para mi empresa?",
-                "answer": "Sí, puedes añadir información fiscal de tu empresa en tu panel de facturación y todas las facturas futuras incluirán estos datos."
             }
         ]
     },
@@ -136,11 +99,11 @@
             },
             {
                 "question": "¿Hay una app móvil?",
-                "answer": "Actualmente AeroTest es una aplicación web responsive que funciona perfectamente en móviles y tablets. Una app nativa está en desarrollo."
+                "answer": "Actualmente PreparaUlm es una aplicación web responsive que funciona perfectamente en móviles y tablets. Una app nativa está en desarrollo."
             },
             {
-                "question": "¿Puedo usar AeroTest offline?",
-                "answer": "No, AeroTest requiere conexión a internet para sincronizar tu progreso y acceder a las últimas preguntas y funcionalidades."
+                "question": "¿Puedo usar PreparaUlm offline?",
+                "answer": "No, PreparaUlm requiere conexión a internet para sincronizar tu progreso y acceder a las últimas preguntas y funcionalidades."
             }
         ]
     }

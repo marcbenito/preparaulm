@@ -23,11 +23,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: {
     default:
-      "AeroTestULM - Tests de ultraligeros ULM Multieje Ala Fija gratis | Examen Piloto AESA",
-    template: "%s | AeroTestULM",
+      "PreparaUlm - Tests de ultraligeros ULM Multieje Ala Fija gratis | Examen Piloto AESA",
+    template: "%s | PreparaUlm",
   },
   description:
-    "Prepárate para el examen ULM multieje ala fija con AeroTestULM. Tests online especializados según normativa AESA. Más de 5,000 preguntas actualizadas. ¡95% de tasa de aprobación! Próximamente: autogiro, instructor y RTC.",
+    "Prepárate para el examen ULM multieje ala fija con PreparaUlm. Tests online especializados según normativa AESA. Más de 5,000 preguntas actualizadas. ¡95% de tasa de aprobación! Próximamente: autogiro, instructor y RTC.",
   keywords: [
     "examen ULM multieje ala fija",
     "licencia piloto ultraligero multieje",
@@ -42,15 +42,15 @@ export const metadata: Metadata = {
     "ULM AESA",
     "preparación piloto ULM",
   ],
-  authors: [{ name: "AeroTestULM" }],
-  creator: "AeroTestULM",
-  publisher: "AeroTestULM",
+  authors: [{ name: "PreparaUlm" }],
+  creator: "PreparaUlm",
+  publisher: "PreparaUlm",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://aerotestulm.es"),
+  metadataBase: new URL("https://www.preparaulm.com"),
   alternates: {
     canonical: "/",
     languages: {
@@ -60,28 +60,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://aerotestulm.es",
+    url: "https://www.preparaulm.com",
     title:
-      "AeroTestULM - Tests de ultraligeros ULM Multieje Ala Fija | Examen Piloto Ultraligero",
+      "PreparaUlm - Tests de ultraligeros ULM Multieje Ala Fija | Examen Piloto Ultraligero",
     description:
-      "Prepárate para el examen ULM multieje ala fija con AeroTestULM. Tests online especializados según normativa AESA. Más de 5,000 preguntas actualizadas. ¡95% de tasa de aprobación! Próximamente: autogiro, instructor y RTC.",
-    siteName: "AeroTestULM",
+      "Prepárate para el examen ULM multieje ala fija con PreparaUlm. Tests online especializados según normativa AESA. Más de 5,000 preguntas actualizadas. ¡95% de tasa de aprobación! Próximamente: autogiro, instructor y RTC.",
+    siteName: "PreparaUlm",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "AeroTestULM - Preparación para examen ULM multieje ala fija",
+        alt: "PreparaUlm - Preparación para examen ULM multieje ala fija",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AeroTestULM - Tests de ultraligeros ULM Multieje Ala Fija",
+    title: "PreparaUlm - Tests de ultraligeros ULM Multieje Ala Fija",
     description:
       "Prepárate para el examen ULM multieje ala fija con más de 5,000 preguntas actualizadas. 95% de tasa de aprobación.",
     images: ["/images/twitter-image.jpg"],
-    creator: "@aerotestulm",
+    creator: "@preparaulm",
   },
   robots: {
     index: true,
@@ -117,15 +117,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
-              name: "AeroTestULM",
+              name: "PreparaUlm",
               description:
                 "Tests de ultraligeros ULM y licencias de piloto ultraligero",
-              url: "https://aerotestulm.es",
-              logo: "https://aerotestulm.es/images/logo.png",
+              url: "https://www.preparaulm.com",
+              logo: "https://www.preparaulm.com/images/logo.png",
               sameAs: [
-                "https://facebook.com/aerotestulm",
-                "https://twitter.com/aerotestulm",
-                "https://linkedin.com/company/aerotestulm",
+                "https://facebook.com/preparaulm",
+                "https://twitter.com/preparaulm",
+                "https://linkedin.com/company/preparaulm",
               ],
               address: {
                 "@type": "PostalAddress",

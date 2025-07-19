@@ -19,7 +19,7 @@ export default function CookiesPage() {
               <Cookie className="h-6 w-6 text-purple-400" />
             </div>
             <h1 className="text-4xl font-bold text-main">
-              Política de Cookies de AeroTest
+              Política de Cookies de PreparaUlm
             </h1>
           </div>
 
@@ -124,7 +124,7 @@ export default function CookiesPage() {
                           Gestionar la sesión e inicio de sesión del usuario
                         </td>
                         <td className="border border-white/20 px-4 py-3 text-secondary">
-                          AeroTest (propia)
+                          PreparaUlm (propia)
                         </td>
                         <td className="border border-white/20 px-4 py-3 text-secondary">
                           Sesión
@@ -132,7 +132,7 @@ export default function CookiesPage() {
                       </tr>
                       <tr className="bg-white/5">
                         <td className="border border-white/20 px-4 py-3 text-secondary font-mono">
-                          aerotest-cookie-consent
+                          preparaulm-cookie-consent
                         </td>
                         <td className="border border-white/20 px-4 py-3 text-secondary">
                           Técnica
@@ -142,7 +142,7 @@ export default function CookiesPage() {
                           cookies del usuario (almacenado en localStorage)
                         </td>
                         <td className="border border-white/20 px-4 py-3 text-secondary">
-                          AeroTest (propia)
+                          PreparaUlm (propia)
                         </td>
                         <td className="border border-white/20 px-4 py-3 text-secondary">
                           1 año
@@ -252,7 +252,7 @@ export default function CookiesPage() {
                   4. Gestión de Consentimiento
                 </h2>
                 <p className="text-secondary leading-relaxed mb-4">
-                  AeroTest implementa un sistema de gestión de consentimiento
+                  PreparaUlm implementa un sistema de gestión de consentimiento
                   que cumple con el RGPD:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-secondary mb-4">

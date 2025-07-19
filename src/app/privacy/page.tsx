@@ -37,14 +37,14 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="text-secondary leading-relaxed mb-4">
                   El responsable del tratamiento de los datos personales
-                  recabados a través de este sitio web y la plataforma AeroTest
+                  recabados a través de este sitio web y la plataforma PreparaUlm
                   es:
                 </p>
                 <div className="text-secondary leading-relaxed">
                   <p>
                     <strong>Marc Benito Pujante</strong>
                   </p>
-                  <p>Correo electrónico de contacto: info@aerotestulm.com</p>
+                  <p>Correo electrónico de contacto: contacto@preparaulm.com</p>
                   <p>Domicilio: Otero Pedrayo 51, 36340 Nigrán (Pontevedra)</p>
                 </div>
               </section>
@@ -201,7 +201,7 @@ export default function PrivacyPage() {
                 </ul>
                 <p className="text-secondary leading-relaxed mb-4">
                   Para ejercer estos derechos, el usuario puede enviar una
-                  solicitud al correo info@aerotestulm.com, indicando su nombre
+                  solicitud al correo contacto@preparaulm.com, indicando su nombre
                   completo, el derecho que desea ejercer y adjuntando una copia
                   de su documento identificativo.
                 </p>

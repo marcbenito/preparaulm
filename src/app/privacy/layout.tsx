@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad - AeroTest ULM",
+  title: "Política de Privacidad - PreparaUlm",
   description:
     "Política de privacidad de AeroTest ULM. Conoce cómo protegemos tus datos y la información que recopilamos para mejorar tu experiencia de aprendizaje.",
   keywords:

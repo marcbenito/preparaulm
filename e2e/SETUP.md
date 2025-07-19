@@ -7,7 +7,7 @@ Para que los tests de autenticación funcionen correctamente, necesitas crear un
 ### Credenciales del Usuario de Prueba
 
 ```
-Email: test@aerotestulm.com
+Email: test@preparaulm.com
 Password: testpassword123
 ```
 
@@ -16,7 +16,7 @@ Password: testpassword123
 ### Opción 1: A través de la interfaz web
 
 1. Ve a `/register` en tu aplicación local
-2. Registra el usuario con el email `test@aerotestulm.com`
+2. Registra el usuario con el email `test@preparaulm.com`
 3. Usa la contraseña `testpassword123`
 
 ### Opción 2: Directamente en la base de datos (Supabase)
@@ -25,7 +25,7 @@ Password: testpassword123
 -- Insertar usuario en auth.users (ajustar según tu configuración)
 INSERT INTO auth.users (email, encrypted_password, email_confirmed_at, created_at, updated_at)
 VALUES (
-  'test@aerotestulm.com',
+      'test@preparaulm.com',
   crypt('testpassword123', gen_salt('bf')),
   NOW(),
   NOW(),
@@ -46,7 +46,7 @@ Antes de ejecutar los tests, puedes verificar que el usuario existe:
 supabase db reset
 
 # O consultar directamente
-psql -h localhost -p 54322 -U postgres -d postgres -c "SELECT email FROM auth.users WHERE email = 'test@aerotestulm.com';"
+psql -h localhost -p 54322 -U postgres -d postgres -c "SELECT email FROM auth.users WHERE email = 'test@preparaulm.com';"
 ```
 
 ## Comportamiento de los Tests

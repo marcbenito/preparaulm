@@ -12,6 +12,11 @@ interface CategoryCardProps {
 }
 
 const confidenceDescriptions = {
+  0: {
+    label: "Sin datos",
+    description:
+      "No hay suficientes datos para evaluar tu confianza en esta categoría. Completa más tests para obtener una evaluación.",
+  },
   1: {
     label: "Mala",
     description:
@@ -44,7 +49,14 @@ const getConfidenceColor = (confidence: number): string => {
   if (confidence >= 4) return "bg-lime-500"
   if (confidence >= 3) return "bg-yellow-500"
   if (confidence >= 2) return "bg-orange-500"
-  return "bg-red-500"
+  if (confidence >= 1) return "bg-red-500"
+  return "bg-gray-500" // Para confidence = 0 (sin datos)
+}
+
+const getConfidenceDescription = (confidence: number) => {
+  // Asegurar que el valor esté en el rango válido
+  const validConfidence = Math.max(0, Math.min(5, Math.floor(confidence)))
+  return confidenceDescriptions[validConfidence as keyof typeof confidenceDescriptions]
 }
 
 export function CategoryCard({ category, index }: CategoryCardProps) {
@@ -117,11 +129,7 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
                   <div className="flex items-center justify-between text-xs mb-1">
                     <span className="text-blue-200">Confianza</span>
                     <span className="text-blue-200">
-                      {
-                        confidenceDescriptions[
-                          category.confidence as keyof typeof confidenceDescriptions
-                        ].label
-                      }
+                      {getConfidenceDescription(category.confidence).label}
                     </span>
                   </div>
                   <div className="h-3 bg-white/10 rounded-full relative group">
@@ -140,11 +148,7 @@ export function CategoryCard({ category, index }: CategoryCardProps) {
                       ))}
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-2 bg-gray-900 text-white text-xs rounded-lg pointer-events-none z-10">
-                      {
-                        confidenceDescriptions[
-                          category.confidence as keyof typeof confidenceDescriptions
-                        ].description
-                      }
+                      {getConfidenceDescription(category.confidence).description}
                     </div>
                   </div>
                 </div>

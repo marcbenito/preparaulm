@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   },
   description:
     "Prepárate para el examen ULM multieje ala fija con PreparaUlm. Tests online especializados según normativa AESA. Más de 5,000 preguntas actualizadas. ¡95% de tasa de aprobación! Próximamente: autogiro, instructor y RTC.",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
+  },
   keywords: [
     "examen ULM multieje ala fija",
     "licencia piloto ultraligero multieje",

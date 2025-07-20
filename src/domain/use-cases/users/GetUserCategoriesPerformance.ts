@@ -48,7 +48,7 @@ export interface UserCategoryPerformance {
 // Mapeos por defecto para iconos y colores de categorías
 const categoryIconMap: Record<string, string> = {
   'meteorologia': 'Cloud',
-  'performance': 'Gauge', 
+  'performance': 'Gauge',
   'comunicaciones': 'Radio',
   'conocimiento-aeronave': 'Plane',
   'navegacion': 'NavigationIcon',
@@ -77,7 +77,7 @@ export class GetUserCategoryPerformanceUseCase {
     private categoryRepository: CategoryRepository,
     private testRepository: TestRepository,
     private userCategoryPerformanceRepository: UserCategoryPerformanceRepository
-  ) {}
+  ) { }
 
   static create(supabase: SupabaseClient): GetUserCategoryPerformanceUseCase {
     const categoryRepository = new CategoryRepositoryImpl(supabase)
@@ -92,6 +92,7 @@ export class GetUserCategoryPerformanceUseCase {
 
   async execute(userId: string): Promise<UserCategoryPerformance[]> {
     try {
+
       // 1. Fetch initial data
       const [categories, performanceData, allQuestions] = await Promise.all([
         this.categoryRepository.getRootCategories(),
@@ -117,14 +118,14 @@ export class GetUserCategoryPerformanceUseCase {
 
         // Usar los mapeos por defecto si los valores son nulos o vacíos
         const iconName = category.iconName || categoryIconMap[category.id] || 'FileQuestion'
-        const color = (category.color && category.color.length > 0) 
-          ? category.color 
+        const color = (category.color && category.color.length > 0)
+          ? category.color
           : categoryColorMap[category.id] || 'from-blue-800 to-indigo-900'
 
         // Usar valores reales de la base de datos
         const minimumProgress = perf ? perf.minimumProgress : 0
         const confidence = perf ? perf.confidence : 0
-        const currentProgress = totalQuestionsInCategory > 0 
+        const currentProgress = totalQuestionsInCategory > 0
           ? Math.round((perf ? perf.questionsCompleted : 0) / totalQuestionsInCategory * 100)
           : 0
 

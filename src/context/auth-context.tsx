@@ -1,6 +1,7 @@
 "use client"
 
 import React, { createContext, useContext, useState, useEffect } from "react"
+import { datadogRum } from "@datadog/browser-rum"
 
 import { AuthService, AuthServiceImpl } from "@/domain/services/AuthServiceImpl"
 
@@ -60,7 +61,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log("🗺️🗺️ event", event, "session", session)
+      // console.log("🗺️🗺️ event", event, "session", session)
       if (event === "SIGNED_IN" && user === null) {
         console.log("👀 event SIGN IN", event, "session", session)
         if (session?.user) {
@@ -71,9 +72,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             updatedAt: session.user.updated_at || new Date().toISOString(),
           }
           setUser(user)
+
+          if (datadogRum.getInternalContext()) {
+            datadogRum.setUser({
+              id: session.user.id,       // ID único del usuario (obligatorio si vas a enviar datos de usuario)
+              name: '-',    // (opcional) Nombre del usuario
+              email: session.user.email // (opcional) Email u otros datos útiles
+            });
+          }
         }
       } else if (event === "SIGNED_OUT") {
         setUser(null)
+        if (datadogRum.getInternalContext()) {
+          datadogRum.clearUser()
+        }
       } else if (event === "INITIAL_SESSION" && user === null) {
         // console.log("👀 event INITIAL_SESSION", event, "session", session)
         // if (session?.user) {
@@ -113,6 +125,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         createdAt: result.user.createdAt.toISOString(),
         updatedAt: result.user.updatedAt.toISOString(),
       })
+      if (datadogRum.getInternalContext()) {
+        datadogRum.setUser({
+          id: result.user.id,       // ID único del usuario (obligatorio si vas a enviar datos de usuario)
+          name: '-',    // (opcional) Nombre del usuario
+          email: result.user.email // (opcional) Email u otros datos útiles
+        });
+      }
 
       // En un sistema real, guardaríamos el token en localStorage o similar
       localStorage.setItem("auth_token", result.token)
@@ -137,6 +156,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         createdAt: result.user.createdAt.toISOString(),
         updatedAt: result.user.updatedAt.toISOString(),
       })
+      
 
       // En un sistema real, guardaríamos el token en localStorage o similar
       localStorage.setItem("auth_token", result.token)
@@ -156,6 +176,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       await authService.logout()
 
       setUser(null)
+      if (datadogRum.getInternalContext()) {
+        datadogRum.clearUser()
+      }
       localStorage.removeItem("auth_token")
     } catch (err: any) {
       setError(err.message || "Error al cerrar sesión")

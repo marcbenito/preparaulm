@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import RadarChart from "@/components/ui/RadarChart"
-import {
-  GetUserCategoryPerformanceUseCase,
-  UserCategoryPerformance,
-} from "@/domain/use-cases/users/GetUserCategoriesPerformance"
+import { GetUserCategoryPerformanceUseCase } from "@/domain/use-cases/GetUserCategoryPerformanceUseCase"
+import { CategoryRepositoryImpl } from "@/domain/repositories/CategoryRepository"
 import { createClient } from "@/utils/supabase/client"
 
 // Define the shape of the data expected by the chart
@@ -37,18 +35,45 @@ export default function DashboardRadarChart() {
           return
         }
 
-        const getUserCategoryPerformanceUseCase =
-          GetUserCategoryPerformanceUseCase.create(supabase)
-        const categoryPerformance =
-          await getUserCategoryPerformanceUseCase.execute(user.id)
+        // Usar el caso de uso simple
+        const getUserCategoryPerformanceUseCase = GetUserCategoryPerformanceUseCase.create(supabase)
+        const categoryRepository = new CategoryRepositoryImpl(supabase)
 
-        const radarData = categoryPerformance.map(
-          (cat: UserCategoryPerformance) => ({
-            subject: cat.name,
-            score: cat.score,
-            fullMark: 100,
-          }),
+        // Obtener datos en paralelo
+        const [performanceData, rootCategories] = await Promise.all([
+          getUserCategoryPerformanceUseCase.execute(user.id),
+          categoryRepository.getRootCategories()
+        ])
+
+        if (!rootCategories || rootCategories.length === 0) {
+          setError("No se encontraron categorías")
+          return
+        }
+
+        // Crear un mapa de rendimiento por categoryId
+        const performanceMap = new Map(
+          performanceData.map((perf) => [perf.categoryId, perf])
         )
+
+        // Combinar datos y calcular scores
+        const radarData = rootCategories.map((category) => {
+          const perf = performanceMap.get(category.id)
+          
+          // Calcular el score usando datos sin ponderar
+          let calculatedScore = 0
+          if (perf && perf.questionsCompleted > 0 && perf.questionsSuccess >= 0) {
+            // Usar preguntas sin ponderar: questionsSuccess / questionsCompleted
+            calculatedScore = (perf.questionsSuccess / perf.questionsCompleted) * 100
+            // Redondear a 1 decimal
+            calculatedScore = Math.round(calculatedScore * 10) / 10
+          }
+
+          return {
+            subject: category.name,
+            score: calculatedScore,
+            fullMark: 100,
+          }
+        })
 
         setPerformanceData(radarData)
       } catch (err) {

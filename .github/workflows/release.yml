@@ -1,0 +1,58 @@
+name: Release & Deploy
+
+on:
+  push:
+    branches:
+      - mainxx # Adjust if your main branch is different
+
+jobs:
+  release_and_deploy:
+    name: Release and Deploy
+    runs-on: ubuntu-latest
+    # Permissions necessary for semantic-release to commit,
+    # create tags, create releases, and comment on PRs/Issues.
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Important! semantic-release needs the full history.
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Use your Node.js version
+
+      - name: Install dependencies
+        # Use 'ci' for faster, deterministic installs in CI
+        run: npm ci
+        # Or: yarn install --frozen-lockfile
+
+      # --- Add your build and test steps here ---
+      # --- Run BEFORE semantic-release        ---
+      # - name: Build project
+      #   run: npm run build
+      # - name: Run tests
+      #   run: npm test
+
+      - name: Semantic Release
+        env:
+          # The GITHUB_TOKEN is automatically injected by Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Uncomment if you ever publish to npm (npmPublish: true)
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Execute semantic-release
+        run: npx semantic-release
+
+      # --- Add your Deploy steps here          ---
+      # --- Run AFTER successful release       ---
+      # --- The new version is in package.json and a Git tag exists ---
+      # - name: Deploy to Vercel
+      #   run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
+      # - name: Deploy to Netlify
+      #   run: netlify deploy --prod --dir=out # Or your build directory

@@ -21,18 +21,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   if (!test) {
     return {
-      title: "Test no encontrado | PreparaUlm",
-      description: "El test que buscas no existe",
+      title: "Test no encontrado",
+      description: "El test que buscas no existe en nuestra plataforma",
+      robots: {
+        index: false,
+        follow: false,
+      },
     }
   }
 
   return {
-    title: `${test.title} - Test Específico ULM | PreparaUlm`,
+    title: `${test.title} - Test Específico ULM`,
     description: test.description,
-    keywords: `${test.title.toLowerCase()}, test ultraligero ${test.categoryName.toLowerCase()}, examen ULM ${test.categoryName.toLowerCase()}, ${test.topics.slice(0, 3).join(", ").toLowerCase()}`,
+    keywords: [
+      test.title.toLowerCase(),
+      `test ultraligero ${test.categoryName.toLowerCase()}`,
+      `examen ULM ${test.categoryName.toLowerCase()}`,
+      ...test.topics.slice(0, 3).map(t => t.toLowerCase()),
+      "preparación específica",
+      "simulación temática"
+    ],
+    alternates: {
+      canonical: `/test-especificos/${slug}`,
+    },
     openGraph: {
       title: `${test.title} - Test Específico ULM`,
       description: test.description,
+      url: `https://www.preparaulm.com/test-especificos/${slug}`,
       type: "website",
       images: [
         {

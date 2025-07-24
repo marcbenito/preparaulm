@@ -1,7 +1,7 @@
-# AeroTest - Esquema de Base de Datos
+# PreparaULM - Esquema de Base de Datos
 
 ## Introducción
-La base de datos de AeroTest está diseñada para soportar la gestión de datos de pruebas aéreas, utilizando Supabase como plataforma de backend. El esquema completo de la base de datos se encuentra en `db/schema.sql`, y este documento proporciona un resumen de las principales tablas y sus relaciones.
+La base de datos de PreparaULM está diseñada para soportar la gestión de datos de pruebas aéreas, utilizando Supabase como plataforma de backend. El esquema completo de la base de datos se encuentra en `db/schema.sql`, y este documento proporciona un resumen de las principales tablas y sus relaciones.
 
 ## Estructura de la Base de Datos
 
@@ -51,4 +51,4 @@ erDiagram
 - Row Level Security (RLS) está habilitado en varias tablas como `test_executions`, `test_execution_answers`, `user_category_performance`, `user_roles`, `subscriptions`, y `user_profiles` para restringir el acceso a datos según el usuario autenticado.
 - Para más detalles sobre las columnas específicas, tipos de datos y políticas de seguridad, consulte el archivo `db/schema.sql`.
 
-Este esquema asegura que los datos de AeroTest estén bien organizados y sean fácilmente accesibles para las operaciones de la aplicación, manteniendo la seguridad y la integridad de los datos. 
+Este esquema asegura que los datos de PreparaULM estén bien organizados y sean fácilmente accesibles para las operaciones de la aplicación, manteniendo la seguridad y la integridad de los datos. 

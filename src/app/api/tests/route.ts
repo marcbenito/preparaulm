@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/utils/supabase/server'; 
-import { GenerateTestUseCase } from '@/domain/use-cases/tests/GenerateTestUseCase'; 
+import { createClient } from '@/utils/supabase/server';
+import { GenerateTestUseCase } from '@/domain/use-cases/tests/GenerateTestUseCase';
 
 export async function POST(request: Request) {
   try {
@@ -23,13 +23,13 @@ export async function POST(request: Request) {
 
     // Safely parse the request body
     try {
-        const body = await request.json();
-        if (body && typeof body.categoryId === 'string') {
-            categoryId = body.categoryId;
-        }
+      const body = await request.json();
+      if (body && typeof body.categoryId === 'string') {
+        categoryId = body.categoryId;
+      }
     } catch (parseError) {
-        // If body is not valid JSON or categoryId is not a string, proceed without it (generic test)
-        console.warn('API: Could not parse categoryId from request body or invalid format. Proceeding with generic test.', parseError);
+      // If body is not valid JSON or categoryId is not a string, proceed without it (generic test)
+      console.warn('API: Could not parse categoryId from request body or invalid format. Proceeding with generic test.', parseError);
     }
 
     const generateTestUseCase = GenerateTestUseCase.create(supabase);
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     console.error('API: Error creating test:', error);
     let errorMessage = 'Failed to create test';
     if (error && typeof error.message === 'string') {
-        errorMessage = error.message; 
+      errorMessage = error.message;
     }
     return NextResponse.json(
       { success: false, error: errorMessage },

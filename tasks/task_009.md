@@ -6,7 +6,7 @@ Implementar una pantalla de finalización que se muestre cuando el usuario presi
 
 ## Contexto
 
-- Proyecto: AeroTest - Plataforma de tests para licencia piloto ULM
+- Proyecto: PreparaULM - Plataforma de tests para licencia piloto ULM
 - Página afectada: `/test/[uid]` - Página de ejecución de tests
 - Framework: NextJS 15, React, Tailwind CSS, Shadcn
 

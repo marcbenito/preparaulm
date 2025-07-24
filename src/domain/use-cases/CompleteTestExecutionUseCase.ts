@@ -22,7 +22,7 @@ export class CompleteTestExecutionUseCase {
   }
 
   private ponderateDifficulty(difficulty: number) {
-    switch(difficulty) {
+    switch (difficulty) {
       case 1:
         return 1;
       case 2:
@@ -41,7 +41,7 @@ export class CompleteTestExecutionUseCase {
     FUERTE successRate 70 % ≤ successRate < 80 % Ya domina, sólo repaso esporádico.
     SUPERIOR successRate ≥ 80 % Ya domina, sólo repaso esporádico.
     */
-        
+
     if (totalQuestions < 5) {
       return 0; // Nueva
     } else if (successRate < 55) {
@@ -54,19 +54,46 @@ export class CompleteTestExecutionUseCase {
       return 4; // Superior
     }
 
-    
+
 
   }
-  
+
   private async calculateCategoryPerformance(categoryId: string, userId: string) {
     const subCategories = await this.userCategoryPerformanceRepository.getUserSubcategoriesPerformance(userId, categoryId);
-    const categoryPerformance = await  this.userCategoryPerformanceRepository.getUserCategoryPerformance(userId, categoryId);
-    if(!categoryPerformance) {
-      return;
+    let categoryPerformance = await this.userCategoryPerformanceRepository.getUserCategoryPerformance(userId, categoryId);
+
+    if (!categoryPerformance) {
+      console.log(`[CompleteTestExecutionUseCase] Creating new parent category performance for category ${categoryId}`);
+      // Crear nuevo registro de rendimiento para la categoría padre
+      await this.userCategoryPerformanceRepository.createUserCategoryPerformance({
+        userId: userId,
+        categoryId: categoryId,
+        successRate: 0,
+        lastTestDate: new Date(),
+        testsCompleted: 0,
+        questionsCompleted: 0,
+        questionsSuccess: 0,
+        questionsCompletedPond: 0,
+        questionsSuccessPond: 0,
+        minimumProgress: 0,
+        confidence: 0,
+        weight: 0
+      });
+
+      // Volver a obtener el registro recién creado
+      categoryPerformance = await this.userCategoryPerformanceRepository.getUserCategoryPerformance(userId, categoryId);
+
+      if (!categoryPerformance) {
+        console.error(`[CompleteTestExecutionUseCase] Failed to create/retrieve category performance for ${categoryId}`);
+        return;
+      }
+
+      console.log(`[CompleteTestExecutionUseCase] New parent category performance created: ${JSON.stringify(categoryPerformance)}`);
     }
+
     const parentCategoryId: string | null | undefined = categoryId;
 
-    const categoryPerformanceResults:{
+    const categoryPerformanceResults: {
       questionsCompleted: number,
       questionsSuccess: number,
       questionsCompletedPond: number,
@@ -79,10 +106,10 @@ export class CompleteTestExecutionUseCase {
       acc.questionsSuccess += curr.questionsSuccess;
       acc.questionsCompletedPond += curr.questionsCompletedPond;
       acc.questionsSuccessPond += curr.questionsSuccessPond;
-      acc.minimumProgress += curr.minimumProgress* curr.weight/100;
-      acc.confidence += curr.confidence * curr.weight/100;
+      acc.minimumProgress += curr.minimumProgress * curr.weight / 100;
+      acc.confidence += curr.confidence * curr.weight / 100;
       return acc;
-    }, {questionsCompleted: 0, questionsSuccess: 0, questionsCompletedPond: 0, questionsSuccessPond: 0, minimumProgress: 0, confidence: 0}) || {questionsCompleted: 0, questionsSuccess: 0, questionsCompletedPond: 0, questionsSuccessPond: 0, minimumProgress: 0, confidence: 0};
+    }, { questionsCompleted: 0, questionsSuccess: 0, questionsCompletedPond: 0, questionsSuccessPond: 0, minimumProgress: 0, confidence: 0 }) || { questionsCompleted: 0, questionsSuccess: 0, questionsCompletedPond: 0, questionsSuccessPond: 0, minimumProgress: 0, confidence: 0 };
 
     categoryPerformance.questionsCompleted = Math.round(categoryPerformanceResults.questionsCompleted);
     categoryPerformance.questionsSuccess = Math.round(categoryPerformanceResults.questionsSuccess);
@@ -90,13 +117,13 @@ export class CompleteTestExecutionUseCase {
     categoryPerformance.questionsSuccessPond = Math.round(categoryPerformanceResults.questionsSuccessPond);
     categoryPerformance.minimumProgress = Math.round(categoryPerformanceResults.minimumProgress);
     categoryPerformance.confidence = Math.round(categoryPerformanceResults.confidence);
-    
-    const categorySuccessRate = categoryPerformance.questionsCompletedPond > 0 
-      ? (categoryPerformance.questionsSuccessPond / categoryPerformance.questionsCompletedPond) * 100 
+
+    const categorySuccessRate = categoryPerformance.questionsCompletedPond > 0
+      ? (categoryPerformance.questionsSuccessPond / categoryPerformance.questionsCompletedPond) * 100
       : 0;
     categoryPerformance.successRate = Math.round(categorySuccessRate * 100) / 100;
     categoryPerformance.confidence = this.calculateConfidence(categoryPerformance.questionsCompletedPond, categorySuccessRate);
-    
+
     console.log('### Updating category wirh', categoryPerformance)
     await this.userCategoryPerformanceRepository.updateUserCategoryPerformance(categoryPerformance);
 
@@ -110,36 +137,36 @@ export class CompleteTestExecutionUseCase {
   }
   private calculateMinimumProgress(totalQuestions: number) {
     const MINIMUM_QUESTIONS = 3
-    if(totalQuestions >= MINIMUM_QUESTIONS) {
+    if (totalQuestions >= MINIMUM_QUESTIONS) {
       return 100;
     }
     return totalQuestions * 100 / MINIMUM_QUESTIONS;
   }
- 
-  private async calculateNewSubcategoryPerformance(answer: TestExecutionAnswer, userId: string) : Promise<UserCategoryPerformance> {
+
+  private async calculateNewSubcategoryPerformance(answer: TestExecutionAnswer, userId: string): Promise<UserCategoryPerformance> {
     console.log(`[CompleteTestExecutionUseCase] Calculating new subcategory performance for category ${answer}`);
     const subcategoryPerformance = await this.userCategoryPerformanceRepository.getUserCategoryPerformance(userId, answer.categoryId);
     //const totalQuestions = await this.categoryRepository.getTotalQuestionsForCategory(answer.categoryId);
-    
-    if(!subcategoryPerformance){
+
+    if (!subcategoryPerformance) {
       console.log(`[CompleteTestExecutionUseCase] Creating new subcategory performance for category ${answer.categoryId}`);
       const newSubcategoryPerformance: Partial<UserCategoryPerformance> = {
-          userId: userId,
+        userId: userId,
         categoryId: answer.categoryId,
         successRate: 0,
         lastTestDate: new Date(),
         testsCompleted: 0,
         questionsCompleted: 1,
         questionsSuccess: answer.isCorrect ? 1 : 0,
-        questionsCompletedPond: this.ponderateDifficulty(answer.difficulty) ,
-        questionsSuccessPond: answer.isCorrect ? this.ponderateDifficulty(answer.difficulty) : 0  ,
+        questionsCompletedPond: this.ponderateDifficulty(answer.difficulty),
+        questionsSuccessPond: answer.isCorrect ? this.ponderateDifficulty(answer.difficulty) : 0,
         minimumProgress: 0,
         confidence: 0
       }
       console.log(`[CompleteTestExecutionUseCase] New subcategory performance created: ${JSON.stringify(newSubcategoryPerformance)}`);
-       await  this.userCategoryPerformanceRepository.createUserCategoryPerformance(newSubcategoryPerformance);
+      await this.userCategoryPerformanceRepository.createUserCategoryPerformance(newSubcategoryPerformance);
       return newSubcategoryPerformance as UserCategoryPerformance;
-     
+
     }
 
     subcategoryPerformance.questionsSuccess += answer.isCorrect ? 1 : 0;
@@ -147,13 +174,13 @@ export class CompleteTestExecutionUseCase {
     subcategoryPerformance.questionsCompleted++;
     subcategoryPerformance.questionsCompletedPond += this.ponderateDifficulty(answer.difficulty);
     subcategoryPerformance.minimumProgress = this.calculateMinimumProgress(subcategoryPerformance.questionsCompleted);
-    
-    const successRate = subcategoryPerformance.questionsCompletedPond > 0 
-      ? (subcategoryPerformance.questionsSuccessPond / subcategoryPerformance.questionsCompletedPond) * 100 
+
+    const successRate = subcategoryPerformance.questionsCompletedPond > 0
+      ? (subcategoryPerformance.questionsSuccessPond / subcategoryPerformance.questionsCompletedPond) * 100
       : 0;
     subcategoryPerformance.confidence = this.calculateConfidence(subcategoryPerformance.questionsCompletedPond, successRate);
     await this.userCategoryPerformanceRepository.updateUserCategoryPerformance(subcategoryPerformance);
-    
+
     return subcategoryPerformance;
   }
   // private async getCategoryHierarchy(categoryId: string, allCategoriesMap: Map<string, Category>): Promise<string[]> {
@@ -184,9 +211,9 @@ export class CompleteTestExecutionUseCase {
     const answers: TestExecutionAnswer[] = testExecutionResult.answers || [];
     console.log('[CompleteTestExecutionUseCase] Extracted answers:', answers);
     if (answers.length === 0) {
-        console.log('[CompleteTestExecutionUseCase] No answers found. Completing test with score 0.');
-        const completedTest = await testRepository.completeTestExecution(testExecutionId, 0);
-        return completedTest;
+      console.log('[CompleteTestExecutionUseCase] No answers found. Completing test with score 0.');
+      const completedTest = await testRepository.completeTestExecution(testExecutionId, 0);
+      return completedTest;
     }
 
 
@@ -195,26 +222,26 @@ export class CompleteTestExecutionUseCase {
     //Por cada subcategoría haremos un update  de subcategory_performance
     const categoriesToUpdate = []
     for (const answer of answers) {
-      const subcategory = await this.calculateNewSubcategoryPerformance(answer, userId); 
+      const subcategory = await this.calculateNewSubcategoryPerformance(answer, userId);
       console.log(' calculated: Subcategory', subcategory);
       categoriesToUpdate.push(subcategory.categoryId);
-    
+
     }
     console.log(' categoriesToUpdate', categoriesToUpdate);
-    
-    for(const categoryId of categoriesToUpdate) {
+
+    for (const categoryId of categoriesToUpdate) {
       console.log(`[CompleteTestExecutionUseCase] Calculating category performance for category ${categoryId}`);
       const category = await this.categoryRepository.getCategoryById(categoryId);
-      console.log(`[CompleteTestExecutionUseCase] Category` ,category);
-      if(!category?.parentCategoryId) {
+      console.log(`[CompleteTestExecutionUseCase] Category`, category);
+      if (!category?.parentCategoryId) {
         throw new Error(`Category ${categoryId} has no parent category.`);
         break;
       }
       await this.calculateCategoryPerformance(category?.parentCategoryId, userId);
-    
+
     }
 
-  
+
     const uniqueQuestionIds = answers
       .map(a => a.questionId)
       .filter((value, index, self) => self.indexOf(value) === index);

@@ -1,0 +1,13 @@
+---
+description: 
+globs: src/app/
+alwaysApply: false
+---
+
+# App directory
+
+No vamos a importar componentes de lucide-react en este directorio.
+Lo haremo siempre creando un componente en @/components/ui/icons. que está en la carpeta src/components/ui/icons.
+Ejemplo de import
+
+import { Check, X, Loader2 } from "@/components/ui/icons"

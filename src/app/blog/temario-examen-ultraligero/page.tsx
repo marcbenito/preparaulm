@@ -1,5 +1,30 @@
+import { Metadata } from "next"
 import BlogPostLayout from "@/components/blog/BlogPostLayout"
 import { Calendar, Clock, User, BookOpen } from "@/components/ui/icons"
+
+export const metadata: Metadata = {
+  title: "Temario Examen Ultraligero - Guía Completa de Estudio",
+  description:
+    "Descubre el temario completo del examen de piloto ultraligero. Todas las materias, temas y contenidos que debes dominar para aprobar tu examen ULM.",
+  keywords: [
+    "temario examen ultraligero",
+    "materias examen ULM",
+    "contenido examen piloto",
+    "temas examen AESA",
+    "programa estudios ULM",
+    "asignaturas piloto ultraligero",
+    "syllabus examen aviación"
+  ],
+  alternates: {
+    canonical: "/blog/temario-examen-ultraligero",
+  },
+  openGraph: {
+    title: "Temario Examen Ultraligero - Guía Completa de Estudio",
+    description: "Descubre el temario completo del examen de piloto ultraligero con todas las materias y temas.",
+    url: "https://www.preparaulm.com/blog/temario-examen-ultraligero",
+    type: "article",
+  },
+}
 
 export default function TemarioExamenUltraligeroPage() {
   return (

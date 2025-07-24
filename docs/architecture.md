@@ -1,8 +1,8 @@
-# AeroTest - Arquitectura del Proyecto
+# PreparaULM - Arquitectura del Proyecto
 
 ## Introducción
 
-La arquitectura de AeroTest está diseñada para ser modular, escalable y mantenible, siguiendo las mejores prácticas de desarrollo web moderno. Utilizamos NextJS como framework principal, lo que nos permite tener una estructura de aplicación basada en componentes y páginas, con soporte para renderizado del lado del servidor y del cliente.
+La arquitectura de PreparaULM está diseñada para ser modular, escalable y mantenible, siguiendo las mejores prácticas de desarrollo web moderno. Utilizamos NextJS como framework principal, lo que nos permite tener una estructura de aplicación basada en componentes y páginas, con soporte para renderizado del lado del servidor y del cliente.
 
 ## Capas de la Arquitectura
 
@@ -84,4 +84,4 @@ Estos métodos encapsulan las queries que anteriormente estaban directamente en 
 - componentes en PascalCase.
 - **Iconos**: Siempre encapsulados en componentes wrapper en `/src/components/ui/icons/`.
 
-Esta arquitectura asegura que AeroTest sea un proyecto bien estructurado, fácil de mantener y preparado para escalar según las necesidades del negocio.
+Esta arquitectura asegura que PreparaULM sea un proyecto bien estructurado, fácil de mantener y preparado para escalar según las necesidades del negocio.

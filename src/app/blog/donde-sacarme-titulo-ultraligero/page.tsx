@@ -1,5 +1,30 @@
+import { Metadata } from "next"
 import BlogPostLayout from "@/components/blog/BlogPostLayout"
 import { Calendar, Clock, User, BookOpen } from "@/components/ui/icons"
+
+export const metadata: Metadata = {
+  title: "Dónde Sacarme el Título de Ultraligero - Escuelas y Centros",
+  description:
+    "Encuentra las mejores escuelas y centros de formación para obtener tu título de piloto ultraligero en España. Comparativa de precios, ubicaciones y modalidades.",
+  keywords: [
+    "escuelas piloto ultraligero",
+    "donde estudiar ULM",
+    "centros formación aviación",
+    "escuelas vuelo España",
+    "academias piloto ULM",
+    "formación presencial ultraligero",
+    "título piloto donde sacarlo"
+  ],
+  alternates: {
+    canonical: "/blog/donde-sacarme-titulo-ultraligero",
+  },
+  openGraph: {
+    title: "Dónde Sacarme el Título de Ultraligero - Escuelas y Centros",
+    description: "Encuentra las mejores escuelas y centros de formación para obtener tu título de piloto ultraligero.",
+    url: "https://www.preparaulm.com/blog/donde-sacarme-titulo-ultraligero",
+    type: "article",
+  },
+}
 
 export default function DondeSacarmetiTuloUltraligeroPage() {
   return (

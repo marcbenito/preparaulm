@@ -1,7 +1,7 @@
-# AeroTest - Instalación y Configuración
+# PreparaULM - Instalación y Configuración
 
 ## Introducción
-Este documento proporciona instrucciones detalladas sobre cómo configurar el entorno de desarrollo para AeroTest, instalar dependencias y añadir nuevos componentes utilizando Shadcn.
+Este documento proporciona instrucciones detalladas sobre cómo configurar el entorno de desarrollo para PreparaULM, instalar dependencias y añadir nuevos componentes utilizando Shadcn.
 
 ## Requisitos Previos
 - **Node.js**: Versión 16 o superior.
@@ -13,7 +13,7 @@ Este documento proporciona instrucciones detalladas sobre cómo configurar el en
 1. **Clonar el Repositorio**:
    ```bash
    git clone <URL-del-repositorio>
-   cd aerotest
+   cd preparaulm
    ```
 
 2. **Instalar Dependencias**:
@@ -55,4 +55,4 @@ Para añadir nuevos componentes a la aplicación, utilizamos la herramienta de l
 - Si encuentras errores relacionados con Supabase, verifica que las variables de entorno estén correctamente configuradas.
 - Para problemas con componentes de Shadcn, asegúrate de estar utilizando la última versión de la CLI.
 
-Con estos pasos, deberías tener el entorno de AeroTest configurado y listo para el desarrollo. 
+Con estos pasos, deberías tener el entorno de PreparaULM configurado y listo para el desarrollo. 

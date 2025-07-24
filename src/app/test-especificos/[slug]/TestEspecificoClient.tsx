@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import {
   BookOpen,
   Clock,
@@ -9,11 +10,13 @@ import {
   CheckCircle2,
   Target,
   ArrowLeft,
+  Trophy,
 } from "@/components/ui/icons"
 import { Card, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
 import { CategoryIcon } from "@/components/ui/CategoryIcon"
+import { datadogRum } from "@datadog/browser-rum"
 
 interface Test {
   id: string
@@ -37,6 +40,17 @@ interface TestEspecificoClientProps {
 
 export default function TestEspecificoClient({ test }: TestEspecificoClientProps) {
   const router = useRouter()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 100)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const getLevelBadgeClasses = (levelColor: string) => {
     const colorMap: { [key: string]: string } = {
@@ -66,6 +80,21 @@ export default function TestEspecificoClient({ test }: TestEspecificoClientProps
   }
 
   const handleStartTest = () => {
+    // Trackear evento en Datadog
+    if (datadogRum.getInternalContext()) {
+      console.log('🎯 Test específico iniciado:', test.title)
+      datadogRum.addAction('test_started', {
+        type: 'byId',
+        test_id: test.id,
+        test_name: test.title,
+        test_category: test.categoryName,
+        test_level: test.level,
+        question_count: test.questionCount,
+        duration_minutes: test.duration,
+        source: 'test_especifico_page'
+      })
+    }
+
     router.push(`/preparacion-test/${test.id}`)
   }
 
@@ -114,27 +143,22 @@ export default function TestEspecificoClient({ test }: TestEspecificoClientProps
               <span className="text-white">{test.title}</span>
             </div>
 
-            {/* Header con imagen */}
-            <div
-              className="h-64 bg-cover bg-center relative rounded-xl overflow-hidden mb-8"
-              style={{
-                backgroundImage: `url('${test.imageUrl}')`,
-              }}
-            >
+            {/* Header sticky con imagen */}
+            <div className={`sticky top-16 z-10 transition-all duration-500 ease-in-out ${
+              isScrolled ? 'h-24' : 'h-64'
+            } bg-cover bg-center relative rounded-xl overflow-hidden mb-8`}
+            style={{
+              backgroundImage: `url('${test.imageUrl}')`,
+            }}>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <Badge
-                  variant="secondary"
-                  className={`mb-4 ${getLevelBadgeClasses(test.levelColor)}`}
-                >
-                  Nivel {test.level}
-                </Badge>
-                <h1 className="text-4xl font-bold text-white mb-2">
+              <div className={`absolute bottom-0 left-0 right-0 transition-all duration-500 ${
+                isScrolled ? 'p-4' : 'p-8'
+              }`}>
+                <h1 className={`font-bold text-white transition-all duration-500 ${
+                  isScrolled ? 'text-xl mb-0' : 'text-4xl mb-2'
+                }`}>
                   {test.title}
                 </h1>
-                <p className="text-xl text-blue-200">
-                  {test.description}
-                </p>
               </div>
             </div>
 
@@ -142,7 +166,25 @@ export default function TestEspecificoClient({ test }: TestEspecificoClientProps
             <Card className="bg-white/5 text-white border-0 mb-8">
               <CardHeader>
                 <CardTitle className="text-lg mb-4">Información del test</CardTitle>
+                
+                {/* Descripción */}
+                <p className="text-blue-200 leading-relaxed mb-6">
+                  {test.description}
+                </p>
+
                 <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Trophy className="h-5 w-5 text-yellow-400 flex-shrink-0" />
+                    <div className="flex items-center gap-2">
+                      <span className="text-blue-200 text-sm md:text-base">Dificultad:</span>
+                      <Badge
+                        variant="secondary"
+                        className={`${getLevelBadgeClasses(test.levelColor)}`}
+                      >
+                        Nivel {test.level}
+                      </Badge>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-3">
                     <BookOpen className="h-5 w-5 text-yellow-400 flex-shrink-0" />
                     <div className="flex items-baseline gap-2">

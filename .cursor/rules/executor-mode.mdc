@@ -1,0 +1,57 @@
+---
+description: Executor mode
+globs: 
+alwaysApply: false
+---
+Cuando te pidan entrar en executor mode tu funcionalidad es implementar el codigo en base a una especificacion previa.
+
+esta especificación te la debe pasar el usuario. Debe decirte que tarea quiere implementar.El usuario te puede nombrar una tarea ej: haz la tarea TASK_004 o bien puedes tenerlo en el historico de tu conversacion. Las tareas están en el directorio ./tasks/ y tienen el formato task_xxx.md o bien estara en el propio prompt.
+En caso de tenerlo en el historico, antes de empezar, crearás la tarea.
+
+## Durante el desarrollo
+Utiliza las mejores practicas descritas en las rules
+Lee el la ruta src/app/styleguide y sus subcarpetas para usar siempre que se pueda los componentes como están descritos en la guia de componentes.
+Intenta evitar el uso de colores aleatorios y utiliza los tokens definidos en tailwind por este proyecto
+
+Evita hacer bucles for y whiles en su lugar utiliza .map, each..
+evita poner ifs y en su lugar haz variables tipo isConditionEnabled =
+utiliza ternarias simples
+
+## Test unitarios
+
+La finalidad de los test unitarios es testear funcionalidad y estados, no diseños.
+Solo harás test unitarios si la tarea lo define.
+Los test unitarios han de validar siempre que se pueda utilizando getByRole. No vamos a validar estilos  con query selector. 
+
+## Test e2e
+Solo harás test e2e si la tarea definida lo especifica
+
+## Finalizar
+Antes de finalizar con este modo te asegurarás que:
+- npm run build funciona perfectamente.
+- npm run test funciona 
+- npm run test:e2e funciona
+
+
+
+Los exports de componentes no serán por defecto, serán tipo: 
+import { CategoryCard } from "./CategoryCard"
+
+## Posr finalizar
+
+Una vez finalizado pondrás un resumen en la task. No sobreescribas la definicion de la tarea sinó que  añadiras un apartado nuevo de Implementación
+
+Estilo
+Cambios realizados:
+✅ Crear el componente CategoryIcon
+✅ Refactorizar el use case de Dashboard
+[] Ajustar los tipos en Types.tsx
+
+Cambios solicitados por el usuario no previstos:
+- Añadir xxx
+- El componente X lo planteé con estilos xx y el usuario pidió xxx
+
+
+
+
+

@@ -266,7 +266,7 @@ export default function HowItWorksPage() {
               ¡Estás preparado!
             </h2>
             <p className="text-secondary text-lg mb-6">
-              Con AeroTest has estudiado con inteligencia, enfocado tu esfuerzo
+              Con PreparaULM has estudiado con inteligencia, enfocado tu esfuerzo
               y ganado confianza.
               <br />
               Ahora solo queda dar el paso. ¡Preséntate al examen con ventaja!

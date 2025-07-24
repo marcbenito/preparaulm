@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { createClient } from "@/utils/supabase/client"
 import { CreateTestUseCase } from "@/domain/use-cases/CreateTestUseCase"
@@ -29,15 +29,22 @@ export default function PreparacionTestClient({ slug }: PreparacionTestClientPro
     testId?: string
   }>({ type: "generic", name: "" })
 
+  // Flag para evitar múltiples ejecuciones
+  const isExecutingTestCreation = useRef(false)
+  const hasProcessedTestInfo = useRef(false)
+
   useEffect(() => {
-    // Primero cargar categorías
+    // Cargar categorías una sola vez al montar
     loadCategories()
   }, [])
 
   useEffect(() => {
-    // Determinar el tipo de test basado en el slug
+    // Solo procesar la información del test una vez que tengamos las categorías necesarias
+    if (hasProcessedTestInfo.current) return
+
     if (slug === "generic") {
       setTestInfo({ type: "generic", name: "" })
+      hasProcessedTestInfo.current = true
     } else {
       // Buscar si es un test específico
       const specificTest = testsData.find(t => t.id === slug)
@@ -47,6 +54,7 @@ export default function PreparacionTestClient({ slug }: PreparacionTestClientPro
           name: specificTest.title,
           testId: specificTest.id
         })
+        hasProcessedTestInfo.current = true
       } else if (categories.length > 0) {
         // Si no es específico y ya tenemos categorías, buscar categoría
         const category = categories.find(cat => cat.id === slug)
@@ -56,13 +64,21 @@ export default function PreparacionTestClient({ slug }: PreparacionTestClientPro
             name: category.name,
             categoryId: category.id
           })
+          hasProcessedTestInfo.current = true
         }
       }
     }
   }, [slug, categories])
 
   useEffect(() => {
-    // Solo ejecutar cuando tengamos la información del test
+    // Solo ejecutar cuando:
+    // 1. Tengamos la información del test procesada
+    // 2. No estemos ya ejecutando la creación
+    // 3. Tengamos usuario o podamos abrir el login
+    if (!hasProcessedTestInfo.current || isExecutingTestCreation.current) {
+      return
+    }
+
     if (testInfo.type !== "generic" && !testInfo.name) {
       return // Esperar a que se determine el tipo de test
     }
@@ -90,6 +106,13 @@ export default function PreparacionTestClient({ slug }: PreparacionTestClientPro
   }
 
   const executeTestCreation = async () => {
+    // Evitar múltiples ejecuciones
+    if (isExecutingTestCreation.current || isPreparingTest) {
+      console.log("Test creation already in progress, skipping...")
+      return
+    }
+
+    isExecutingTestCreation.current = true
     setIsPreparingTest(true)
     setPreparingTestError(null)
 
@@ -128,10 +151,14 @@ export default function PreparacionTestClient({ slug }: PreparacionTestClientPro
         error.message ||
           "Ocurrió un error al preparar el test. Por favor, inténtalo de nuevo."
       )
+      isExecutingTestCreation.current = false // Resetear flag en caso de error
+    } finally {
+      setIsPreparingTest(false)
     }
   }
 
   const handleRetryTest = () => {
+    isExecutingTestCreation.current = false // Resetear flag para permitir reintentos
     setPreparingTestError(null)
     executeTestCreation()
   }

@@ -2,11 +2,11 @@
 
 ## **Descripción**
 
-Implementación completa de un sistema de gestión de consentimiento de cookies que cumple con GDPR para la plataforma AeroTest. El sistema permite a los usuarios aceptar/rechazar cookies analíticas mientras mantiene las cookies técnicas necesarias para el funcionamiento.
+Implementación completa de un sistema de gestión de consentimiento de cookies que cumple con GDPR para la plataforma PreparaULM. El sistema permite a los usuarios aceptar/rechazar cookies analíticas mientras mantiene las cookies técnicas necesarias para el funcionamiento.
 
 ## **Caso de Uso**
 
-Un usuario visita AeroTest por primera vez y ve un banner inferior no intrusivo que le permite:
+Un usuario visita PreparaULM por primera vez y ve un banner inferior no intrusivo que le permite:
 
 - Aceptar todas las cookies (analíticas + técnicas)
 - Rechazar cookies analíticas (solo técnicas)
@@ -20,7 +20,7 @@ Si rechaza cookies analíticas, Google Analytics y Datadog RUM no se cargan, mej
 ### **1. Contexto y Estado**
 
 - **CookieConsentContext.tsx**: Contexto global para gestión de estado
-- **Persistencia**: localStorage con key `aerotest-cookie-consent`
+- **Persistencia**: localStorage con key `preparaulm-cookie-consent`
 - **Expiración**: 1 año, después solicita consentimiento nuevamente
 - **Integración**: Google Consent Mode v2 para gtag
 

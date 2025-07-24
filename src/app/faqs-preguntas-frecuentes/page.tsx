@@ -3,9 +3,9 @@ import { FaqAccordion } from "./_components/FaqAccordion"
 import faqsData from "./faqs.json"
 
 export const metadata: Metadata = {
-  title: "Preguntas Frecuentes | PreparaUlm",
+  title: "Preguntas Frecuentes",
   description:
-    "Encuentra respuestas a las preguntas más frecuentes sobre PreparaUlm, la plataforma de tests para licencia de piloto ULM. Información sobre funcionamiento, pagos, cuenta y soporte.",
+    "Encuentra respuestas a las preguntas más frecuentes sobre PreparaUlm, la plataforma de tests para licencia de piloto ULM. Información sobre funcionamiento, pagos, cuenta y soporte técnico.",
   keywords: [
     "FAQ",
     "preguntas frecuentes",
@@ -15,11 +15,17 @@ export const metadata: Metadata = {
     "soporte",
     "pagos",
     "Stripe",
+    "ayuda usuarios",
+    "dudas comunes"
   ],
+  alternates: {
+    canonical: "/faqs-preguntas-frecuentes",
+  },
   openGraph: {
     title: "Preguntas Frecuentes | PreparaUlm",
     description:
       "Encuentra respuestas a las preguntas más frecuentes sobre PreparaUlm, la plataforma de tests para licencia de piloto ULM.",
+    url: "https://www.preparaulm.com/faqs-preguntas-frecuentes",
     type: "website",
   },
 }

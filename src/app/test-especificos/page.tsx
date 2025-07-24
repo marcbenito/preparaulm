@@ -12,12 +12,24 @@ import { Button } from "@/components/ui/Button"
 import testsData from "./tests-data.json"
 
 export const metadata: Metadata = {
-  title: "Tests Específicos de Ultraligero | PreparaUlm",
-  description: "Tests especializados para profundizar en temas concretos del examen ULM. Meteorología, navegación, comunicaciones y más.",
-  keywords: "test ultraligero específico, examen ULM especializado, meteorología aviación, navegación aérea, comunicaciones emergencia",
+  title: "Tests Específicos de Ultraligero",
+  description: "Tests especializados para profundizar en temas concretos del examen ULM. Meteorología, navegación, comunicaciones y más áreas específicas de estudio.",
+  keywords: [
+    "test ultraligero específico",
+    "examen ULM especializado", 
+    "meteorología aviación",
+    "navegación aérea",
+    "comunicaciones emergencia",
+    "tests temáticos ULM",
+    "preparación específica piloto"
+  ],
+  alternates: {
+    canonical: "/test-especificos",
+  },
   openGraph: {
     title: "Tests Específicos de Ultraligero | PreparaUlm",
     description: "Tests especializados para profundizar en temas concretos del examen ULM",
+    url: "https://www.preparaulm.com/test-especificos",
     type: "website",
   },
 }

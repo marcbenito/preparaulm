@@ -14,7 +14,7 @@ import * as React from "react"
 
 export default function PasswordResetEmail({
   userName = "Usuario",
-  resetLink = "https://www.aerotestulm.es/reset-password",
+  resetLink = "https://www.preparaulm.com/reset-password",
 }) {
   const currentYear = new Date().getFullYear()
 
@@ -52,7 +52,7 @@ export default function PasswordResetEmail({
                 margin: "0",
               }}
             >
-              AeroTest
+              PreparaULM
             </Heading>
           </Section>
 
@@ -94,7 +94,7 @@ export default function PasswordResetEmail({
               }}
             >
               Hemos recibido una solicitud para restablecer tu contraseña en
-              AeroTest ULM. Haz clic en el botón de abajo para crear una nueva
+              PreparaULM ULM. Haz clic en el botón de abajo para crear una nueva
               contraseña.
             </Text>
             <Section style={{ textAlign: "center", marginBottom: "32px" }}>
@@ -159,7 +159,7 @@ export default function PasswordResetEmail({
                 textAlign: "center",
               }}
             >
-              © {currentYear} AeroTest ULM. Todos los derechos reservados.
+              © {currentYear} PreparaULM ULM. Todos los derechos reservados.
             </Text>
           </Section>
         </Container>

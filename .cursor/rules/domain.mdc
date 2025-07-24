@@ -1,0 +1,40 @@
+---
+description: 
+globs: src/domain
+alwaysApply: false
+---
+# Modificacion de dominio
+
+Si has de modificar un fichero de domain. Antes asegurate de enviarme un esquema con los ficheros a modificar y los que se crearán nuevos.
+
+
+
+## Repositorios (Repositories)
+
+- **Ubicación:** Las interfaces (`InterfaceName`) y sus implementaciones (`InterfaceNameImpl` o simplemente la clase `InterfaceName` si no hay interfaz separada explícita) residen juntas en `src/domain/repositories/InterfaceName.ts`.
+- **Implementación:** La clase de implementación concreta (ej: `UserRepository`, `CategoryRepositoryImpl`) implementa la interfaz (si existe) y **siempre** recibe la instancia del cliente de Supabase en su constructor (`constructor(private supabase: any)`).
+- **Métodos:** Implementan las operaciones de acceso a datos definidas en la interfaz. Presta atención a si un método debe crear (`insert` sin ID) o actualizar/guardar (`upsert` o `update`). Si necesitas crear un registro donde el ID es autogenerado por la base de datos, asegúrate de que exista un método específico para ello (ej: `createUserPerformance`) que no requiera pasar un `id`.
+
+
+## Estructura
+El dominio esta compuesto por las siguientes partes:
+
+### Entidades
+Manejan la logica dentro del dominio.
+Cuando se modifica una entidad hay que modificar el [schema.sql](mdc:db/schema.sql)
+
+### useCase N
+Es el punto de entrada con la APP. Los useCases han de tener doActionUseCaseParams y doActionUseCaseResult donde doAction sería el nombre del caso de uso, a modo de ejemplo.
+
+Los Casos de Uso se organizan en src/domain/use-cases/<entidad-principal>/<Accion>.ts. Por ejemplo, la lógica de registro de usuarios reside en src/domain/use-cases/users/RegisterUser.ts. Utiliza los ficheros existentes si aplican a la entidad y acción que necesitas implementar.
+- Los casos de uso (use cases) deben implementarse siguiendo el patrón de método estático "create" para su inicialización, El create unicamente recibirá elementos de infraestructura como el supabaseClient. El resto de Repositorios los instanciaremos desde el create.
+- Cada caso de uso debe definir interfaces claras para sus parámetros (Params) y resultado (Result)
+Ejemplo RegisterUserUSeCaseParams y RegisterUserResult
+- Los servicios de dominio deben abstraer la implementación de infraestructura
+
+
+
+Tanto la interface, como la clase como los Params y Result van en el mismo fichero
+
+
+

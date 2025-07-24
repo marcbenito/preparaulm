@@ -11,7 +11,7 @@
         "levelColor": "orange",
         "questionCount": 15,
         "duration": 20,
-        "imageUrl": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800&h=400",
+        "imageUrl": "/images/test-frentes.png",
         "topics": [
             "Frentes cálidos y sus características",
             "Frentes fríos y sus características",
@@ -23,27 +23,27 @@
         ]
     },
     {
-        "id": "luces-en-tierra-y-aire",
-        "slug": "luces-en-tierra-y-aire",
-        "title": "Luces en Tierra y Aire",
-        "description": "Domina las luces de navegación, señales luminosas de aeropuertos, balizas y sistemas de iluminación cruciales para la seguridad aérea.",
-        "extendedDescription": "La correcta identificación e interpretación de las luces aeronáuticas es fundamental para la seguridad del vuelo, especialmente en condiciones de visibilidad reducida o vuelos nocturnos. Este test cubre todos los aspectos relacionados con la iluminación aeronáutica: desde las luces de navegación de las aeronaves (posición, anticolisión, aterrizaje) hasta los sistemas de iluminación de aeródromos (PAPI/VASI, luces de pista, rodadura y plataforma). También incluye señales luminosas de torre de control, balizas de obstáculos y ayudas visuales para la aproximación.",
-        "categoryId": "5",
-        "categoryName": "Navegación",
+        "id": "luces-en-tierra",
+        "slug": "luces-en-tierra",
+        "title": "Luces en Tierra",
+        "description": "Domina las luces de aeródromo, balizas y ayudas visuales esenciales para operaciones seguras de ULM en tierra y durante aproximaciones.",
+        "extendedDescription": "Para los pilotos de ULM, el conocimiento de las luces en tierra y ayudas visuales es fundamental para operar de forma segura en aeródromos. Este test se centra en los elementos de señalización luminosa más relevantes para ultraligeros: luces de pista y umbrales, balizas de obstáculos, ayudas visuales básicas como PAPI, señales luminosas de torre de control, y sistemas de iluminación de rodadura. También cubre la interpretación de estas señales durante operaciones diurnas y nocturnas, así como las precauciones especiales que deben tomar los pilotos de ULM al operar en aeródromos con tráfico mixto.",
+        "categoryId": "3",
+        "categoryName": "Comunicaciones",
         "level": "Avanzado",
         "levelColor": "purple",
-        "questionCount": 12,
+        "questionCount": 10,
         "duration": 15,
-        "imageUrl": "https://images.unsplash.com/photo-1548309667-15c4a4f36b0e?auto=format&fit=crop&q=80&w=800&h=400",
+        "imageUrl": "/images/test-luces-tierra.png",
         "topics": [
-            "Luces de navegación de aeronaves",
-            "Luces anticolisión y estroboscópicas",
-            "Sistemas PAPI y VASI",
-            "Iluminación de pista y umbrales",
-            "Luces de rodadura y señalización",
-            "Señales luminosas de torre",
+            "Luces de pista y umbrales",
             "Balizas de obstáculos",
-            "Luces de aproximación"
+            "Sistema PAPI básico",
+            "Luces de rodadura",
+            "Señales luminosas de torre de control",
+            "Iluminación de plataforma",
+            "Ayudas visuales para ULM",
+            "Operaciones nocturnas en aeródromos"
         ]
     },
     {
@@ -58,7 +58,7 @@
         "levelColor": "red",
         "questionCount": 18,
         "duration": 25,
-        "imageUrl": "https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?auto=format&fit=crop&q=80&w=800&h=400",
+        "imageUrl": "/images/test-comunicaciones-emerg.png",
         "topics": [
             "Frecuencias de emergencia",
             "Señales MAYDAY y PAN-PAN",

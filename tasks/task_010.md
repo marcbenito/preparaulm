@@ -44,7 +44,7 @@ Preparando tu test…
 Estamos generando tu test con ayuda de inteligencia artificial.
 Las preguntas se seleccionan estratégicamente para conocerte mejor, identificar tus puntos fuertes y detectar las áreas que necesitas reforzar.
 
-Cuanto más usas AeroTest, más afinamos el contenido para ti:
+Cuanto más usas PreparaULM, más afinamos el contenido para ti:
 buscamos que cada test te aporte información útil, un feedback más preciso y te ayude a progresar más rápido.
 
 En unos segundos tendrás tu test listo, totalmente adaptado a ti.

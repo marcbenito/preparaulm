@@ -26,13 +26,14 @@ interface SelectedQuestionInternal extends QuestionFromDB {
 
 // Minimal interface for UserCategoryPerformance needed by this use case
 interface UserCategoryPerformanceInfo {
-  success_rate: number; 
+  success_rate: number;
 }
 
 
 interface GenerateTestParams {
   userId: string;
   baseCategoryId?: string;
+  testId?: number;
 }
 
 const TOTAL_QUESTIONS_PER_TEST = 10;
@@ -92,7 +93,7 @@ export class GenerateTestUseCase {
       try {
         const parsed = JSON.parse(optionsFromDB);
         if (Array.isArray(parsed) && parsed.every(opt => opt && typeof opt.key === 'string' && typeof opt.value === 'string')) {
-            return parsed as QuestionOption[];
+          return parsed as QuestionOption[];
         }
       } catch (e) {
         console.error('GenerateTestUseCase: Failed to parse question options string:', e);
@@ -101,20 +102,20 @@ export class GenerateTestUseCase {
       return optionsFromDB as QuestionOption[];
     }
     console.warn('GenerateTestUseCase: Question options are not in expected format for a question, returning empty array.');
-    return []; 
+    return [];
   }
 
   private async getPrioritizedSubcategories(userId: string, baseCategoryId: string): Promise<PrioritizedSubcategory[]> {
     console.log(`GenerateTestUseCase: Getting prioritized subcategories for ${baseCategoryId}`);
-    
+
     return await this.categoryRepository.getPrioritizedSubcategories(userId, baseCategoryId);
   }
 
   private calculateQuestionDistribution(prioritizedSubcategories: PrioritizedSubcategory[], totalQuestions: number): Record<string, number> {
     console.log(`GenerateTestUseCase: Calculating question distribution for ${totalQuestions} questions`);
-    
+
     const distribution: Record<string, number> = {};
-    
+
     if (prioritizedSubcategories.length === 0) {
       return distribution;
     }
@@ -130,7 +131,7 @@ export class GenerateTestUseCase {
     if (highPriority.length > 0) {
       const questionsForHigh = Math.floor(totalQuestions * 0.6);
       const questionsPerHighCategory = Math.max(1, Math.floor(questionsForHigh / highPriority.length));
-      
+
       highPriority.forEach(sc => {
         const assigned = Math.min(questionsPerHighCategory, remainingQuestions);
         distribution[sc.categoryId] = assigned;
@@ -142,7 +143,7 @@ export class GenerateTestUseCase {
     if (mediumPriority.length > 0 && remainingQuestions > 0) {
       const questionsForMedium = Math.floor(totalQuestions * 0.3);
       const questionsPerMediumCategory = Math.max(1, Math.floor(questionsForMedium / mediumPriority.length));
-      
+
       mediumPriority.forEach(sc => {
         if (remainingQuestions > 0) {
           const assigned = Math.min(questionsPerMediumCategory, remainingQuestions);
@@ -155,7 +156,7 @@ export class GenerateTestUseCase {
     // Asignar preguntas restantes a subcategorías de baja prioridad
     if (lowPriority.length > 0 && remainingQuestions > 0) {
       const questionsPerLowCategory = Math.max(1, Math.floor(remainingQuestions / lowPriority.length));
-      
+
       lowPriority.forEach(sc => {
         if (remainingQuestions > 0) {
           const assigned = Math.min(questionsPerLowCategory, remainingQuestions);
@@ -175,7 +176,7 @@ export class GenerateTestUseCase {
       categoryIndex = (categoryIndex + 1) % allCategories.length;
     }
 
-    console.log(`GenerateTestUseCase: Question distribution:`, 
+    console.log(`GenerateTestUseCase: Question distribution:`,
       Object.entries(distribution).map(([cat, count]) => `${cat}: ${count}`).join(', '));
 
     return distribution;
@@ -183,7 +184,7 @@ export class GenerateTestUseCase {
 
   private prioritizeQuestionsByCategory(questions: SelectedQuestionInternal[], distribution: Record<string, number>): SelectedQuestionInternal[] {
     console.log(`GenerateTestUseCase: Prioritizing ${questions.length} questions by category distribution`);
-    
+
     const prioritizedQuestions: SelectedQuestionInternal[] = [];
     const questionsByCategory: Record<string, SelectedQuestionInternal[]> = {};
 
@@ -199,33 +200,90 @@ export class GenerateTestUseCase {
     Object.entries(distribution).forEach(([categoryId, targetCount]) => {
       const availableQuestions = questionsByCategory[categoryId] || [];
       shuffleArray(availableQuestions);
-      
+
       const selectedFromCategory = availableQuestions.slice(0, targetCount);
       prioritizedQuestions.push(...selectedFromCategory);
-      
+
       console.log(`GenerateTestUseCase: Selected ${selectedFromCategory.length}/${targetCount} questions from ${categoryId}`);
     });
 
     // Si no tenemos suficientes preguntas, añadir las restantes aleatoriamente
     if (prioritizedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
-      const remainingQuestions = questions.filter(q => 
+      const remainingQuestions = questions.filter(q =>
         !prioritizedQuestions.some(pq => pq.id === q.id)
       );
-      
+
       shuffleArray(remainingQuestions);
       const needed = TOTAL_QUESTIONS_PER_TEST - prioritizedQuestions.length;
       prioritizedQuestions.push(...remainingQuestions.slice(0, needed));
-      
+
       console.log(`GenerateTestUseCase: Added ${Math.min(needed, remainingQuestions.length)} additional questions`);
     }
 
     return prioritizedQuestions;
   }
 
+  private async getQuestionsFromSpecificTest(testId: number): Promise<SelectedQuestionInternal[]> {
+    console.log(`GenerateTestUseCase: Loading questions from specific test ID: ${testId}`);
 
-  async execute({ userId, baseCategoryId }: GenerateTestParams): Promise<number> {
+    const test = await this.testRepository.getTestById(testId);
+    if (!test || !test.questions || test.questions.length === 0) {
+      throw new Error(`GenerateTestUseCase: Test with ID ${testId} not found or has no questions`);
+    }
+
+    const questionIds = test.questions.map(tq => tq.questionId);
+    console.log(`GenerateTestUseCase: Found ${questionIds.length} questions in test ${testId}. Question IDs: ${questionIds.join(', ')}`);
+
+    const questions = await this.testRepository.getQuestionsByIds(questionIds);
+
+    const selectedQuestions: SelectedQuestionInternal[] = questions.map(q => ({
+      id: q.id,
+      category_id: q.categoryId,
+      text: q.text,
+      options: q.options,
+      correct_answer: q.correctAnswer,
+      explanation: q.explanation,
+      difficulty: q.difficulty,
+      parsed_options: this.parseQuestionOptions(q.options),
+      mapped_difficulty: this.mapDBDifficultyToInternal(q.difficulty),
+    })).filter(q => {
+      if (q.parsed_options.length === 0) {
+        console.warn(`GenerateTestUseCase: Question ID ${q.id} from test ${testId} filtered out due to invalid/empty options.`);
+        return false;
+      }
+      return true;
+    });
+
+    console.log(`GenerateTestUseCase: Successfully loaded ${selectedQuestions.length} valid questions from test ${testId}`);
+    return selectedQuestions;
+  }
+
+
+  async execute({ userId, baseCategoryId, testId }: GenerateTestParams): Promise<number> {
     console.log(`
 --- GenerateTestUseCase: Starting Test Generation ---`);
+
+    if (testId) {
+      console.log(`User ID: ${userId}, Specific Test ID: ${testId}`);
+
+      // Flujo para test específico
+      const selectedQuestions = await this.getQuestionsFromSpecificTest(testId);
+
+      // Para tests específicos, mantenemos el orden original pero mezclamos las opciones
+      shuffleArray(selectedQuestions);
+      console.log(`GenerateTestUseCase: Final selected questions count: ${selectedQuestions.length}. IDs: ${selectedQuestions.map(q => q.id).join(', ')}`);
+
+      const testExecution = await this.testRepository.createTestExecution(testId, userId);
+      const testExecutionId = testExecution.id;
+
+      await this.testRepository.saveTestQuestions(testExecutionId, selectedQuestions);
+
+      console.log(`GenerateTestUseCase: Successfully created test execution ID: ${testExecutionId} from specific test ${testId} with ${selectedQuestions.length} questions.`);
+      console.log(`--- GenerateTestUseCase: Test Generation Ended ---`);
+      return testExecutionId;
+    }
+
+    // Flujo original para generación dinámica por categoría
     console.log(`User ID: ${userId}, Category ID: ${baseCategoryId || 'generic'}`);
 
     const answeredQuestionIds = await this.testRepository.getUserAnsweredQuestionIds(userId);
@@ -234,7 +292,7 @@ export class GenerateTestUseCase {
     // Obtener subcategorías priorizadas por minimum_progress
     let relevantCategoryIds: string[] = [];
     let prioritizedSubcategories: PrioritizedSubcategory[] = [];
-    
+
     if (baseCategoryId) {
       relevantCategoryIds.push(baseCategoryId);
       prioritizedSubcategories = await this.getPrioritizedSubcategories(userId, baseCategoryId);
@@ -246,11 +304,11 @@ export class GenerateTestUseCase {
     if (baseCategoryId) {
       successRate = await this.userPerformanceRepository.getUserCategorySuccessRate(userId, baseCategoryId);
       console.log(`GenerateTestUseCase: Performance for category ${baseCategoryId}: ${successRate}%`);
-    } else { 
+    } else {
       successRate = await this.userPerformanceRepository.getUserAverageSuccessRate(userId);
       console.log(`GenerateTestUseCase: Average performance: ${successRate}%`);
     }
-    successRate = Math.max(0, Math.min(100, successRate)); 
+    successRate = Math.max(0, Math.min(100, successRate));
     console.log(`GenerateTestUseCase: Final calculated success rate: ${successRate}%`);
 
     const difficultyDistributionTargets = this.getDifficultyDistribution(successRate);
@@ -259,134 +317,134 @@ export class GenerateTestUseCase {
     let selectedQuestions: SelectedQuestionInternal[] = [];
     let attemptPreviouslyAnswered = false;
 
-    for (let attempt = 1; attempt <= 2; attempt++) { 
-        console.log(`
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      console.log(`
 --- Question Fetching Attempt: ${attempt} (Previously Answered Allowed: ${attemptPreviouslyAnswered}) ---`);
-        if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) {
-            console.log('GenerateTestUseCase: Target question count met, skipping further attempts.');
-            break;
+      if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) {
+        console.log('GenerateTestUseCase: Target question count met, skipping further attempts.');
+        break;
+      }
+
+      const candidateQuestionsDB = await this.testRepository.getCandidateQuestions(relevantCategoryIds, answeredQuestionIds, attemptPreviouslyAnswered);
+
+      console.log(`GenerateTestUseCase: Querying with category IDs: ${relevantCategoryIds.join(', ') || 'ALL'}`);
+
+      if (attemptPreviouslyAnswered) {
+        console.log('GenerateTestUseCase: Including previously answered questions in this attempt.');
+      } else {
+        console.log(`GenerateTestUseCase: Excluding ${answeredQuestionIds.size} previously answered question IDs.`);
+      }
+
+      if (!candidateQuestionsDB || candidateQuestionsDB.length === 0) {
+        console.log(`GenerateTestUseCase: No candidate questions found from DB query (attempt ${attempt}).`);
+        if (attempt === 1 && answeredQuestionIds.size > 0 && !attemptPreviouslyAnswered) {
+          attemptPreviouslyAnswered = true;
+          console.log("GenerateTestUseCase: Will retry fetch including previously answered questions.");
+          continue;
         }
+        break;
+      }
+      console.log(`GenerateTestUseCase: Fetched ${candidateQuestionsDB.length} raw candidate questions from DB (attempt ${attempt}).`);
 
-        const candidateQuestionsDB = await this.testRepository.getCandidateQuestions(relevantCategoryIds, answeredQuestionIds, attemptPreviouslyAnswered);
-
-        console.log(`GenerateTestUseCase: Querying with category IDs: ${relevantCategoryIds.join(', ') || 'ALL'}`);
-        
-        if (attemptPreviouslyAnswered) {
-            console.log('GenerateTestUseCase: Including previously answered questions in this attempt.');
-        } else {
-            console.log(`GenerateTestUseCase: Excluding ${answeredQuestionIds.size} previously answered question IDs.`);
+      let availableCandidates: SelectedQuestionInternal[] = candidateQuestionsDB.map(q => ({
+        ...q,
+        parsed_options: this.parseQuestionOptions(q.options),
+        mapped_difficulty: this.mapDBDifficultyToInternal(q.difficulty),
+      })).filter(q => {
+        if (q.parsed_options.length === 0) {
+          console.warn(`GenerateTestUseCase: Question ID ${q.id} filtered out due to invalid/empty options.`);
+          return false;
         }
+        return true;
+      });
+      console.log(`GenerateTestUseCase: ${availableCandidates.length} candidates after parsing options (attempt ${attempt}).`);
 
-        if (!candidateQuestionsDB || candidateQuestionsDB.length === 0) {
-            console.log(`GenerateTestUseCase: No candidate questions found from DB query (attempt ${attempt}).`);
-            if (attempt === 1 && answeredQuestionIds.size > 0 && !attemptPreviouslyAnswered) { 
-                attemptPreviouslyAnswered = true; 
-                console.log("GenerateTestUseCase: Will retry fetch including previously answered questions.");
-                continue;
-            }
-            break; 
+      const currentSelectedIds = new Set(selectedQuestions.map(sq => sq.id));
+      availableCandidates = availableCandidates.filter(q => !currentSelectedIds.has(q.id));
+      console.log(`GenerateTestUseCase: ${availableCandidates.length} candidates after filtering already selected ones (attempt ${attempt}).`);
+
+      shuffleArray(availableCandidates);
+
+      const questionsByDifficulty: Record<number, SelectedQuestionInternal[]> = { 1: [], 2: [], 3: [], 4: [] };
+      availableCandidates.forEach(q => {
+        const difficultyKey = q.mapped_difficulty as (1 | 2 | 3 | 4);
+        if (questionsByDifficulty[difficultyKey]) {
+          questionsByDifficulty[difficultyKey].push(q);
         }
-        console.log(`GenerateTestUseCase: Fetched ${candidateQuestionsDB.length} raw candidate questions from DB (attempt ${attempt}).`);
-        
-        let availableCandidates: SelectedQuestionInternal[] = candidateQuestionsDB.map(q => ({
-            ...q,
-            parsed_options: this.parseQuestionOptions(q.options),
-            mapped_difficulty: this.mapDBDifficultyToInternal(q.difficulty),
-        })).filter(q => {
-            if (q.parsed_options.length === 0) {
-                console.warn(`GenerateTestUseCase: Question ID ${q.id} filtered out due to invalid/empty options.`);
-                return false;
-            }
-            return true;
-        }); 
-        console.log(`GenerateTestUseCase: ${availableCandidates.length} candidates after parsing options (attempt ${attempt}).`);
-        
-        const currentSelectedIds = new Set(selectedQuestions.map(sq => sq.id));
-        availableCandidates = availableCandidates.filter(q => !currentSelectedIds.has(q.id));
-        console.log(`GenerateTestUseCase: ${availableCandidates.length} candidates after filtering already selected ones (attempt ${attempt}).`);
+      });
+      console.log('GenerateTestUseCase: Candidates by difficulty:',
+        `D1: ${questionsByDifficulty[1].length}, D2: ${questionsByDifficulty[2].length}, D3: ${questionsByDifficulty[3].length}, D4: ${questionsByDifficulty[4].length}`);
 
-        shuffleArray(availableCandidates); 
+      // Aplicar priorización por categoría si tenemos subcategorías priorizadas
+      if (prioritizedSubcategories.length > 0) {
+        console.log('--- Starting Category-Priority-Based Selection ---');
+        const questionDistribution = this.calculateQuestionDistribution(prioritizedSubcategories, TOTAL_QUESTIONS_PER_TEST);
+        selectedQuestions = this.prioritizeQuestionsByCategory(availableCandidates, questionDistribution);
+        console.log(`--- After Category-Priority Selection: ${selectedQuestions.length} questions selected ---`);
+      } else {
+        console.log('--- Starting Primary Difficulty-Based Selection --- ');
+        for (const diffLevel of [1, 2, 3, 4] as const) {
+          if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
+          const targetCount = difficultyDistributionTargets[diffLevel];
+          const currentCountForLevel = selectedQuestions.filter(q => q.mapped_difficulty === diffLevel).length;
+          let needed = targetCount - currentCountForLevel;
+          console.log(`Difficulty ${diffLevel}: Target ${targetCount}, Have ${currentCountForLevel}, Need ${needed}. Available: ${questionsByDifficulty[diffLevel]?.length || 0}`);
 
-        const questionsByDifficulty: Record<number, SelectedQuestionInternal[]> = { 1: [], 2: [], 3: [], 4: [] };
-        availableCandidates.forEach(q => {
-            const difficultyKey = q.mapped_difficulty as (1|2|3|4);
-            if (questionsByDifficulty[difficultyKey]) {
-                 questionsByDifficulty[difficultyKey].push(q);
+          while (needed > 0 && questionsByDifficulty[diffLevel]?.length > 0) {
+            if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
+            const questionToAdd = questionsByDifficulty[diffLevel].pop();
+            if (questionToAdd) {
+              selectedQuestions.push(questionToAdd);
+              console.log(`   Added QID ${questionToAdd.id} (D${diffLevel}). Total selected: ${selectedQuestions.length}`);
+              needed--;
             }
-        });
-        console.log('GenerateTestUseCase: Candidates by difficulty:',
-            `D1: ${questionsByDifficulty[1].length}, D2: ${questionsByDifficulty[2].length}, D3: ${questionsByDifficulty[3].length}, D4: ${questionsByDifficulty[4].length}`);
-
-        // Aplicar priorización por categoría si tenemos subcategorías priorizadas
-        if (prioritizedSubcategories.length > 0) {
-            console.log('--- Starting Category-Priority-Based Selection ---');
-            const questionDistribution = this.calculateQuestionDistribution(prioritizedSubcategories, TOTAL_QUESTIONS_PER_TEST);
-            selectedQuestions = this.prioritizeQuestionsByCategory(availableCandidates, questionDistribution);
-            console.log(`--- After Category-Priority Selection: ${selectedQuestions.length} questions selected ---`);
-        } else {
-            console.log('--- Starting Primary Difficulty-Based Selection --- ');
-            for (const diffLevel of [1, 2, 3, 4] as const) { 
-                if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
-                const targetCount = difficultyDistributionTargets[diffLevel];
-                const currentCountForLevel = selectedQuestions.filter(q => q.mapped_difficulty === diffLevel).length;
-                let needed = targetCount - currentCountForLevel;
-                console.log(`Difficulty ${diffLevel}: Target ${targetCount}, Have ${currentCountForLevel}, Need ${needed}. Available: ${questionsByDifficulty[diffLevel]?.length || 0}`);
-
-                while (needed > 0 && questionsByDifficulty[diffLevel]?.length > 0) {
-                    if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
-                    const questionToAdd = questionsByDifficulty[diffLevel].pop();
-                    if (questionToAdd) {
-                        selectedQuestions.push(questionToAdd);
-                        console.log(`   Added QID ${questionToAdd.id} (D${diffLevel}). Total selected: ${selectedQuestions.length}`);
-                        needed--;
-                    }
-                }
-            }
-            console.log(`--- After Primary Selection: ${selectedQuestions.length} questions selected ---`);
-            
-            if (selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
-                console.log('--- Starting Fallback Filling --- ');
-                const difficultyOrderForFallback: (1|2|3|4)[] = [1,2,3,4]; 
-                for (const diffLevel of difficultyOrderForFallback) {
-                     if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
-                     console.log(`Fallback fill for D${diffLevel}: Need ${TOTAL_QUESTIONS_PER_TEST - selectedQuestions.length}. Available in D${diffLevel}: ${questionsByDifficulty[diffLevel]?.length || 0}`);
-                     while(questionsByDifficulty[diffLevel]?.length > 0 && selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
-                        const questionToAdd = questionsByDifficulty[diffLevel].pop();
-                        if (questionToAdd && !selectedQuestions.some(sq => sq.id === questionToAdd.id)) { // Ensure unique if somehow missed
-                             selectedQuestions.push(questionToAdd);
-                             console.log(`   Fallback Added QID ${questionToAdd.id} (D${diffLevel}). Total selected: ${selectedQuestions.length}`);
-                        }
-                     }
-                }
-                console.log(`--- After Fallback Filling: ${selectedQuestions.length} questions selected ---`);
-            }
+          }
         }
-        
-        if (attempt === 1 && selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST && answeredQuestionIds.size > 0 && !attemptPreviouslyAnswered) {
-            attemptPreviouslyAnswered = true; 
-            console.log(`GenerateTestUseCase: First attempt (unique) yielded ${selectedQuestions.length} questions. Will retry, allowing previously answered questions.`);
-        } else if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) {
-            console.log('GenerateTestUseCase: Target question count met.');
-            break; 
+        console.log(`--- After Primary Selection: ${selectedQuestions.length} questions selected ---`);
+
+        if (selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
+          console.log('--- Starting Fallback Filling --- ');
+          const difficultyOrderForFallback: (1 | 2 | 3 | 4)[] = [1, 2, 3, 4];
+          for (const diffLevel of difficultyOrderForFallback) {
+            if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) break;
+            console.log(`Fallback fill for D${diffLevel}: Need ${TOTAL_QUESTIONS_PER_TEST - selectedQuestions.length}. Available in D${diffLevel}: ${questionsByDifficulty[diffLevel]?.length || 0}`);
+            while (questionsByDifficulty[diffLevel]?.length > 0 && selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
+              const questionToAdd = questionsByDifficulty[diffLevel].pop();
+              if (questionToAdd && !selectedQuestions.some(sq => sq.id === questionToAdd.id)) { // Ensure unique if somehow missed
+                selectedQuestions.push(questionToAdd);
+                console.log(`   Fallback Added QID ${questionToAdd.id} (D${diffLevel}). Total selected: ${selectedQuestions.length}`);
+              }
+            }
+          }
+          console.log(`--- After Fallback Filling: ${selectedQuestions.length} questions selected ---`);
         }
-    } 
+      }
+
+      if (attempt === 1 && selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST && answeredQuestionIds.size > 0 && !attemptPreviouslyAnswered) {
+        attemptPreviouslyAnswered = true;
+        console.log(`GenerateTestUseCase: First attempt (unique) yielded ${selectedQuestions.length} questions. Will retry, allowing previously answered questions.`);
+      } else if (selectedQuestions.length >= TOTAL_QUESTIONS_PER_TEST) {
+        console.log('GenerateTestUseCase: Target question count met.');
+        break;
+      }
+    }
 
     console.log(`--- Finalizing Selection ---`);
     if (selectedQuestions.length === 0) {
-         console.error('GenerateTestUseCase: Insufficient questions. No questions selected after all attempts.');
-         throw new Error('GenerateTestUseCase: Insufficient questions available to generate any test, even after all fallbacks.');
-    }
-    
-    if (selectedQuestions.length > TOTAL_QUESTIONS_PER_TEST) {
-        console.warn(`GenerateTestUseCase: Selected ${selectedQuestions.length} questions, more than target. Slicing to ${TOTAL_QUESTIONS_PER_TEST}.`);
-        selectedQuestions = selectedQuestions.slice(0, TOTAL_QUESTIONS_PER_TEST);
-    }
-     if (selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
-        console.warn(`GenerateTestUseCase: Selected only ${selectedQuestions.length} questions, less than target ${TOTAL_QUESTIONS_PER_TEST}. Proceeding with available.`);
+      console.error('GenerateTestUseCase: Insufficient questions. No questions selected after all attempts.');
+      throw new Error('GenerateTestUseCase: Insufficient questions available to generate any test, even after all fallbacks.');
     }
 
-    shuffleArray(selectedQuestions); 
-    console.log(`GenerateTestUseCase: Final selected questions count: ${selectedQuestions.length}. IDs: ${selectedQuestions.map(q=>q.id).join(', ')}`);
+    if (selectedQuestions.length > TOTAL_QUESTIONS_PER_TEST) {
+      console.warn(`GenerateTestUseCase: Selected ${selectedQuestions.length} questions, more than target. Slicing to ${TOTAL_QUESTIONS_PER_TEST}.`);
+      selectedQuestions = selectedQuestions.slice(0, TOTAL_QUESTIONS_PER_TEST);
+    }
+    if (selectedQuestions.length < TOTAL_QUESTIONS_PER_TEST) {
+      console.warn(`GenerateTestUseCase: Selected only ${selectedQuestions.length} questions, less than target ${TOTAL_QUESTIONS_PER_TEST}. Proceeding with available.`);
+    }
+
+    shuffleArray(selectedQuestions);
+    console.log(`GenerateTestUseCase: Final selected questions count: ${selectedQuestions.length}. IDs: ${selectedQuestions.map(q => q.id).join(', ')}`);
 
     const testExecution = await this.testRepository.createTestExecution(null, userId);
     const testExecutionId = testExecution.id;
@@ -397,7 +455,7 @@ export class GenerateTestUseCase {
       selected_answer: null,
       is_correct: null,
       is_marked: false,
-      observations: null, 
+      observations: null,
     }));
 
     await this.testRepository.saveTestQuestions(testExecutionId, selectedQuestions);

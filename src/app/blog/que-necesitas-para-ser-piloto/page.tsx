@@ -1,5 +1,30 @@
+import { Metadata } from "next"
 import BlogPostLayout from "@/components/blog/BlogPostLayout"
 import { Calendar, Clock, User, BookOpen } from "@/components/ui/icons"
+
+export const metadata: Metadata = {
+  title: "Qué Necesitas para Ser Piloto ULM - Guía Completa",
+  description:
+    "Descubre todos los requisitos, documentación y pasos necesarios para convertirte en piloto de ultraligero. Guía completa con requisitos médicos, formación y trámites.",
+  keywords: [
+    "requisitos piloto ULM",
+    "ser piloto ultraligero",
+    "documentación piloto aviación",
+    "formación piloto ULM",
+    "certificado médico aviación",
+    "licencia piloto ultraligero",
+    "requisitos AESA piloto"
+  ],
+  alternates: {
+    canonical: "/blog/que-necesitas-para-ser-piloto",
+  },
+  openGraph: {
+    title: "Qué Necesitas para Ser Piloto ULM - Guía Completa",
+    description: "Descubre todos los requisitos y pasos necesarios para convertirte en piloto de ultraligero.",
+    url: "https://www.preparaulm.com/blog/que-necesitas-para-ser-piloto",
+    type: "article",
+  },
+}
 
 export default function QueNecesitasParaSerPilotoPage() {
   return (

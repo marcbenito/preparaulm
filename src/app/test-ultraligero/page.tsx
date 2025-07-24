@@ -25,6 +25,7 @@ import { Category } from "@/domain/entities/Category"
 
 import { createClient } from "@/utils/supabase/client"
 import { GetMainCategoriesUseCase } from "@/domain/use-cases/GetMainCategoriesUseCase"
+import { datadogRum } from "@datadog/browser-rum"
 
 export default function TestSelectionPage() {
   const router = useRouter()
@@ -51,6 +52,25 @@ export default function TestSelectionPage() {
 
 
   const handleStartTest = (categoryId?: string) => {
+    // Trackear evento en Datadog
+    if (datadogRum.getInternalContext()) {
+      if (categoryId) {
+        const category = categories.find(cat => cat.id === categoryId)
+        
+        datadogRum.addAction('test_started', {
+          type: 'category',
+          category_id: categoryId,
+          source: 'test_ultraligero_page'
+        })
+      } else {
+       
+        datadogRum.addAction('test_started', {
+          type: 'generic',
+          source: 'test_ultraligero_page'
+        })
+      }
+    }
+
     if (categoryId) {
       router.push(`/preparacion-test/${categoryId}`)
     } else {
@@ -192,7 +212,7 @@ export default function TestSelectionPage() {
                   className="h-32 bg-cover bg-center relative"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&q=80&w=800&h=400')",
+                      "url('/images/test-frentes.png')",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -230,13 +250,13 @@ export default function TestSelectionPage() {
                 </CardHeader>
               </Card>
 
-              {/* Test Luces en Tierra y Aire */}
+              {/* Test Luces en Tierra */}
               <Card className="bg-white/5 text-white border-0 overflow-hidden">
                 <div
                   className="h-32 bg-cover bg-center relative"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1548309667-15c4a4f36b0e?auto=format&fit=crop&q=80&w=800&h=400')",
+                      "url('/images/test-luces-tierra.png')",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -249,19 +269,17 @@ export default function TestSelectionPage() {
                 </div>
                 <CardHeader className="p-6">
                   <CardTitle className="text-lg font-bold mb-3">
-                    Luces en Tierra y Aire
+                    Luces en Tierra
                   </CardTitle>
                   <p className="text-blue-200 text-sm mb-4">
-                    Domina las luces de navegación, señales luminosas de
-                    aeropuertos, balizas y sistemas de iluminación cruciales
-                    para la seguridad aérea.
+                    Domina las luces de aeródromo, balizas y ayudas visuales esenciales para operaciones seguras de ULM en tierra y durante aproximaciones.
                   </p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center text-blue-300 text-sm">
                       <BookOpen className="h-4 w-4 mr-1" />
-                      <span>12 preguntas</span>
+                      <span>10 preguntas</span>
                     </div>
-                    <Link href="/test-especificos/luces-en-tierra-y-aire">
+                    <Link href="/test-especificos/luces-en-tierra">
                       <Button
                         size="sm"
                         className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600"
@@ -280,7 +298,7 @@ export default function TestSelectionPage() {
                   className="h-32 bg-cover bg-center relative"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?auto=format&fit=crop&q=80&w=800&h=400')",
+                      "url('/images/test-comunicaciones-emerg.png')",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

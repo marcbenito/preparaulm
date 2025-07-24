@@ -1,16 +1,16 @@
-# AeroTest - Visión General
+# PreparaULM - Visión General
 
 ## Introducción
 
-AeroTest es una aplicación diseñada para realizar pruebas aéreas, proporcionando una plataforma robusta y eficiente para la gestión y análisis de datos relacionados con pruebas de vuelo y aeronáutica. La aplicación está construida utilizando tecnologías modernas como NextJS y Supabase, asegurando un rendimiento óptimo y una experiencia de usuario fluida.
+PreparaULM es una aplicación diseñada para realizar pruebas aéreas, proporcionando una plataforma robusta y eficiente para la gestión y análisis de datos relacionados con pruebas de vuelo y aeronáutica. La aplicación está construida utilizando tecnologías modernas como NextJS y Supabase, asegurando un rendimiento óptimo y una experiencia de usuario fluida.
 
 ## Objetivo
 
-El objetivo principal de AeroTest es facilitar la realización de test para obtener para licencia de piloto ULM. Para ello ofrecemos métricas y estudios a medida basados en IA que ayudan al usuario a conseguir el objetivo.
+El objetivo principal de PreparaULM es facilitar la realización de test para obtener para licencia de piloto ULM. Para ello ofrecemos métricas y estudios a medida basados en IA que ayudan al usuario a conseguir el objetivo.
 
 ## Visión
 
-Nuestra visión es convertir a AeroTest en la herramienta líder para instructores y estudiantes de la licencia de piloto ultraligero ULM, ofreciendo una solución integral que no solo cumpla con las necesidades actuales sino que también se adapte a los desafíos futuros del sector. Queremos que AeroTest sea sinónimo de innovación.
+Nuestra visión es convertir a PreparaULM en la herramienta líder para instructores y estudiantes de la licencia de piloto ultraligero ULM, ofreciendo una solución integral que no solo cumpla con las necesidades actuales sino que también se adapte a los desafíos futuros del sector. Queremos que PreparaULM sea sinónimo de innovación.
 
 ## Características Principales
 
@@ -20,7 +20,7 @@ Nuestra visión es convertir a AeroTest en la herramienta líder para instructor
 
 ## Público Objetivo
 
-AeroTest está dirigido a estudiantes de la licencia ULM. Tanto multi eje de a la fija como el resto de habilitaciones.
+PreparaULM está dirigido a estudiantes de la licencia ULM. Tanto multi eje de a la fija como el resto de habilitaciones.
 
 ## Funcionalidades
 

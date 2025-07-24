@@ -30,10 +30,10 @@ Para crear la base de datos desde cero con todos los datos:
 
 ```bash
 # Primero crear la base de datos
-psql -U postgres -c "CREATE DATABASE aerotest;"
+psql -U postgres -c "CREATE DATABASE preparaulm;"
 
 # Luego inicializar con los scripts
-psql -U postgres -d aerotest -f db/scripts/init_db.sql
+psql -U postgres -d preparaulm -f db/scripts/init_db.sql
 ```
 
 ### Ejecutar migraciones
@@ -41,7 +41,7 @@ psql -U postgres -d aerotest -f db/scripts/init_db.sql
 Para actualizar una base de datos existente aplicando las migraciones pendientes:
 
 ```bash
-psql -U postgres -d aerotest -f db/scripts/run_migrations.sql
+psql -U postgres -d preparaulm -f db/scripts/run_migrations.sql
 ```
 
 ### Realizar backup
@@ -50,10 +50,10 @@ Para generar una copia de seguridad de la base de datos:
 
 ```bash
 # Formato SQL
-pg_dump -U postgres -d aerotest -f db/backups/backup_$(date +%Y%m%d_%H%M%S).sql
+pg_dump -U postgres -d preparaulm -f db/backups/backup_$(date +%Y%m%d_%H%M%S).sql
 
 # Formato comprimido
-pg_dump -U postgres -d aerotest -Fc -f db/backups/backup_$(date +%Y%m%d_%H%M%S).dump
+pg_dump -U postgres -d preparaulm -Fc -f db/backups/backup_$(date +%Y%m%d_%H%M%S).dump
 ```
 
 ## Migraciones

@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# BASE RULES
+
+- Utilizamos NextJS 15
+- Utiliza tailwind v3 
+- Utiliza shadcn 
+- Utilizamos supabase. Para los componente cliente usaremos el @/utils/supabase/client y para servidor el @/utils/supabase/server
+- No ponemos comentarios en el codigo bajo ningun concepto
+
+# Convencion de nombres de ficheros:
+
+## Reglas por carpetas
+Folder names must allways  be kebab-case.
+
+Nombres de ficheros serán por defecto kebab-case excepto para los ficheros TS:
+Hooks serán siempre camelCase.
+Nombres de ficheros por subcarpetas:
+- src/app/**: kebab-case.
+    - src/app/**/_components: PascalCase
+    - src/app/**/ (hooks): PascalCase
+- src/domain/** : PascalCase
+- src/components/**:
+    - Hook filenames must be camelCase
+    - Components  PascalCase
+- src/context/**: PascalCase
+- src/lib: kebab-case
+- src/utils: kebab-case
+
+
+
+## Instalacion de componentes:
+
+utilizaremos 
+npx shadcn@latest add
+
+# BASE DE DATOS
+El esquema de la base de datos está en db/schema.sql
+
+# DOCUMENTACION
+la documentación del proyecto está en ./docs.
+Utiliza 
+
+
+## UI
+
+## Iconos
+Nuncas añadiremos iconos de lucid charts directamente al codigo. Lo harmeos mediante un wrapper en   /src/components/ui/icons/
+para el import haremos @/components/ui/icons 
+
+# UI
+- Instalaremos todos los componentes nuevos desde shadcn
+- For all designs I ask you to make, have them be beautiful, not cookie cutter. Make webpages that are fully featured and worthy for production.
+- Cada vez que necesites un componente nuevo lo crearemos utilizando shadcm.
+
+
+
+
+

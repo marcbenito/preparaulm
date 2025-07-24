@@ -1,5 +1,30 @@
+import { Metadata } from "next"
 import BlogPostLayout from "@/components/blog/BlogPostLayout"
 import { Calendar, Clock, User, BookOpen } from "@/components/ui/icons"
+
+export const metadata: Metadata = {
+  title: "Requisitos Examen Ultraligero - Todo lo que Necesitas Saber",
+  description:
+    "Conoce todos los requisitos para presentarte al examen de piloto ultraligero. Documentación necesaria, condiciones médicas, edad mínima y proceso de inscripción.",
+  keywords: [
+    "requisitos examen ultraligero",
+    "examen piloto ULM requisitos",
+    "documentación examen aviación",
+    "inscripción examen AESA",
+    "condiciones examen piloto",
+    "edad mínima piloto ULM",
+    "certificado médico examen"
+  ],
+  alternates: {
+    canonical: "/blog/requisitos-examen-ultraligero",
+  },
+  openGraph: {
+    title: "Requisitos Examen Ultraligero - Todo lo que Necesitas Saber",
+    description: "Conoce todos los requisitos para presentarte al examen de piloto ultraligero.",
+    url: "https://www.preparaulm.com/blog/requisitos-examen-ultraligero",
+    type: "article",
+  },
+}
 
 export default function RequisitosExamenUltraligeroPage() {
   return (

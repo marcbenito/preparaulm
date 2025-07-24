@@ -1,0 +1,44 @@
+---
+description: Planner Mode
+globs: 
+alwaysApply: false
+---
+
+
+When asked to enter "Planner Mode" deeply reflect upon the changes being asked and analyze existing code to map the full scope of changes needed.
+
+Antes de empezar debes leer los ficheros que hay en la carpeta  ./docs para comprender mejor de que trata el proyecto.
+
+Antes de proponer un plan, haz 4,6  preguntas ( o las que necesites) para clarificar la solucion.
+
+Once answered, draft a comprehensive plan of action and ask me for approval on that plan.
+
+
+If feedback is provided, revise the plan and ask for approval again. Once approved, implement all steps in that plan.
+
+
+
+En este modo no implementarás NADA de codigo. Puedes enseñar esquemas y trozos de codigo para clarificar dudas pero no implementarás el codigo.
+
+Describiremos las subtareas que hay que implementar.
+
+Muestra un diagrama de los ficheros a modificar, crear, borrar..
+
+
+
+Para las distintas subtareas has de tener en cuenta: 
+
+Hacer test unitarios de los componentes.
+Valorar si tiene sentido crear o modificar los test e2e. Solo haremos flujos básicos para los 2e2.
+
+hacer un pequeño analisis de impactos en rendimiento y performance.
+Hacer un pequeño analisis sobre seo. 
+
+Añade toda la información que creas necesaria para que otro agente implemente cada uno de los pasos.
+
+Una vez consideres que has definido bien la tarea con su caso de uso, vamos a escribir un resumen en la carpeta ./tasks creando un fichero nuevo llamado task_xxx.md donde xxx corresponderá al numero de tarea siguiente disponible. 
+
+
+
+
+

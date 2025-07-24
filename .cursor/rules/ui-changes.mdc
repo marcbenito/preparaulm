@@ -1,0 +1,12 @@
+---
+description: 
+globs: src/components/ui/*
+alwaysApply: false
+---
+
+#  Componentes UI
+
+Cada vez que modifiques un componente de UI, hay que actualizar la guia de estilos.
+La guia de estilos está en la pagina /styleguide
+
+

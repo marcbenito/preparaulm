@@ -28,7 +28,10 @@ export const metadata: Metadata = {
 
 export default function DondeSacarmetiTuloUltraligeroPage() {
   return (
-    <BlogPostLayout>
+    <BlogPostLayout 
+      title="¿Dónde puedo sacarme el título de piloto de ultraligero?"
+      description="Guía completa sobre las escuelas de vuelo autorizadas y centros de formación donde puedes obtener tu licencia."
+    >
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full">
@@ -49,27 +52,6 @@ export default function DondeSacarmetiTuloUltraligeroPage() {
               <span className="text-sm">10/3/2024</span>
             </div>
           </div>
-        </div>
-
-        <h1 className="text-3xl md:text-5xl font-bold text-main mb-6 leading-tight">
-          ¿Dónde puedo sacarme el título de piloto de ultraligero?
-        </h1>
-
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
-            <User className="h-6 w-6 text-white" />
-          </div>
-          <div>
-                            <p className="text-main font-medium">Equipo PreparaUlm</p>
-            <p className="text-secondary text-sm">Equipo de redacción</p>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-l-4 border-blue-500 rounded-r-lg p-6 mb-8">
-          <p className="text-lg text-main leading-relaxed italic">
-            Guía completa sobre las escuelas de vuelo autorizadas y centros de
-            formación donde puedes obtener tu licencia.
-          </p>
         </div>
       </div>
 

@@ -76,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/requisitos-examen-ultraligero`,
-      lastModified: new Date('2024-03-12'),
+      lastModified: new Date('2025-07-25'),
       changeFrequency: 'monthly',
       priority: 0.6,
     },

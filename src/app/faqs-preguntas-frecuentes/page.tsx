@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { FaqAccordion } from "./_components/FaqAccordion"
+import { FaqsSection } from "./_components/FaqsSection"
 import faqsData from "./faqs.json"
 
 export const metadata: Metadata = {
@@ -65,7 +65,7 @@ export default function FaqsPage() {
             </p>
           </div>
 
-          <FaqAccordion data={faqsData} />
+          <FaqsSection data={faqsData} />
         </div>
       </div>
     </>

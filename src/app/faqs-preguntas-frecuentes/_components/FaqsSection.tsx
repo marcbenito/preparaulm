@@ -20,11 +20,11 @@ interface FaqCategory {
   questions: Question[]
 }
 
-interface FaqAccordionProps {
+interface FaqsSectionProps {
   data: FaqCategory[]
 }
 
-export function FaqAccordion({ data }: FaqAccordionProps) {
+export function FaqsSection({ data }: FaqsSectionProps) {
   const [searchTerm, setSearchTerm] = useState("")
 
   const filteredData = useMemo(() => {

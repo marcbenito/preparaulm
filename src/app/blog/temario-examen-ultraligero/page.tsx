@@ -28,7 +28,10 @@ export const metadata: Metadata = {
 
 export default function TemarioExamenUltraligeroPage() {
   return (
-    <BlogPostLayout>
+    <BlogPostLayout 
+      title="Temario Examen Ultraligero" 
+      description="Descubre el temario completo del examen de piloto ultraligero con todas las materias y temas."
+    >
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <div className="bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full">
@@ -46,30 +49,9 @@ export default function TemarioExamenUltraligeroPage() {
           <div className="bg-white/10 px-3 py-2 rounded-full">
             <div className="flex items-center gap-2 text-main">
               <Calendar className="h-4 w-4" />
-              <span className="text-sm">8/3/2024</span>
+              <span className="text-sm">Ult. Actualizacion: 25/07/2025</span>
             </div>
           </div>
-        </div>
-
-        <h1 className="text-3xl md:text-5xl font-bold text-main mb-6 leading-tight">
-          Temario completo del examen de ultraligero
-        </h1>
-
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
-            <User className="h-6 w-6 text-white" />
-          </div>
-          <div>
-                            <p className="text-main font-medium">Equipo PreparaUlm</p>
-            <p className="text-secondary text-sm">Equipo de redacción</p>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-l-4 border-blue-500 rounded-r-lg p-6 mb-8">
-          <p className="text-lg text-main leading-relaxed italic">
-            Desglose detallado de todas las materias y temas que debes estudiar
-            para superar el examen teórico oficial.
-          </p>
         </div>
       </div>
 

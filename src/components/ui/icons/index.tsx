@@ -118,6 +118,8 @@ export * from "./X"
 export * from "./Building2"
 export * from "./EyeOff"
 export * from "./Trash2"
+export * from "./ThumbsUp"
+export * from "./ThumbsDown"
 
 export {
   Cloud,
